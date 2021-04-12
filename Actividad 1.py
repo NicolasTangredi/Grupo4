@@ -209,5 +209,10 @@ def punto_1():
     print("-"*39)                             
     promedio_options(pal1)
     print("-"*39) 
-punto_1()
+
+    return tabla
+
+# agrege esto para que no se ejecutara al importarlo
+if __name__ == "__main__":
+    punto_1()
 

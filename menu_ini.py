@@ -29,7 +29,7 @@ def elegir_opcion():
     def print_menu():
         print('Elija una opcion:')
         print('     0: Cerrar menu')
-        print('     1: Calcular promedio total')
+        print('     1: Calcular promedio total y suma de ambas notas')
         print('     2: Generar reporte')
         print('     3: Ordenar datos')
 
@@ -40,8 +40,15 @@ def elegir_opcion():
 
     return op
 
+def asignarNotas(nombres,eval1,eval2,tabla):
+        z=0   
+        for i in nombres:
+            tabla[i] = [int(eval1[z]) , int(eval2[z]) , -1 ]
+            z=z+1      
+
 # programa principal
 datos = {}
+asignarNotas(nombres,eval1,eval2,datos)
 modulos = {
     1: Actividad_1.punto_1, 
     2: Actividad1_reportes.reportes, 

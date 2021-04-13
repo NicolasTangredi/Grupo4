@@ -1,11 +1,8 @@
 
 def ordenar(datos):
-    """ 
-        Ordena un diccionario segun el criterio que se elija 
-        de los listados en el menu
-
-        llamado: ordenar(diccionario)
-    """
+    """ Ordena un diccionario segun el criterio que se elija 
+        de los listados en el menu """
+    
     def print_menu():
         print('elija un criterio para ordenar')
         print('    0: por nombre')
@@ -18,6 +15,9 @@ def ordenar(datos):
         lista = list(datos.items())
 
         if num != -1:
+            if num == 2 and lista[0][1][num] == -1:
+                print('--! Estas tratando de ordenar por el total, pero aun no fue calculado !--')
+
             lista.sort(key = lambda lista: lista[1][num])
         else:
             lista.sort()
@@ -26,12 +26,3 @@ def ordenar(datos):
     
     print_menu()
     return ordenar( datos, int(input()) - 1 )
-
-# prueba
-if __name__ == '__main__':
-    print(ordenar({
-        'Agustin': [81, 30, 111], 'Alan': [60, 95, 155], 
-        'Andrés': [72, 28, 100], 'Ariadna': [24, 84, 108], 
-        'Bautista': [15, 84, 99], 'CAROLINA': [91, 43, 134], 
-        'CESAR': [12, 66, 78], 'David': [70, 51, 121]
-    }))

@@ -17,7 +17,7 @@ def ordenar(datos):
         if num != -1:
             if num == 2 and lista[0][1][num] == -1:
                 print('--! Estas tratando de ordenar por el total, pero aun no fue calculado !--')
-
+            
             lista.sort(key = lambda lista: lista[1][num])
         else:
             lista.sort()

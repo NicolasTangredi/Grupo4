@@ -1,0 +1,262 @@
+{
+    "lunes": {
+        "maniana": {
+            "criterio": "Atletas olimpicos de la disciplina de natacion con medallas de oro",
+            "data": [
+                "HAJOS, Alfred",
+                "MALOKINIS, Ioannis",
+                "HAJOS, Alfred",
+                "NEUMANN, Paul",
+                "JARVIS, John Arthur",
+                "HOPPENBERG, Ernst",
+                "LANE, Frederick C.V.",
+                "LANE, Frederick C.V.",
+                "FREY, Julius",
+                "HAINLE, Max",
+                "HOPPENBERG, Ernst",
+                "SCH\u00d6NE, Max",
+                "VON PETERSDORFF, Herbert",
+                "JARVIS, John Arthur",
+                "DE VENDEVILLE, Charles",
+                "BRACK, Walter",
+                "HALMAY, Zoltan",
+                "RAUSCH, Emil",
+                "DANIELS, Charles",
+                "ZACHARIAS, Georg"
+            ]
+        },
+        "tarde": {
+            "criterio": "Series de netflix con mas de 2 temporadas",
+            "data": [
+                "3%",
+                "13 Reasons Why",
+                "13 Reasons Why: Beyond the Reasons",
+                "A Series of Unfortunate Events",
+                "Aggretsuko",
+                "Alexa & Katie",
+                "All Hail King Julien",
+                "Alphablocks",
+                "American Crime",
+                "American Horror Story",
+                "Angry Birds",
+                "Anne with an E",
+                "Anthony Bourdain: Parts Unknown",
+                "Arrested Development",
+                "Arrow",
+                "Ash vs. Evil Dead",
+                "Ask the StoryBots",
+                "Atypical",
+                "Avatar: The Last Airbender",
+                "Baby"
+            ]
+        }
+    },
+    "martes": {
+        "maniana": {
+            "criterio": "Atletas olimpicos de la disciplina de esgrima con medallas de plata",
+            "data": [
+                "CALLOT, Henri",
+                "PERRONNET, Maurice",
+                "KARAKALOS, Telemachos",
+                "PERREE, Louis",
+                "FONST, Ramon",
+                "BOUGNOL, Emile",
+                "MASSON, Henri",
+                "KIRCHHOFFER, Alphonse",
+                "THIEBAUT, L\u00e9on",
+                "SANTELLI, Italo",
+                "TATHAM, Charles",
+                "VAN ZO POST, Albertson",
+                "FOX, Arthur",
+                "TATHAM, Charles",
+                "TOWNSEND, Charles Fitzhugh",
+                "GREBE, William",
+                "O'CONNOR, William Scott",
+                "LIPPMANN, Alexandre",
+                "DANIELL, Charles Leaf",
+                "HAIG, Cecil Henry"
+            ]
+        },
+        "tarde": {
+            "criterio": "Peliculas de terror en netflix con mas de 60 minutos",
+            "data": [
+                "7:19",
+                "21",
+                "187",
+                "1922",
+                "Oct-01",
+                "22-Jul",
+                "15-Aug",
+                "\u200b\u200bKuch Bheege Alfaaz",
+                "\u200bGoli Soda 2",
+                "\u200bMaj Rati \u200b\u200bKeteki",
+                "\u200bMayurakshi",
+                "#FriendButMarried",
+                "#FriendButMarried 2",
+                "#Selfie",
+                "#Selfie 69",
+                "\u00d2l\u00f2t\u016br\u00e9",
+                "1 Chance 2 Dance",
+                "1 Mile to You",
+                "10 jours en or",
+                "100 Meters"
+            ]
+        }
+    },
+    "miercoles": {
+        "maniana": {
+            "criterio": "Atletas olimpicos que participaron en las olimpiadas del 2008 y son mujeres",
+            "data": [
+                "WANG, Xin",
+                "CHEN, Ruolin",
+                "HEYMANS, Emilie",
+                "WU, Minxia",
+                "GUO, Jingjing",
+                "PAKHALINA, Julia",
+                "ESPINOSA, Paola",
+                "ORTIZ, Tatiana",
+                "CHEN, Ruolin",
+                "WANG, Xin",
+                "COLE, Briony",
+                "WU, Melissa",
+                "FISCHER, Heike",
+                "KOTZIAN, Ditte",
+                "GUO, Jingjing",
+                "WU, Minxia",
+                "PAKHALINA, Julia",
+                "POZDNYAKOVA, Anastasia",
+                "HOELZER, Margaret",
+                "COUGHLIN, Natalie"
+            ]
+        },
+        "tarde": {
+            "criterio": "Peliculas de netflix creadas entre los a\u00f1os 1980 y 2000",
+            "data": [
+                "3%",
+                "46",
+                "1983",
+                "1994",
+                "Feb-09",
+                "\u200bSAINT SEIYA: Knights of the Zodiac",
+                "(Un)Well",
+                "#blackAF",
+                "\u0e41\u0e1c\u0e19\u0e23\u0e49\u0e32\u0e22\u0e19\u0e32\u0e22\u0e40\u0e08\u0e49\u0e32\u0e40\u0e25\u0e48\u0e2b\u0e4c",
+                "\u015eubat",
+                "100 Days My Prince",
+                "100 Humans",
+                "100% Hotter",
+                "12 Years Promise",
+                "13 Reasons Why",
+                "13 Reasons Why: Beyond the Reasons",
+                "20 Minutes",
+                "21 Again",
+                "21 Sarfarosh: Saragarhi 1897",
+                "21 Thunder"
+            ]
+        }
+    },
+    "jueves": {
+        "maniana": {
+            "criterio": "Gimnastas olimpicos que participaron en las olimpiadas en Atenas",
+            "data": [
+                "WEING\u00c4RTNER, Hermann",
+                "FLATOW, Alfred",
+                "FLATOW, Alfred",
+                "ZUTTER, Louis",
+                "ZUTTER, Louis",
+                "WEING\u00c4RTNER, Hermann",
+                "PERSAKIS, Petros",
+                "MITROPOULOS, Ioannis",
+                "WEING\u00c4RTNER, Hermann",
+                "HOFMANN, Fritz",
+                "ANDRIAKOPOULOS, Nicolaos",
+                "XENAKIS, Thomasios",
+                "B\u00d6CKER, Konrad",
+                "FLATOW, Alfred",
+                "FLATOW, Gustav Felix",
+                "HILMAR, Georg",
+                "HOFMANN, Fritz",
+                "MANTEUFFEL, Fritz",
+                "NEUKIRCH, Karl",
+                "R\u00d6STEL, Richard"
+            ]
+        },
+        "tarde": {
+            "criterio": "Series de netflix que aparecen en la categoria \"Dramas\"",
+            "data": [
+                "3%",
+                "46",
+                "1983",
+                "Feb-09",
+                "\u015eubat",
+                "100 Days My Prince",
+                "13 Reasons Why",
+                "20 Minutes",
+                "21 Sarfarosh: Saragarhi 1897",
+                "21 Thunder",
+                "A Boy Name Flora A",
+                "A Good Wife",
+                "A House of Blocks",
+                "A Taiwanese Tale of Two Cities",
+                "A Thousand Goodnights",
+                "A Touch of Green",
+                "A Young Doctor's Notebook and Other Stories",
+                "A.D. Kingdom and Empire",
+                "Ad Vitam",
+                "Against the Tide"
+            ]
+        }
+    },
+    "viernes": {
+        "maniana": {
+            "criterio": "Atletas olimpicos de Eestados Unidos cuyo apellido comienza con una c o una l ",
+            "data": [
+                "LANE, Francis",
+                "CURTIS, Thomas",
+                "CLARK, Ellery",
+                "CONNOLLY, James",
+                "CONNOLLY, James",
+                "CLARK, Ellery",
+                "CONNOLLY, James",
+                "LONG, Maxwell W.Maxey",
+                "CREGAN, John",
+                "COLKETT, Meredith Bright",
+                "CONNOLLY, James",
+                "LAKE, John Henry",
+                "CARR, William",
+                "LOCKWOOD, Roscoe",
+                "LEARY, J. Scott",
+                "LEARY, J. Scott",
+                "COOKE, Emma C.",
+                "COOKE, Emma C.",
+                "CLARK, William A.",
+                "COOKE, Emma C."
+            ]
+        },
+        "tarde": {
+            "criterio": "Peliculas o series de netflix cuya descripcion contiene la palabra robot",
+            "data": [
+                "9",
+                "A.X.L.",
+                "Automata",
+                "Barrio Universitario",
+                "Better Than Us",
+                "Bill Burr: Paper Tiger",
+                "Chappie",
+                "F.R.E.D.I.",
+                "Gurren Lagann",
+                "Hot Bot",
+                "Kill Command",
+                "Kong: King of the Apes",
+                "Kung Fu Magoo",
+                "Miniforce",
+                "Mystery Science Theater 3000",
+                "Mystery Science Theater 3000: The Return",
+                "Next Gen",
+                "Noddy Toyland Detective",
+                "Pets United",
+                "Power Players"
+            ]
+        }
+    }
+}

@@ -5,15 +5,17 @@ def crear(semana):
         para elegir los datos  
         esta funcion no tiene retorno, solo crea un archivo
     '''
-    # guarda el resultado
-    diccionario = {}
+    
 
-    # abre los dos datasets como diccionarios
+    # abre los dos datasets
     with open('data/netflix_titles.csv', 'r', encoding='utf-8') as data, open('data/summer.csv', 'r', encoding='utf-8') as data2:
+        
+        # criterios y datos a utilizar
+        diccionario = {}
         full_data = (csv.DictReader(data2), csv.DictReader(data))
-
         criterios = definir_criterios()
 
+        # carga el diccionario con los datos divididos por dia y por franja horaria
         for i, dia in enumerate(semana):
             crit = criterios[i]
 
@@ -27,10 +29,13 @@ def crear(semana):
                     'data': crit[1][0](full_data),
                 }
             }
+
+            # reset de los lectores de archivos
             data.seek(0)
             data2.seek(0)
 
-        with open('data/json_new.json', 'w', encoding='utf-8') as json_new:
+        # crea y guarda los datos en json
+        with open('data/datos_juego.json', 'w', encoding='utf-8') as json_new:
             json.dump(diccionario, json_new, indent=4)
 
 def definir_criterios():
@@ -42,6 +47,9 @@ def definir_criterios():
                 --- mañana y tarde(tupla)
     '''
 
+    # en general, se filtra a los datos por un criterio definido y
+    # se mapea el filterObject, quedandose con el dato que se necesite,
+    # para despues castearlo el map a lista
     criterios = [
         (
             (lambda data: list(map( lambda item: item['Athlete'], filter(lambda row: row['Discipline'] == 'Swimming' and row['Medal'] == 'Gold', data[0])))[:20]

@@ -16,17 +16,17 @@ def elegir_criterio():
     semana = ['lunes','martes','miercoles','jueves','viernes']
     data = None   
 
-    # intenta cargar los datos desde el archivo json, sino crea el
-    # archivo y carga el archivo, si esto tambien falla imprime un
-    # mensaje de error
+    # intenta cargar los datos desde el archivo json
     try:
-        with open('data/json_new.json', 'r', encoding='utf-8') as json_file:
+        with open('data/datos_juego.json', 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
     except:
+
+        # sino intenta crear el archivo y carga los datos
         try:
             print('JSON no existe, creando uno nuevo')
             crear_datos.crear(semana)
-            with open('data/json_new.json', 'r', encoding='utf-8') as json_file:
+            with open('data/datos_juego.json', 'r', encoding='utf-8') as json_file:
                 data = json.load(json_file)
         except:
             print('Parece que hay problemas con los datos')
@@ -44,6 +44,7 @@ def elegir_criterio():
             dia = semana[random.randint(0,4)]
         horario = horario // 12
 
+        # elije los datos por dia y franja horaria
         if horario == 0:
             print(dia, ' por la maniana')
             return data[dia]['maniana']

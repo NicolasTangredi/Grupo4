@@ -1,5 +1,5 @@
 import PySimpleGUI as sg
-from Source.Ventanas import ventana_signin
+from Source.Ventanas import signin
 from Source.Handlers import usuario
 
 def start():
@@ -11,7 +11,7 @@ def start():
 
 def loop():
 
-    window = ventana_signin.build_signin()
+    window = signin.build_signin()
     while True:
         event, values = window.read()
 

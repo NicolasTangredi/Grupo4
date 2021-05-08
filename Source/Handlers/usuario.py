@@ -13,7 +13,9 @@ def crear_usuario(nombre, contra, genero, edad):
                                 'tipo_elemento': 'texto',
                                 'cant_coincidencias': 0,
                                 'tiempo': 120,
-                                'paleta_de_colores': 'color'}
+                                'paleta_de_colores': 'color'},
+              #Si el usuario esta desconectado = 0/Si el usuario esta conectado = 1
+              'conectado': 0
                }                                   
     return usuario
 
@@ -40,7 +42,26 @@ def check_contra (nombre,contra):
         for user in users:
             if user['nombre'] == nombre and user['contraseña'] == contra:
                 return True
-        return False        
+        return False       
+ 
+def user_logged(nom,contra):
+    """devuelve una lista con el nombre y contraseña del usuario logeado""" 
+    with open("data/usuarios.json","w", encoding="utf8") as usuario:
+        datos = json.load(usuario)
+        for buscar_usuario in datos:
+            if nom == buscar_usuario["nombre"] and contra == buscar_usuario["contraseña"]:
+                buscar_usuario["conectado"] = 1
+                break
+                         
+
+def user_disconnected():
+    """devuelve una lista con el nombre y contraseña del usuario logeado""" 
+    with open("data/usuarios.json","w", encoding="utf8") as usuario:
+        datos = json.load(usuario)
+        for buscar_usuario in datos:
+            if buscar_usuario == datos["nombre"]:
+                buscar_usuario["conectado"] = 0
+                break                      
                 
 
 

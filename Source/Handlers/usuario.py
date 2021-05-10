@@ -45,7 +45,7 @@ def check_contra (nombre,contra):
         return False       
  
 def user_logged(nom,contra):
-    """devuelve una lista con el nombre y contraseña del usuario logeado""" 
+    """conecta al usuario del que se ingrso nombre y contraseña en sus argumentos""" 
     with open("data/usuarios.json","w", encoding="utf8") as usuario:
         datos = json.load(usuario)
         for buscar_usuario in datos:
@@ -61,7 +61,27 @@ def user_disconnected():
         for buscar_usuario in datos:
             if buscar_usuario == datos["nombre"]:
                 buscar_usuario["conectado"] = 0
-                break                      
+                break    
+            
+def puntajes_usuarios():
+    """devuelve un diccionario con los nombres como llave y el puntaje como valor"""
+    with open('data/usuarios.json',"r", encoding="utf8") as usuario:
+        datos = json.load(usuario)
+        puntajes = []
+        dic = {}
+        for users in datos:
+            dic[users["nombre"]]= users["estadisticas"]["puntaje_maximo"]
+        return dic 
+  
+def stats_logged():
+    """devuelve las estadisticas del usuario conectado"""
+    with open('data/usuarios.py',"r", encoding="utf8") as usuar:
+        for usuario in usuar:
+            if usuario["conectado"] == 1:
+                num1 = usuario["estadisticas"]["partidas_ganadas"]
+                num2 = usuario["estadisticas"]["partidas_perdidas"]
+                num3 = usuario["estadisticas"]["puntaje_maximo"] 
+        return num1,num2,num3                                             
                 
 
 

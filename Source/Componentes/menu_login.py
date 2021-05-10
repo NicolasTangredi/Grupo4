@@ -40,6 +40,7 @@ def loop():
                     crear_aviso(avisos.build_contra_incorrecta())
                 else:
                     window.close()
+                    usuario.user_logged(user,pwd)
                     menu_principal.iniciar()
                     break        
             except:

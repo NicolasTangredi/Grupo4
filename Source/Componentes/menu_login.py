@@ -9,13 +9,6 @@ def start():
 
     loop()
 
-def crear_aviso(funcion):
-    window = funcion
-    while True:
-        event = window.read()
-        if event == None or event == 'Ok':
-            break 
-    return window
 
 def loop():
     """ Mantiene 'viva' la ventana """
@@ -33,14 +26,12 @@ def loop():
             try:
                 users = usuario.usuarios_registrados()
                 if user not in users:
-                    window.hide()
-                    crear_aviso(avisos.build_no_registrado())
-                    loop()
-                if not usuario.check_contra(user,pwd):
-                    crear_aviso(avisos.build_contra_incorrecta())
+                    sg.popup('usuario no registrado')
+                elif not usuario.check_contra(user,pwd):
+                    sg.popup('contraseña incorrecta')
                 else:
                     window.close()
-                    usuario.user_logged(user,pwd)
+                    #usuario.user_logged(user,pwd)
                     menu_principal.iniciar()
                     break        
             except:

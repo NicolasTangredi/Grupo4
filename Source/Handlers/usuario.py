@@ -21,8 +21,13 @@ def crear_usuario(nombre, contra, genero, edad):
 
 def añadir_usuario(user):
     '''añade un usuario al archivo usuarios.json'''
-    with open("data/usuarios.json", "r", encoding="utf8") as file:
-        lista_de_usuarios = json.load(file)
+    try:
+        with open("data/usuarios.json", "r", encoding="utf8") as file:
+            lista_de_usuarios = json.load(file)
+    except FileNotFoundError:
+        lista_de_usuarios = []
+
+        
     lista_de_usuarios.append(user)
     with open("data/usuarios.json", "w", encoding="utf8") as file:
         json.dump(lista_de_usuarios, file, indent=4, ensure_ascii=False)   
@@ -43,20 +48,23 @@ def check_contra (nombre,contra):
             if user['nombre'] == nombre and user['contraseña'] == contra:
                 return True
         return False       
- 
-def user_logged(nom,contra):
-    """conecta al usuario del que se ingrso nombre y contraseña en sus argumentos""" 
-    with open("data/usuarios.json","w", encoding="utf8") as usuario:
-        datos = json.load(usuario)
-        for buscar_usuario in datos:
-            if nom == buscar_usuario["nombre"] and contra == buscar_usuario["contraseña"]:
-                buscar_usuario["conectado"] = 1
-                break
+
+
+# comento esto pq al abrir usuarios.json con 'w' borra todos los datos de usurios.json y rompe todo xd
+
+# def user_logged(nom,contra):
+#     """conecta al usuario del que se ingrso nombre y contraseña en sus argumentos""" 
+#     with open("data/usuarios.json","w", encoding="utf8") as usuario:
+#         datos = json.load(usuario)
+#         for buscar_usuario in datos:
+#             if nom == buscar_usuario["nombre"] and contra == buscar_usuario["contraseña"]:
+#                 buscar_usuario["conectado"] = 1
+#                 break
                          
 
 def user_disconnected():
     """devuelve una lista con el nombre y contraseña del usuario logeado""" 
-    with open("data/usuarios.json","w", encoding="utf8") as usuario:
+    with open("data/usuarios.json","r", encoding="utf8") as usuario:
         datos = json.load(usuario)
         for buscar_usuario in datos:
             if buscar_usuario == datos["nombre"]:

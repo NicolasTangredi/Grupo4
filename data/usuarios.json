@@ -1,9 +1,9 @@
 [
     {
-        "nombre": "Juan",
-        "contraseña": "1235",
+        "nombre": "pepe",
+        "contraseña": "pepe",
         "edad": "Masculino",
-        "genero": "23",
+        "genero": "56",
         "estadisticas": {
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
@@ -15,6 +15,26 @@
             "cant_coincidencias": 0,
             "tiempo": 120,
             "paleta_de_colores": "color"
-        }
+        },
+        "conectado": 0
+    },
+    {
+        "nombre": "juan",
+        "contraseña": "juan",
+        "edad": "Masculino",
+        "genero": "46",
+        "estadisticas": {
+            "partidas_ganadas": 0,
+            "partidas_perdidas": 0,
+            "puntaje_maximo": 0
+        },
+        "configuracion": {
+            "cant_casilas": 0,
+            "tipo_elemento": "texto",
+            "cant_coincidencias": 0,
+            "tiempo": 120,
+            "paleta_de_colores": "color"
+        },
+        "conectado": 0
     }
 ]

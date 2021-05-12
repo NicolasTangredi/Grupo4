@@ -1,4 +1,6 @@
+import PySimpleGUI as sg
 from Source.Ventanas import puntajes
+
 def start():
     """Ejecuta la ventana de puntajes del menu principal"""
 
@@ -8,13 +10,13 @@ def start():
 
 def loop():
 
-    window = puntajes.usuario.build_punt()
+    window = puntajes.build_punt()
      
             
     while True:
         event,values = window.read()
         
-        if event == "Ok" or event == None:
+        if event == "Ok" or event == sg.WIN_CLOSED:
             break      
                     
     return window        

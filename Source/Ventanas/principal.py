@@ -1,6 +1,7 @@
 import PySimpleGUI as sg
 
 def crear():
+    ''' crea y devuelve la ventana del menu principal '''
 
     button = lambda txt, key: sg.Button(txt, key= key, size=(20, 2))
     layout = [

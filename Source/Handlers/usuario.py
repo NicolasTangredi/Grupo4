@@ -86,13 +86,19 @@ def puntajes_usuarios():
   
 def stats_logged():
     """devuelve las estadisticas del usuario conectado"""
-    with open('data/usuarios.py',"r", encoding="utf8") as usuar:
+    
+    with open('data/usuarios.json',"r", encoding="utf8") as usuar:
+        usuar = json.load(usuar)
+
         for usuario in usuar:
+            print(usuario['conectado'])
             if usuario["conectado"] == 1:
                 num1 = usuario["estadisticas"]["partidas_ganadas"]
                 num2 = usuario["estadisticas"]["partidas_perdidas"]
-                num3 = usuario["estadisticas"]["puntaje_maximo"] 
+                num3 = usuario["estadisticas"]["puntaje_maximo"]
+        
         return num1,num2,num3
+
 def max_punt():
     """retorna una lista con los nombres(impares) y puntajes(pares) de los 3 mejores jugadores"""
     lista = []

@@ -4,7 +4,7 @@ from Source.Handlers import usuario
 def build_punt():
     """ Construye la ventana del registro del usuario"""
 
-    lista = max_punt() 
+    lista = usuario.max_punt() 
         
     layout = [[sg.Text(lista[0]), sg.Text(lista[1])],
                 [sg.Text(lista[2]), sg.Text(lista[3])],

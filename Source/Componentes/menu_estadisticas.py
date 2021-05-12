@@ -16,7 +16,7 @@ def loop():
     while True:
         event,values = window.read()
         
-        if event == "Ok":
+        if event == "Ok" or event == None:
             break
     return window
             

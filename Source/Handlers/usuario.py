@@ -50,16 +50,19 @@ def check_contra (nombre,contra):
         return False       
 
 
-# comento esto pq al abrir usuarios.json con 'w' borra todos los datos de usurios.json y rompe todo xd
+# arreglado brother B)
 
-# def user_logged(nom,contra):
-#     """conecta al usuario del que se ingrso nombre y contraseña en sus argumentos""" 
-#     with open("data/usuarios.json","w", encoding="utf8") as usuario:
-#         datos = json.load(usuario)
-#         for buscar_usuario in datos:
-#             if nom == buscar_usuario["nombre"] and contra == buscar_usuario["contraseña"]:
-#                 buscar_usuario["conectado"] = 1
-#                 break
+def user_logged(nom,contra):
+    """conecta al usuario del que se ingrso nombre y contraseña en sus argumentos""" 
+    with open("data/usuarios.json","r", encoding="utf8") as usuario:
+        datos = json.load(usuario)
+        for buscar_usuario in datos:
+            if nom == buscar_usuario["nombre"] and contra == buscar_usuario["contraseña"]:
+                buscar_usuario["conectado"] = 1
+                break
+        datoss = json.dumps(datos,indent = 4)
+        with open("data/usuarios.json","w", encoding="utf8") as user:
+            user.write(datoss)
                          
 
 def user_disconnected():
@@ -73,9 +76,9 @@ def user_disconnected():
             
 def puntajes_usuarios():
     """devuelve un diccionario con los nombres como llave y el puntaje como valor"""
-    with open('data/usuarios.json',"r", encoding="utf8") as usuario:
+    with open('data/usuarios.json', encoding="utf8") as usuario:
         datos = json.load(usuario)
-        puntajes = []
+
         dic = {}
         for users in datos:
             dic[users["nombre"]]= users["estadisticas"]["puntaje_maximo"]
@@ -89,7 +92,23 @@ def stats_logged():
                 num1 = usuario["estadisticas"]["partidas_ganadas"]
                 num2 = usuario["estadisticas"]["partidas_perdidas"]
                 num3 = usuario["estadisticas"]["puntaje_maximo"] 
-        return num1,num2,num3                                             
+        return num1,num2,num3
+def max_punt():
+    """retorna una lista con los nombres(impares) y puntajes(pares) de los 3 mejores jugadores"""
+    lista = []
+    puntajes = puntajes_usuarios()
+    k=1
+    for i in range(3):
+        max=-100
+        for jugador in puntajes.keys():
+            if puntajes[jugador] > max:
+                puntos_max=puntajes[jugador]
+                jugador_max=jugador
+        lista.append(jugador_max)
+        lista.append(puntos_max)        
+        puntajes.pop(jugador_max)
+        k=k+2
+    return lista                                                     
                 
 
 

@@ -1,5 +1,6 @@
 import PySimpleGUI as sg
 from ..Ventanas import principal as ventana
+from ..Componentes import menu_estadisticas 
 
 def iniciar():
 
@@ -26,13 +27,13 @@ def loop(window):
         elif(event == '-PUNTOS-'):
             print('puntajes')
             window.hide()
-            # agregar menu puntajes aca
+            menu_puntajes()
             window.un_hide()
 
         elif(event == '-ESTAD-'):
             print('estadisticas')
             window.hide()
-            # agregar menu estadisticas aca
+            menu_estadisticas()
             window.un_hide()
 
         elif(event == '-SALIR-' or event == sg.WIN_CLOSED):

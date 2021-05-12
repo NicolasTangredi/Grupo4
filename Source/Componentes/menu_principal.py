@@ -1,6 +1,7 @@
 import PySimpleGUI as sg
 from ..Ventanas import principal as ventana
 from ..Componentes import menu_estadisticas 
+from ..Componentes import menu_puntajes
 
 def iniciar():
 

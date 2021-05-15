@@ -7,7 +7,6 @@ from Source.Handlers import usuario
 def start():
     """Ejecuta la ventana del menu de configuracion"""
     window = configuracion.build_config()
-    print('xd')
     loop(window)
     window.close()
 
@@ -16,9 +15,9 @@ def start():
 def loop(window):
     """crea la ventana de configuracion"""
     user = usuario.usuario_conectado()
-
     while True:
         event, values = window.read()
+
 
         if event == None or event == "-SALIR-":
             break
@@ -78,10 +77,10 @@ def menu_elemento(user):
         if event == None:
             break
         elif event == "palabras":
-            config.set_casillas("palabras",user)
+            config.set_elemento("palabras",user)
             break
         elif event == "imagenes":
-            config.set_casillas("imagenes",user)
+            config.set_elemento("imagenes",user)
             break
     window.close()
 
@@ -94,14 +93,14 @@ def menu_tiempo(user):
         event, values = window.read()
         if event == None:
             break
-        elif event == "60":
-            config.set_tiempo("60",user)
+        elif event == "-60-":
+            config.set_tiempo(60,user)
             break
-        elif event == "90":
-            config.set_tiempo("90",user)
+        elif event == "-90-":
+            config.set_tiempo(90,user)
             break
-        elif event == "120":
-            config.set_tiempo("120",user)
+        elif event == "-120-":
+            config.set_tiempo(120,user)
             break
     window.close()
 
@@ -114,13 +113,13 @@ def menu_color(user):
         if event == None:
             break
         elif event == "Color1":
-            config.set_tiempo("Color1",user)
+            config.set_color("Color1",user)
             break
         elif event == "Color2":
-            config.set_tiempo("Color2",user)
+            config.set_color("Color2",user)
             break
         elif event == "Color3":
-            config.set_tiempo("Color3",user)
+            config.set_color("Color3",user)
             break
     window.close()            
            

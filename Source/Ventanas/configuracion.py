@@ -7,7 +7,6 @@ def build_config():
                 [sg.Button( 'Tiempo', key='-TIEMPO-')],
                 [sg.Button( 'Paleta de colores', key='-COLOR-')],
                 [sg.Button( 'Salir', key='-SALIR-')]]
-        print('layout')
         window = sg.Window('Configuracion', layout)
         return window
 
@@ -17,8 +16,8 @@ def build_casillas():
     layout = [
         [sg.T("Elegi la cantidad de casillas")],
         [sg.Button('4x4', key='4x4')], 
-        [sg.Button( '5x5', key='4x4')], 
-        [sg.Button( '6x6', key='4x4')]
+        [sg.Button( '5x5', key='5x5')], 
+        [sg.Button( '6x6', key='6x6')]
     ]
 
     window = sg.Window('Cantidad de casillas', layout)
@@ -42,9 +41,9 @@ def build_tiempo():
 
     layout = [
         [sg.T("Elegi la duracion de la partida")],
-        [sg.Button( '60')], 
-        [sg.Button( '90')], 
-        [sg.Button( '120')]
+        [sg.Button( '60', key = "-60-")], 
+        [sg.Button( '90', key = "-90-")], 
+        [sg.Button( '120', key = "-120-")]
     ]
     window = sg.Window('Tiempo', layout)
     return window

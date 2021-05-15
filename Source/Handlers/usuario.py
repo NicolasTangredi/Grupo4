@@ -9,7 +9,7 @@ def crear_usuario(nombre, contra, genero, edad):
               "estadisticas": { 'partidas_ganadas': 0,
                                 'partidas_perdidas': 0,
                                 'puntaje_maximo': 0},
-              'configuracion': {'cant_casilas': 0,
+              'configuracion': {'cant_casillas': 0,
                                 'tipo_elemento': 'texto',
                                 'cant_coincidencias': 0,
                                 'tiempo': 120,
@@ -52,17 +52,16 @@ def check_contra (nombre,contra):
 
 # arreglado brother B)
 
-def user_logged(nom,contra):
+def user_logged(nom):
     """conecta al usuario del que se ingrso nombre y contraseña en sus argumentos""" 
     with open("data/usuarios.json","r", encoding="utf8") as usuario:
         datos = json.load(usuario)
         for buscar_usuario in datos:
-            if nom == buscar_usuario["nombre"] and contra == buscar_usuario["contraseña"]:
+            if nom == buscar_usuario["nombre"]:
                 buscar_usuario["conectado"] = 1
                 break
-        datoss = json.dumps(datos,indent = 4)
-        with open("data/usuarios.json","w", encoding="utf8") as user:
-            user.write(datoss)
+        with open("data/usuarios.json","w", encoding="utf8") as file:
+           json.dump(datos, file, indent=4, ensure_ascii=False)
                          
 
 def user_disconnected(nom):

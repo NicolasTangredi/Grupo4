@@ -10,11 +10,11 @@
             "puntaje_maximo": 0
         },
         "configuracion": {
-            "cant_casilas": 0,
-            "tipo_elemento": "texto",
+            "cant_casillas": "6x6",
+            "tipo_elemento": "palabras",
             "cant_coincidencias": 0,
             "tiempo": 120,
-            "paleta_de_colores": "color"
+            "paleta_de_colores": "Color3"
         },
         "conectado": 0
     },
@@ -29,11 +29,11 @@
             "puntaje_maximo": 0
         },
         "configuracion": {
-            "cant_casilas": 0,
-            "tipo_elemento": "texto",
+            "cant_casillas": "6x6",
+            "tipo_elemento": "palabras",
             "cant_coincidencias": 0,
             "tiempo": 120,
-            "paleta_de_colores": "color"
+            "paleta_de_colores": "Color3"
         },
         "conectado": 0
     },
@@ -48,11 +48,11 @@
             "puntaje_maximo": 0
         },
         "configuracion": {
-            "cant_casilas": 0,
-            "tipo_elemento": "texto",
+            "cant_casillas": "6x6",
+            "tipo_elemento": "imagenes",
             "cant_coincidencias": 0,
             "tiempo": 120,
-            "paleta_de_colores": "color"
+            "paleta_de_colores": "Color3"
         },
         "conectado": 0
     }

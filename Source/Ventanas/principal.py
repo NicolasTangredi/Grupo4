@@ -7,7 +7,7 @@ def crear():
     layout = [
         [sg.Text("MEM-PY", font=('', 30), pad=(3, 5))],
         [button( 'Jugar', '-JUGAR-')],
-        [button( 'Opcion', '-OPCION-')],
+        [button( 'Configuracion', '-CONFIG-')],
         [button( 'Puntos', '-PUNTOS-')],
         [button( 'Estadisticas', '-ESTAD-')],
         [button( 'Salir', '-SALIR-')]

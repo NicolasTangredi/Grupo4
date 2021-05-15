@@ -2,6 +2,8 @@ import PySimpleGUI as sg
 from ..Ventanas import principal as ventana
 from ..Componentes import menu_estadisticas, menu_tablero 
 from ..Componentes import menu_puntajes
+from ..Componentes import menu_configuracion
+from ..Handlers import usuario
 
 def iniciar():
     ''' comienza la ejecucion del menu del juego '''
@@ -20,10 +22,10 @@ def loop(window):
             menu_tablero.start()
             window.un_hide()
         
-        elif(event == '-OPCION-'):
-            print('opciones')
+        elif(event == '-CONFIG-'):
+            print('configuracion')
             window.hide()
-            # agregar menu opciones aca
+            menu_configuracion.start()
             window.un_hide()
         
         elif(event == '-PUNTOS-'):
@@ -38,6 +40,8 @@ def loop(window):
             window.un_hide()
 
         elif(event == '-SALIR-' or event == sg.WIN_CLOSED):
+            user = usuario.usuario_conectado()
+            usuario.user_disconnected(user)
             window.close()
             break
         

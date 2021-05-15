@@ -65,14 +65,16 @@ def user_logged(nom,contra):
             user.write(datoss)
                          
 
-def user_disconnected():
+def user_disconnected(nom):
     """devuelve una lista con el nombre y contraseña del usuario logeado""" 
     with open("data/usuarios.json","r", encoding="utf8") as usuario:
         datos = json.load(usuario)
         for buscar_usuario in datos:
-            if buscar_usuario == datos["nombre"]:
+            if nom == buscar_usuario["nombre"]:
                 buscar_usuario["conectado"] = 0
-                break    
+                break
+        with open("data/usuarios.json","w", encoding="utf8") as file:
+            json.dump(datos, file, indent=4, ensure_ascii=False)
             
 def puntajes_usuarios():
     """devuelve un diccionario con los nombres como llave y el puntaje como valor"""
@@ -98,6 +100,15 @@ def stats_logged():
                 num3 = usuario["estadisticas"]["puntaje_maximo"]
         
         return num1,num2,num3
+def usuario_conectado():
+    """devuelve el nombre del usuario conectado"""
+
+    with open('data/usuarios.json',"r", encoding="utf8") as file:
+        usuarios = json.load(file)
+        for user in usuarios:
+            if user["conectado"] == 1:
+                return user["nombre"]
+
 
 def max_punt():
     """retorna una lista con los nombres(impares) y puntajes(pares) de los 3 mejores jugadores"""
@@ -114,8 +125,18 @@ def max_punt():
         lista.append(puntos_max)        
         puntajes.pop(jugador_max)
         k=k+2
-    return lista                                                     
-                
+    return lista
+
+
+
+                        
+                        
+
+
+
+
+
+
 
 
 

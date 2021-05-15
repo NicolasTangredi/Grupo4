@@ -31,7 +31,7 @@ def loop():
                     sg.popup('contraseña incorrecta')
                 else:
                     window.close()
-                    #usuario.user_logged(user,pwd)
+                    usuario.user_logged(user,pwd)
                     menu_principal.iniciar()
                     break        
             except:

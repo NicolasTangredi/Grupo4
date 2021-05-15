@@ -16,11 +16,11 @@ def start():
 def loop(window):
     """crea la ventana de configuracion"""
     user = usuario.usuario_conectado()
+
     while True:
         event, values = window.read()
 
-
-        if event == None or event == "Salir":
+        if event == None or event == "-SALIR-":
             break
         
         elif event == "-CASILLAS-":

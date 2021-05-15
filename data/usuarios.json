@@ -1,7 +1,7 @@
 [
     {
         "nombre": "pepe",
-        "contrase\u00f1a": "pepe",
+        "contraseña": "pepe",
         "edad": "Masculino",
         "genero": "56",
         "estadisticas": {
@@ -16,11 +16,11 @@
             "tiempo": 120,
             "paleta_de_colores": "color"
         },
-        "conectado": 1
+        "conectado": 0
     },
     {
         "nombre": "juan",
-        "contrase\u00f1a": "juan",
+        "contraseña": "juan",
         "edad": "Masculino",
         "genero": "46",
         "estadisticas": {
@@ -39,7 +39,7 @@
     },
     {
         "nombre": "tobias",
-        "contrase\u00f1a": "tobias",
+        "contraseña": "tobias",
         "edad": "Femenino",
         "genero": "46",
         "estadisticas": {

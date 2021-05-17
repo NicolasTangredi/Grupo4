@@ -59,4 +59,17 @@ def build_colores():
     window = sg.Window('Paleta de colores', layout)
     return window
 
+def build_coincidencias():
+
+    """contruye la ventana de coincidencias"""
+
+    layout = [
+        [sg.T("Elegi la cantidad de coincidencias")],
+        [sg.Button( 'Cant1', key = "-1-")], 
+        [sg.Button( 'Cant2', key = "-2-")], 
+        [sg.Button( 'Cant3', key = "-3-")]
+    ]
+    window= sg.Window('Coincidencias', layout)
+    return window        
+
             

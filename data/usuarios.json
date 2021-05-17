@@ -12,9 +12,9 @@
         "configuracion": {
             "cant_casillas": "6x6",
             "tipo_elemento": "palabras",
-            "cant_coincidencias": 0,
+            "cant_coincidencias": "Cant3",
             "tiempo": 120,
-            "paleta_de_colores": "Color3"
+            "paleta_de_colores": "Color1"
         },
         "conectado": 0
     },
@@ -69,7 +69,7 @@
         "configuracion": {
             "cant_casillas": "6x6",
             "tipo_elemento": "imagenes",
-            "cant_coincidencias": 0,
+            "cant_coincidencias": "Cant3",
             "tiempo": 120,
             "paleta_de_colores": "Color2"
         },

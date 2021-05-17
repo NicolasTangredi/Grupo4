@@ -55,5 +55,24 @@
             "paleta_de_colores": "Color3"
         },
         "conectado": 0
+    },
+    {
+        "nombre": "Goku",
+        "contraseña": "123",
+        "edad": "Masculino",
+        "genero": "37",
+        "estadisticas": {
+            "partidas_ganadas": 0,
+            "partidas_perdidas": 0,
+            "puntaje_maximo": 0
+        },
+        "configuracion": {
+            "cant_casillas": "6x6",
+            "tipo_elemento": "imagenes",
+            "cant_coincidencias": 0,
+            "tiempo": 120,
+            "paleta_de_colores": "Color2"
+        },
+        "conectado": 0
     }
 ]

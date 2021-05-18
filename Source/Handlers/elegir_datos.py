@@ -46,8 +46,8 @@ def elegir_criterio():
 
         # elije los datos por dia y franja horaria
         if horario == 0:
-            print(dia, ' por la maniana')
-            return data[dia]['maniana']
+            print(dia, ' por la mañana')
+            return data[dia]['mañana']
         else:
             print(dia, ' por la tarde')
             return data[dia]['tarde']

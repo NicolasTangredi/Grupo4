@@ -1,6 +1,6 @@
 {
     "lunes": {
-        "maniana": {
+        "mañana": {
             "criterio": "Atletas olimpicos de la disciplina de natacion con medallas de oro",
             "data": [
                 "HAJOS, Alfred",
@@ -14,7 +14,7 @@
                 "FREY, Julius",
                 "HAINLE, Max",
                 "HOPPENBERG, Ernst",
-                "SCH\u00d6NE, Max",
+                "SCHÖNE, Max",
                 "VON PETERSDORFF, Herbert",
                 "JARVIS, John Arthur",
                 "DE VENDEVILLE, Charles",
@@ -52,7 +52,7 @@
         }
     },
     "martes": {
-        "maniana": {
+        "mañana": {
             "criterio": "Atletas olimpicos de la disciplina de esgrima con medallas de plata",
             "data": [
                 "CALLOT, Henri",
@@ -63,7 +63,7 @@
                 "BOUGNOL, Emile",
                 "MASSON, Henri",
                 "KIRCHHOFFER, Alphonse",
-                "THIEBAUT, L\u00e9on",
+                "THIEBAUT, Léon",
                 "SANTELLI, Italo",
                 "TATHAM, Charles",
                 "VAN ZO POST, Albertson",
@@ -87,15 +87,15 @@
                 "Oct-01",
                 "22-Jul",
                 "15-Aug",
-                "\u200b\u200bKuch Bheege Alfaaz",
-                "\u200bGoli Soda 2",
-                "\u200bMaj Rati \u200b\u200bKeteki",
-                "\u200bMayurakshi",
+                "​​Kuch Bheege Alfaaz",
+                "​Goli Soda 2",
+                "​Maj Rati ​​Keteki",
+                "​Mayurakshi",
                 "#FriendButMarried",
                 "#FriendButMarried 2",
                 "#Selfie",
                 "#Selfie 69",
-                "\u00d2l\u00f2t\u016br\u00e9",
+                "Òlòtūré",
                 "1 Chance 2 Dance",
                 "1 Mile to You",
                 "10 jours en or",
@@ -104,7 +104,7 @@
         }
     },
     "miercoles": {
-        "maniana": {
+        "mañana": {
             "criterio": "Atletas olimpicos que participaron en las olimpiadas del 2008 y son mujeres",
             "data": [
                 "WANG, Xin",
@@ -130,18 +130,18 @@
             ]
         },
         "tarde": {
-            "criterio": "Peliculas de netflix creadas entre los a\u00f1os 1980 y 2000",
+            "criterio": "Peliculas de netflix creadas entre los años 1980 y 2000",
             "data": [
                 "3%",
                 "46",
                 "1983",
                 "1994",
                 "Feb-09",
-                "\u200bSAINT SEIYA: Knights of the Zodiac",
+                "​SAINT SEIYA: Knights of the Zodiac",
                 "(Un)Well",
                 "#blackAF",
-                "\u0e41\u0e1c\u0e19\u0e23\u0e49\u0e32\u0e22\u0e19\u0e32\u0e22\u0e40\u0e08\u0e49\u0e32\u0e40\u0e25\u0e48\u0e2b\u0e4c",
-                "\u015eubat",
+                "แผนร้ายนายเจ้าเล่ห์",
+                "Şubat",
                 "100 Days My Prince",
                 "100 Humans",
                 "100% Hotter",
@@ -156,39 +156,39 @@
         }
     },
     "jueves": {
-        "maniana": {
+        "mañana": {
             "criterio": "Gimnastas olimpicos que participaron en las olimpiadas en Atenas",
             "data": [
-                "WEING\u00c4RTNER, Hermann",
+                "WEINGÄRTNER, Hermann",
                 "FLATOW, Alfred",
                 "FLATOW, Alfred",
                 "ZUTTER, Louis",
                 "ZUTTER, Louis",
-                "WEING\u00c4RTNER, Hermann",
+                "WEINGÄRTNER, Hermann",
                 "PERSAKIS, Petros",
                 "MITROPOULOS, Ioannis",
-                "WEING\u00c4RTNER, Hermann",
+                "WEINGÄRTNER, Hermann",
                 "HOFMANN, Fritz",
                 "ANDRIAKOPOULOS, Nicolaos",
                 "XENAKIS, Thomasios",
-                "B\u00d6CKER, Konrad",
+                "BÖCKER, Konrad",
                 "FLATOW, Alfred",
                 "FLATOW, Gustav Felix",
                 "HILMAR, Georg",
                 "HOFMANN, Fritz",
                 "MANTEUFFEL, Fritz",
                 "NEUKIRCH, Karl",
-                "R\u00d6STEL, Richard"
+                "RÖSTEL, Richard"
             ]
         },
         "tarde": {
-            "criterio": "Series de netflix que aparecen en la categoria \"Dramas\"",
+            "criterio": "Series de netflix que aparecen en la categoria de dramas",
             "data": [
                 "3%",
                 "46",
                 "1983",
                 "Feb-09",
-                "\u015eubat",
+                "Şubat",
                 "100 Days My Prince",
                 "13 Reasons Why",
                 "20 Minutes",
@@ -208,8 +208,8 @@
         }
     },
     "viernes": {
-        "maniana": {
-            "criterio": "Atletas olimpicos de Eestados Unidos cuyo apellido comienza con una c o una l ",
+        "mañana": {
+            "criterio": "Atletas olimpicos de Estados Unidos cuyo apellido comienza con una c o una l ",
             "data": [
                 "LANE, Francis",
                 "CURTIS, Thomas",

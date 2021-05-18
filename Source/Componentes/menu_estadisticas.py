@@ -11,7 +11,7 @@ def start():
 def loop():
     num1,num2,num3 = usuario.stats_logged()
     window = estadisticas.build_estad(num1,num2,num3)
-    
+
     while True:
         event,values = window.read()
         

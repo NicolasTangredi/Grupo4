@@ -2,7 +2,6 @@ import PySimpleGUI as sg
 from Source.Ventanas import login
 from Source.Componentes import menu_signin, menu_principal
 from Source.Handlers import usuario
-from Source.Ventanas import avisos
 
 def start():
     """Ejecuta la ventana del menu de inicio de sesion"""
@@ -28,7 +27,7 @@ def loop():
                 if user not in users:
                     sg.popup('usuario no registrado')
                 elif not usuario.check_contra(user,pwd):
-                    sg.popup('contraseña incorrecta')
+                    sg.popup('contraseña incorrecta', )
                 else:
                     window.close()
                     usuario.user_logged(user)

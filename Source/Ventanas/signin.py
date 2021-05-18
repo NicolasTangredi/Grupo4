@@ -4,11 +4,11 @@ def build_signin():
      """ Construye la ventana del registro del usuario"""
 
 
-     layout = [[sg.T("Usuario"), sg.InputText(key='-USER-')],
-                [sg.T("Contraseña"), sg.InputText(key='-PASS-')],
-                [sg.T("Edad"), sg.InputText(key='-AGE-')],
-                [sg.T("Genero"), sg.InputText(key='-GENRE-')],
-                [sg.Submit("SignIn"), sg.Cancel()]]
+     layout = [[sg.T("Usuario", size=(10, 1)), sg.InputText(key='-USER-')],
+                [sg.T("Contraseña", size=(10, 1)), sg.InputText(key='-PASS-')],
+                [sg.T("Edad", size=(10, 1)), sg.InputText(key='-AGE-')],
+                [sg.T("Genero", size=(10, 1)), sg.InputText(key='-GENRE-')],
+                [sg.Submit("SignIn", size=(15, 1)), sg.Cancel(size=(15, 1))]]
 
-     window = sg.Window('Registrarse', layout) 
+     window = sg.Window('Registrarse', layout, element_justification='center') 
      return window         

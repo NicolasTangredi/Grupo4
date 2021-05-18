@@ -1,12 +1,12 @@
 import PySimpleGUI as sg
 
 def build_config():
-        layout =[[sg.Button( 'Cantidad de casillas', key='-CASILLAS-')],
-                [sg.Button( 'Elemento', key='-ELEMENTO-')],
-                [sg.Button( 'Cantidad de coincidencias', key='-COINCIDENCIAS-')],
-                [sg.Button( 'Tiempo', key='-TIEMPO-')],
-                [sg.Button( 'Paleta de colores', key='-COLOR-')],
-                [sg.Button( 'Salir', key='-SALIR-')]]
+        layout =[[sg.Button( 'Cantidad de casillas', key='-CASILLAS-', size=(20,1))],
+                [sg.Button( 'Elemento', key='-ELEMENTO-', size=(20,1))],
+                [sg.Button( 'Cantidad de coincidencias', key='-COINCIDENCIAS-', size=(20,1))],
+                [sg.Button( 'Tiempo', key='-TIEMPO-', size=(20,1))],
+                [sg.Button( 'Paleta de colores', key='-COLOR-', size=(20,1))],
+                [sg.Button( 'Salir', key='-SALIR-', size=(20,1))]]
         window = sg.Window('Configuracion', layout)
         return window
 
@@ -20,7 +20,7 @@ def build_casillas():
         [sg.Button( '6x6', key='6x6')]
     ]
 
-    window = sg.Window('Cantidad de casillas', layout)
+    window = sg.Window('Cantidad de casillas', layout, element_justification='center')
     return window
 
 def build_elemento():
@@ -32,7 +32,7 @@ def build_elemento():
         [sg.Button( 'imagenes')]
     ]
 
-    window = sg.Window('Tipo de elemento', layout)
+    window = sg.Window('Tipo de elemento', layout, element_justification='center')
     return window
 
 def build_tiempo():
@@ -45,7 +45,7 @@ def build_tiempo():
         [sg.Button( '90', key = "-90-")], 
         [sg.Button( '120', key = "-120-")]
     ]
-    window = sg.Window('Tiempo', layout)
+    window = sg.Window('Tiempo', layout, element_justification='center')
     return window
 
 def build_colores():
@@ -56,7 +56,7 @@ def build_colores():
         [sg.Button( 'Color2')], 
         [sg.Button( 'Color3')]
     ]
-    window = sg.Window('Paleta de colores', layout)
+    window = sg.Window('Paleta de colores', layout, element_justification='center')
     return window
 
 def build_coincidencias():
@@ -69,7 +69,7 @@ def build_coincidencias():
         [sg.Button( 'Cant2', key = "-2-")], 
         [sg.Button( 'Cant3', key = "-3-")]
     ]
-    window= sg.Window('Coincidencias', layout)
-    return window        
+    window= sg.Window('Coincidencias', layout, element_justification='center')
+    return window
 
             

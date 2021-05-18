@@ -92,7 +92,6 @@ def stats_logged():
         usuar = json.load(usuar)
 
         for usuario in usuar:
-            print(usuario['conectado'])
             if usuario["conectado"] == 1:
                 num1 = usuario["estadisticas"]["partidas_ganadas"]
                 num2 = usuario["estadisticas"]["partidas_perdidas"]

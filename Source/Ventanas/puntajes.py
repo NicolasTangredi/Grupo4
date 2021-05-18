@@ -11,5 +11,5 @@ def build_punt():
                 [sg.Text(lista[4]), sg.Text(lista[5])],
                 [sg.Ok()]]
 
-    window = sg.Window('los 3 Mejores puntajes ', layout) 
+    window = sg.Window('los 3 Mejores puntajes ', layout, element_justification='center') 
     return window         

@@ -1,12 +1,16 @@
 import PySimpleGUI as sg
-from PySimpleGUI.PySimpleGUI import Window
+from Source.Handlers import elegir_datos
 
 # recibiria x, y, criterio
 def crear():
     ''' crea la ventana que funciona como el tablero del juego '''
 
-    x = 8
-    y = 8
+    x = 5
+    y = 5
+
+    # datos = elegir_datos.elegir_criterio()
+    # crit = datos['criterio'] 
+    # pal = datos['data']
     criterio = 'Gimnastas olimpicos que participaron en las olimpiadas en Atenas'
 
     layout = [
@@ -27,5 +31,5 @@ def crear():
         'tablero',
         layout,
         element_justification = 'center',
-        margins = (3,3)
+        margins = (3, 3)
     )

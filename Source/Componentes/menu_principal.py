@@ -23,7 +23,6 @@ def loop(window):
             window.un_hide()
         
         elif(event == '-CONFIG-'):
-            print('configuracion')
             window.hide()
             menu_configuracion.start()
             window.un_hide()
@@ -34,7 +33,6 @@ def loop(window):
             window.un_hide()
 
         elif(event == '-ESTAD-'):
-            print('estadisticas')
             window.hide()
             menu_estadisticas.start()
             window.un_hide()

@@ -1,7 +1,7 @@
 # Trabajo integrador Mempy -- Grupo4
 
 
-**Lo que tenemos hasta ahora**
+**descripcion**
 
 Este proyecto es un juego simple de la memoria creado usando PySimpleGUI como Trabajo integrador.
 

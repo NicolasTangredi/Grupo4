@@ -1,10 +1,10 @@
 import PySimpleGUI as sg
 from ..Ventanas import tablero
 
-def start():
+def start(user):
     ''' comienza la ejecucion del tablero del juego'''
     
-    window = tablero.crear()
+    window = tablero.crear(user)
     loop(window)
     window.close()
 

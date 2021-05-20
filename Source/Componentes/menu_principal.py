@@ -1,3 +1,4 @@
+import json
 import PySimpleGUI as sg
 from ..Ventanas import principal as ventana
 from ..Componentes import menu_estadisticas, menu_tablero 
@@ -8,6 +9,11 @@ from ..Handlers import usuario
 def iniciar():
     ''' comienza la ejecucion del menu del juego '''
 
+    with open('data/usuarios.json',"r", encoding="utf8") as file:
+        users = json.load(file)
+        user = [user for user in users if user["conectado"] == 1][0]
+        sg.theme(user['configuracion']['paleta_de_colores'])
+    
     window = ventana.crear()
     loop(window)
     

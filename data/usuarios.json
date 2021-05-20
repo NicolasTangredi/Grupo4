@@ -14,7 +14,7 @@
             "tipo_elemento": "palabras",
             "cant_coincidencias": "Cant3",
             "tiempo": 120,
-            "paleta_de_colores": "Color3"
+            "paleta_de_colores": "GreenTan"
         },
         "conectado": 0
     },
@@ -33,7 +33,7 @@
             "tipo_elemento": "palabras",
             "cant_coincidencias": 0,
             "tiempo": 120,
-            "paleta_de_colores": "Color3"
+            "paleta_de_colores": "DarkTeal5"
         },
         "conectado": 0
     },
@@ -52,7 +52,7 @@
             "tipo_elemento": "imagenes",
             "cant_coincidencias": 0,
             "tiempo": 120,
-            "paleta_de_colores": "Color3"
+            "paleta_de_colores": "DarkTeal5"
         },
         "conectado": 0
     },
@@ -71,7 +71,7 @@
             "tipo_elemento": "imagenes",
             "cant_coincidencias": "Cant3",
             "tiempo": 120,
-            "paleta_de_colores": "Color2"
+            "paleta_de_colores": "DarkTeal5"
         },
         "conectado": 0
     }

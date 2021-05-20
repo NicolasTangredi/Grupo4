@@ -2,7 +2,7 @@ import PySimpleGUI as sg
 from Source.Handlers import elegir_datos
 
 # recibiria x, y, criterio
-def crear():
+def crear(user):
     ''' crea la ventana que funciona como el tablero del juego '''
 
     x = 5

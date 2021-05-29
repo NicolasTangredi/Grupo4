@@ -11,12 +11,12 @@
         },
         "configuracion": {
             "cant_casillas": "6x6",
-            "tipo_elemento": "palabras",
-            "cant_coincidencias": "Cant3",
+            "tipo_elemento": "imagenes",
+            "cant_coincidencias": 3,
             "tiempo": 120,
             "paleta_de_colores": "GreenTan"
         },
-        "conectado": 0
+        "conectado": 1
     },
     {
         "nombre": "juan",

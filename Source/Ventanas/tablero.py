@@ -1,32 +1,18 @@
-import PySimpleGUI as sg
+from base64 import encode
+import json, io, random, requests, PySimpleGUI as sg
 from Source.Handlers import elegir_datos
+from Source.Handlers import usuario
+from PIL import Image
 
 # recibiria x, y, criterio
-def crear(user):
-    ''' crea la ventana que funciona como el tablero del juego '''
-
-    x = 5
-    y = 5
-
-    # datos = elegir_datos.elegir_criterio()
-    # crit = datos['criterio'] 
-    # pal = datos['data']
-    criterio = 'Gimnastas olimpicos que participaron en las olimpiadas en Atenas'
+def crear(nombre, crit):
+    '''crea la ventana que funciona como el tablero del juego'''
 
     layout = [
-        [sg.Text('Criterio: ' + criterio)],
+        [sg.Text(f'Criterio: {crit}')],
+        [sg.Text(f'Jugador: {nombre}'), sg.Text('Tiempo: 00:00', key='-TIMER-')]
     ]
-
-    # genera X botones en Y filas para crear el tablero
-    filas = []
-    for _i in range(y):
-        fila = []
-        for _i in range(x):
-            fila.append(sg.Button('palabra', size=(8, 4)))
-        filas.append(fila)
     
-    layout = layout + filas
-
     return sg.Window(
         'tablero',
         layout,

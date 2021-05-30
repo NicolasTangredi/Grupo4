@@ -10,7 +10,7 @@ def crear_usuario(nombre, contra, genero, edad):
                                 'partidas_perdidas': 0,
                                 'puntaje_maximo': 0},
               'configuracion': {'cant_casillas': 0,
-                                'tipo_elemento': 'texto',
+                                'tipo_elemento': 'palabras',
                                 'cant_coincidencias': 0,
                                 'tiempo': 120,
                                 'paleta_de_colores': 'color'},

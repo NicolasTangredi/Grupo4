@@ -18,6 +18,7 @@ def loop(window):
     guarde = False
     while True:
         event, values = window.read()
+
         if event == '-SALIR-':
             if guarde:
                 pop1 = sg.popup_yes_no('Estas segurx que queres salir?')
@@ -31,7 +32,24 @@ def loop(window):
         elif event == None:
             sg.popup('No se guardaron los cambios')
             break
-            
+        elif event == "-FACIL-":
+             window['-CASILLAS-'].update("4x4")
+             window['-ELEMENTO-'].update("imagenes")
+             window['-COIN-'].update(2)
+             window['-TIEMPO-'].update(120)
+             window['-COLOR-'].update("DarkTeal5")
+        elif event == "-NORMAL-":
+             window['-CASILLAS-'].update("5x5")
+             window['-ELEMENTO-'].update("imagenes")
+             window['-COIN-'].update(2)
+             window['-TIEMPO-'].update(90)
+             window['-COLOR-'].update("DarkTeal5")
+        elif event == "-DIFICIL-":
+             window['-CASILLAS-'].update("6x6")
+             window['-ELEMENTO-'].update("imagenes")
+             window['-COIN-'].update(2)
+             window['-TIEMPO-'].update(60)
+             window['-COLOR-'].update("DarkTeal5")
         elif event == '-SAVE-':
             guarde = True
             valores = {'cant_casillas' : values['-CASILLAS-'], 'tipo_elemento': values['-ELEMENTO-'], 'cant_coincidencias': values['-COIN-'], 'tiempo': values['-TIEMPO-'], 'paleta_de_colores':values['-COLOR-']}

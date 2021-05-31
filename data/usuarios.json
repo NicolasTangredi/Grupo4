@@ -12,8 +12,8 @@
         "configuracion": {
             "cant_casillas": "4x4",
             "tipo_elemento": "imagenes",
-            "cant_coincidencias": 1,
-            "tiempo": 90,
+            "cant_coincidencias": 2,
+            "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
         },
         "conectado": 0

@@ -11,10 +11,10 @@
         },
         "configuracion": {
             "cant_casillas": "4x4",
-            "tipo_elemento": "palabras",
-            "cant_coincidencias": "Cant2",
-            "tiempo": 120,
-            "paleta_de_colores": "GreenTan"
+            "tipo_elemento": "imagenes",
+            "cant_coincidencias": 1,
+            "tiempo": 90,
+            "paleta_de_colores": "DarkTeal5"
         },
         "conectado": 0
     },

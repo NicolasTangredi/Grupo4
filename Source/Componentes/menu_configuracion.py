@@ -31,8 +31,7 @@ def loop(window):
         elif event == None:
             sg.popup('No se guardaron los cambios')
             break
-        elif event == '-FACIL-':
-            values['-CASILLAS'] = '5x5'        
+            
         elif event == '-SAVE-':
             guarde = True
             valores = {'cant_casillas' : values['-CASILLAS-'], 'tipo_elemento': values['-ELEMENTO-'], 'cant_coincidencias': values['-COIN-'], 'tiempo': values['-TIEMPO-'], 'paleta_de_colores':values['-COLOR-']}

@@ -1,4 +1,3 @@
-from multiprocessing import Value
 import requests, io, random, PySimpleGUI as sg
 from PIL import Image
 from Source.Handlers.elegir_datos import elegir_criterio
@@ -14,12 +13,12 @@ def crearDatosJugada( tipo_elem, coincidencias, x, y ):
 
     def crearDato(elem):
         if tipo_elem == "imagenes":
+
             # pide la imagen
             req = requests.get(elem)
             if ( req.ok ):
 
-                # toma los bytes de imagen recibidos y los lee con
-                # un lector BytesIO
+                # toma los bytes de imagen recibidos y los lee
                 byte_img = req.content
                 img = Image.open(io.BytesIO( byte_img ))
 
@@ -43,18 +42,18 @@ def crearDatosJugada( tipo_elem, coincidencias, x, y ):
         filasDatos.extend([crearDato(datos[index]) for _i in range(coincidencias)])
         datos.pop(index)
 
+    # revuelv el arreglo y pense en retornar como una especie de matriz
     random.shuffle(filasDatos)
-    return  ([filasDatos[i::x] for i in range(x)], crit)
+    return  ([filasDatos[i:i+x] for i in range(0, y*x, x)], crit)
 
 def crearCasillasVacias(x, y):
-    ''' retorna una matriz de botones vacios'''
+    ''' retorna una especie de matriz con botones vacios'''
 
-    # doble list comprehension
     col = []
     for i in range(y):
         row = []
         for j in range(x):
-            row.append(sg.Button(key=f"CARD-{j},{i}", size=(12, 6)))
+            row.append(sg.Button(image_size=(100,100), key=f"CARD-{j},{i}", size=(12, 6)))
         col.append(row)
     return col
     

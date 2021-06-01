@@ -93,5 +93,24 @@
             "paleta_de_colores": "DarkTeal5"
         },
         "conectado": 0
+    },
+    {
+        "nombre": "pepa",
+        "contraseña": "123",
+        "edad": "Femenino",
+        "genero": "15",
+        "estadisticas": {
+            "partidas_ganadas": 0,
+            "partidas_perdidas": 0,
+            "puntaje_maximo": 0
+        },
+        "configuracion": {
+            "cant_casillas": 0,
+            "tipo_elemento": "palabras",
+            "cant_coincidencias": 0,
+            "tiempo": 120,
+            "paleta_de_colores": "DarkTeal5"
+        },
+        "conectado": 0
     }
 ]

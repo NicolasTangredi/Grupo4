@@ -32,6 +32,13 @@ def añadir_usuario(user):
     with open("data/usuarios.json", "w", encoding="utf8") as file:
         json.dump(lista_de_usuarios, file, indent=4, ensure_ascii=False)   
               
+def usuario_disponible(usuario):
+    """ recibe un nombre de usuario y devuelve True si el nombre no 
+        no pertenece a otro usuario registrado y False si ya esta en uso"""
+    if usuario not in usuarios_registrados():
+        return True
+    else:
+        return False    
 
 
 def usuarios_registrados():
@@ -55,7 +62,7 @@ def validacion_signin(user,age,genre):
         y devuelve un nro. si los datos son validos devuelve 0, si 
         el username no es valido devuelve 1, si la edad no es valida
         devuelve 2 y si el genero no es valido devuelve 3"""
-    if len(user) == 0 or user[0] == ' ' :
+    if len(user) == 0 or user[0] == ' ' or  not usuario_disponible(user) :
         return 1
     elif len(age) == 0 or age[0] == ' ':
         return 2

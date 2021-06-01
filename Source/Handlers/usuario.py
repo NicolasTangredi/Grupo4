@@ -13,7 +13,7 @@ def crear_usuario(nombre, contra, genero, edad):
                                 'tipo_elemento': 'palabras',
                                 'cant_coincidencias': 0,
                                 'tiempo': 120,
-                                'paleta_de_colores': 'color'},
+                                'paleta_de_colores': 'DarkTeal5'},
               #Si el usuario esta desconectado = 0/Si el usuario esta conectado = 1
               'conectado': 0
                }                                   
@@ -49,6 +49,36 @@ def check_contra (nombre,contra):
                 return True
         return False       
 
+
+def validacion_signin(user,age,genre):
+    """Recibe los datos ingresados durante el registro de usuario.
+        y devuelve un nro. si los datos son validos devuelve 0, si 
+        el username no es valido devuelve 1, si la edad no es valida
+        devuelve 2 y si el genero no es valido devuelve 3"""
+    if len(user) == 0 or user[0] == ' ' :
+        return 1
+    elif len(age) == 0 or age[0] == ' ':
+        return 2
+    elif len(genre) == 0 or genre[0] == ' ':
+        return 3       
+    else:
+        try:
+            i = 0
+            print(int(age))
+            i=+ 1
+            print(int(genre))
+            return 3
+        except ValueError:
+            if i == 0:
+                return 2
+            else:
+                return 0  
+            
+
+                 
+
+    
+    
 
 # arreglado brother B)
 
@@ -124,6 +154,9 @@ def max_punt():
         puntajes.pop(jugador_max)
         k=k+2
     return lista
+
+
+
 
 
 

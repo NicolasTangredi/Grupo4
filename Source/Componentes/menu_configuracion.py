@@ -30,7 +30,6 @@ def loop(window):
                     break
                 
         elif event == None:
-            sg.popup('No se guardaron los cambios')
             break
         elif event == "-FACIL-":
              window['-CASILLAS-'].update("4x4")

@@ -25,8 +25,8 @@ def loop(window, datos, tipo, coin, x, y):
     ''' loop de la ventana del tablero '''
 
     # crea los botones vacios e inicia la jugada
-    window.layout(datos_casilleros.crearCasillasVacias(x,y))
-    jugada = clases.Jugada(coin)
+    window.layout(datos_casilleros.crearCasillasVacias(x,y, coin))
+    jugada = clases.Jugada(tipo, coin, (x*y // coin))
 
     while True:
         event, _value = window.read()
@@ -41,12 +41,6 @@ def loop(window, datos, tipo, coin, x, y):
             # consigue los valores de x e y del boton, busca el dato adecuado y actualiza
             x, y = values.split(',')
             dato = datos[int(y)][int(x)]
-            button.Update(image_data=dato, disabled=True) if tipo == 'imagenes' else button.Update(dato, disabled=True)
+            button.Update(image_data=dato, image_size=(100,102), disabled=True) if tipo == 'imagenes' else button.Update(dato, disabled=True)
+            window.refresh()
             evento = jugada.update(button, dato)
-
-            # manejaria los eventos del juego
-            if(not evento == None):
-                if(not evento):
-                    window.refresh()
-                    sleep(0.5)
-                    jugada.mala(tipo)

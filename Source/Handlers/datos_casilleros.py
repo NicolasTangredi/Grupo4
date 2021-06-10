@@ -25,7 +25,7 @@ def crearDatosJugada( tipo_elem, coincidencias, x, y ):
                 # recorta el tamanio de la imagen y lo transforma a png ya
                 # que PySimpleGUI no acepta jpgs
                 with io.BytesIO() as f:
-                    img.thumbnail((100, 100))
+                    img.thumbnail((100, 102))
                     img.save(f, format='PNG')
 
                     # lo vuleve a transformar a bytes con las modificaciones
@@ -40,20 +40,26 @@ def crearDatosJugada( tipo_elem, coincidencias, x, y ):
         index = random.randint(0, len(datos) - 1)
         
         filasDatos.extend([crearDato(datos[index]) for _i in range(coincidencias)])
-        datos.pop(index)
+        datos.remove(datos[index])
 
     # revuelv el arreglo y pense en retornar como una especie de matriz
     random.shuffle(filasDatos)
     return  ([filasDatos[i:i+x] for i in range(0, y*x, x)], crit)
 
-def crearCasillasVacias(x, y):
+def crearCasillasVacias(x, y, coinc):
     ''' retorna una especie de matriz con botones vacios'''
 
     col = []
+    cant = ((x*y) // coinc) * coinc
+
     for i in range(y):
         row = []
         for j in range(x):
-            row.append(sg.Button(image_size=(100,100), key=f"CARD-{j},{i}", size=(12, 6)))
+            if(cant > 0):
+                row.append(sg.Button(key=f"CARD-{j},{i}", size=(12,6)))
+                cant -= 1
+            else:
+                break
         col.append(row)
     return col
     

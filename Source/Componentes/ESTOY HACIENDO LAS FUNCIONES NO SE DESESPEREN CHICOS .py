@@ -18,8 +18,8 @@ def calcular_puntos (boolean,cant_punt,difficult="facil bro",n_intento=0):
     if boolean:
         cant_punt = sumar_puntos(boolean,cant_punt,difficult)
     else:
-        #Es necesario incrementar "n_intento" desde fuera de la funcion y resetearlo cada 3 intento
-        if n_intento == 3:
+        #Es necesario incrementar "n_intento" desde fuera de la funcion
+        if n_intento % 3 == 0:
             cant_punt = restar_puntos(boolean,cant_punt,difficult)
     return cant_punt    
     
@@ -46,11 +46,11 @@ def restar_puntos (boolean,es_igual,difficult="facil bro"):
             es_igual = es_igual - 12
     return es_igual
 
-def que_dificultad_papa (cant_coincidencias,time):
+def que_dificultad_papa (time):
     """ define la dificultad en el rango (1-3) segun la cantidad de coincidencias y tiempo del usuario"""
-    if (cant_coincidencias == 1 or cant_coincidencias == 2 or cant_coincidencias == 3)  and time == 120:
+    if time == 120:
         jg_diff = "facil bro"
-    elif (cant_coincidencias == 2 or cant_coincidencias == 1 or cant_coincidencias == 3) and time == 90:
+    elif time == 90:
         jg_diff = "madio pa"
     else:
         jg_diff = "re dificil hermano"     

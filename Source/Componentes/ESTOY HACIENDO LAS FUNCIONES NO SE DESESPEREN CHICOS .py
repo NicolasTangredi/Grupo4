@@ -19,7 +19,7 @@ def calcular_puntos (boolean,cant_punt,difficult="facil bro",n_intento=0):
         cant_punt = sumar_puntos(boolean,cant_punt,difficult)
     else:
         #Es necesario incrementar "n_intento" desde fuera de la funcion y resetearlo cada 3 intento
-        if n_intento = 3:
+        if n_intento == 3:
             cant_punt = restar_puntos(boolean,cant_punt,difficult)
     return cant_punt    
     

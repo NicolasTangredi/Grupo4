@@ -14,6 +14,7 @@ def crear_usuario(nombre, contra, genero, edad):
                                 'cant_coincidencias': 0,
                                 'tiempo': 120,
                                 'paleta_de_colores': 'DarkTeal5'},
+              "historial" : [],
               #Si el usuario esta desconectado = 0/Si el usuario esta conectado = 1
               'conectado': 0
                }                                   
@@ -116,7 +117,6 @@ def puntajes_usuarios():
     """devuelve un diccionario con los nombres como llave y el puntaje como valor"""
     with open('data/usuarios.json', encoding="utf8") as usuario:
         datos = json.load(usuario)
-
         dic = {}
         for users in datos:
             dic[users["nombre"]]= users["estadisticas"]["puntaje_maximo"]

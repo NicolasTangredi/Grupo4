@@ -14,6 +14,8 @@ def crear_usuario(nombre, contra, genero, edad):
                                 'cant_coincidencias': 0,
                                 'tiempo': 120,
                                 'paleta_de_colores': 'DarkTeal5'},
+              "in_game":{"cant_puntos":0,
+                         "cant_aciertos":0},
               "historial" : [],
               #Si el usuario esta desconectado = 0/Si el usuario esta conectado = 1
               'conectado': 0
@@ -142,7 +144,21 @@ def usuario_conectado():
         usuarios = json.load(file)
         for user in usuarios:
             if user["conectado"] == 1:
-                return user["nombre"]
+                usuar = user["nombre"]
+                break
+    return usuar
+
+def usuario_conectado_profile():
+    """devuelve el usuario conectado"""
+
+    with open('data/usuarios.json',"r", encoding="utf8") as file:
+        usuarios = json.load(file)
+        for user in usuarios:
+            if user["conectado"] == 1:
+                usuar = user
+                break
+    return usuar        
+            
 
 
 def max_punt():
@@ -161,6 +177,38 @@ def max_punt():
         puntajes.pop(jugador_max)
         k=k+2
     return lista
+
+def get_time ():
+    """retorna el tiempo de juego definido por el usuario"""
+    with open("data/usuarios.json","r", encoding="utf8") as usuario:
+            datos = json.load(usuario)
+            for buscar_usuario in datos:
+                if usuario_conectado() == buscar_usuario["nombre"]:
+                    tiempo = buscar_usuario["estadisticas"]["tiempo"]
+                    break
+    return tiempo
+
+def que_dificultad_papa (time):
+    """ define la dificultad en el rango (1-3) segun la cantidad de coincidencias y tiempo del usuario"""
+    if time == 120:
+        jg_diff = "facil bro"
+    elif time == 90:
+        jg_diff = "madio pa"
+    else:
+        jg_diff = "re dificil hermano"     
+    return jg_diff
+
+def datos_partida(usuario,puntaje_logrado,tiempo_jugado):
+    """
+    recibe datos de la partida y retorna un diccionario con 
+    el nombre de usuario y los datos de la partida jugada cargados"""
+    dic={}
+    dic["nombre"]=usuario["nombre"]
+    dic["puntaje"]=puntaje_logrado
+    dic["tiempo"]=usuario["configuraciones"]["tiempo"] - tiempo_jugado
+    dic["dificultad"]=que_dificultad_papa(usuario["estadisticas"]["cant_coincidencias"],usuario["estadisticas"]["tiempo"])    
+    return dic
+
 
 
 

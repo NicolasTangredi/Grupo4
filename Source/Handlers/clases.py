@@ -1,4 +1,6 @@
 from time import sleep
+from ..Handlers import PuntosAciertos
+from ..Handlers import usuario
 
 class Jugada():
     ''' es el controlador de la jugada, lleva la cuenta de los 
@@ -27,10 +29,17 @@ class Jugada():
         esIgual = self.elems.count(self.elems[0]) == len(self.elems)
 
         # si se equivoco o llego al max de coincidencias
+        point = 0
         if( not esIgual):
             self.mala()
+            #calcula la puntuacion del jugador si la jugada fue buena y actualiza la puntuacion en su perfil
+            point = PuntosAciertos.calcular_puntos(False,point,PuntosAciertos.que_dificultad_papa(PuntosAciertos.get_time()))
+            PuntosAciertos.update_accumulated_points(PuntosAciertos.usuario_conectado_profile(),point)
         elif ( len(self.elems) == self.max):
             self.buena()
+            #calcula la puntuacion del jugador si la jugada fue buena y actualiza la puntuacion en su perfil
+            point = PuntosAciertos.calcular_puntos(True,point,usuario.que_dificultad_papa(usuario.get_time()))
+            PuntosAciertos.update_accumulated_points(usuario.usuario_conectado_profile(),point)
 
     def mala(self):
         ''' pone los casilleros en blanco y reinicia los elementos y botones guardados
@@ -54,5 +63,13 @@ class Jugada():
 
         # termino la jugada y gano
         if( self.aciertos == self.maxAc):
+            user = usuario.usuario_conectado_profile()
+                                            #falta una funcion para retornar el tiempo sobrante despues de la partida
+            puntuacion_total = PuntosAciertos.fin_juego(PuntosAciertos.puntuacion_acumulada(),PuntosAciertos.aciertos(),tiempo_sobrante(user),user)
+            #si la puntuacion fue mayor que su puntaje maximo entonces la actualiza
+            PuntosAciertos.sos_pro(user["estadisticas"]["puntaje_maximo"],puntuacion_total,user["nombre"])
+            #pone en 0 la casilla in game del usuario
+            PuntosAciertos.clear_accumulated_points(user)
+            PuntosAciertos.clear_accumulated_aciertos(user)
             print("Ganaste!")
             pass

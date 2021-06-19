@@ -31,15 +31,15 @@ class Jugada():
         # si se equivoco o llego al max de coincidencias
         point = 0
         if( not esIgual):
-            self.mala()
             #calcula la puntuacion del jugador si la jugada fue buena y actualiza la puntuacion en su perfil
             point = PuntosAciertos.calcular_puntos(False,point,PuntosAciertos.que_dificultad_papa(PuntosAciertos.get_time()))
             PuntosAciertos.update_accumulated_points(PuntosAciertos.usuario_conectado_profile(),point)
+            self.mala()
         elif ( len(self.elems) == self.max):
-            self.buena()
             #calcula la puntuacion del jugador si la jugada fue buena y actualiza la puntuacion en su perfil
             point = PuntosAciertos.calcular_puntos(True,point,usuario.que_dificultad_papa(usuario.get_time()))
             PuntosAciertos.update_accumulated_points(usuario.usuario_conectado_profile(),point)
+            self.buena()
 
     def mala(self):
         ''' pone los casilleros en blanco y reinicia los elementos y botones guardados

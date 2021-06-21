@@ -8,7 +8,7 @@
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
             "puntaje_maximo": 0,
-            "dif_puntMax" : "facil"
+            "dif_puntMax": "facil"
         },
         "configuracion": {
             "cant_casillas": "5x5",
@@ -17,7 +17,7 @@
             "tiempo": 90,
             "paleta_de_colores": "DarkTeal5"
         },
-        "conectado": 0
+        "conectado": 1
     },
     {
         "nombre": "juan",
@@ -28,7 +28,7 @@
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
             "puntaje_maximo": 0,
-            "dif_puntMax" : "facil"
+            "dif_puntMax": "facil"
         },
         "configuracion": {
             "cant_casillas": "6x6",
@@ -48,7 +48,7 @@
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
             "puntaje_maximo": 10,
-            "dif_puntMax" : "facil"
+            "dif_puntMax": "facil"
         },
         "configuracion": {
             "cant_casillas": "6x6",
@@ -57,7 +57,7 @@
             "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
         },
-        "conectado": 0
+        "conectado": 1
     },
     {
         "nombre": "Goku",
@@ -68,7 +68,7 @@
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
             "puntaje_maximo": 0,
-            "dif_puntMax" : "facil"
+            "dif_puntMax": "facil"
         },
         "configuracion": {
             "cant_casillas": "4x4",
@@ -88,7 +88,7 @@
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
             "puntaje_maximo": 0,
-            "dif_puntMax" : "facil"
+            "dif_puntMax": "facil"
         },
         "configuracion": {
             "cant_casillas": 0,
@@ -107,8 +107,8 @@
         "estadisticas": {
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
-            "puntaje_maximo": 0,
-            "dif_puntMax" : "facil"
+            "puntaje_maximo": 2,
+            "dif_puntMax": "dificil"
         },
         "configuracion": {
             "cant_casillas": 0,
@@ -127,8 +127,8 @@
         "estadisticas": {
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
-            "puntaje_maximo": 0,
-            "dif_puntMax" : "facil"
+            "puntaje_maximo": 5,
+            "dif_puntMax": "facil"
         },
         "configuracion": {
             "cant_casillas": 0,

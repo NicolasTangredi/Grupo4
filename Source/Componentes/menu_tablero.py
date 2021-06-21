@@ -1,6 +1,7 @@
 import traceback, PySimpleGUI as sg
 from ..Ventanas import tablero
 from ..Handlers import datos_casilleros, usuario, clases
+from ..Handlers import PuntosAciertos
 
 def start():
     ''' comienza la ejecucion del tablero del juego'''
@@ -18,7 +19,9 @@ def start():
 
 def loop(window, datos, tipo, coin, x, y):
     ''' loop de la ventana del tablero '''
-
+    #Reinicia sus aciertos y puntos en caso de que se haya cerrado inesperadamente la partida anterior y quedaran guardados
+    PuntosAciertos.clear_accumulated_aciertos()
+    PuntosAciertos.clear_accumulated_points()
     # crea los botones vacios e inicia la jugada
     window.layout(datos_casilleros.crearCasillasVacias(x,y, coin))
     jugada = clases.Jugada(tipo, coin, (x*y // coin))

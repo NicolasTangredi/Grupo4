@@ -74,6 +74,7 @@ class Jugada():
 
         # termino la jugada y gano
         if( self._aciertos == self._maxAc):
+            usuario.pro_o_manco(True)
             registrar_jugada('fin', self._numJug)
             user = usuario.usuario_conectado_profile()
             

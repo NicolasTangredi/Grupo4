@@ -128,7 +128,7 @@
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
             "puntaje_maximo": 5,
-            "dif_puntMax": "facil"
+            "dif_puntMax": "dificil"
         },
         "configuracion": {
             "cant_casillas": 0,

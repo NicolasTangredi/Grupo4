@@ -7,7 +7,7 @@ def build_punt():
     easy = PA.dividir_puntajes("facil")
     medium = PA.dividir_puntajes("medio")
     hard = PA.dividir_puntajes("dificil")
-        
+    #MAÑANA METO MAS JUGADORES XQ SINO ME REVIENTA LA VENTANA XD :]
     layout = [[sg.Text(hard[0][0]), sg.Text(hard[0][1]),sg.Text(hard[0][2])],
                 [sg.Text(hard[1][0]), sg.Text(hard[1][1]),sg.Text(hard[1][2])],
                 [sg.Text(hard[2][0]), sg.Text(hard[2][1]),sg.Text(hard[2][2])],

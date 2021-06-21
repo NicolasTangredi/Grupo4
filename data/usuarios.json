@@ -7,7 +7,8 @@
         "estadisticas": {
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
-            "puntaje_maximo": 0
+            "puntaje_maximo": 0,
+            "dif_puntMax" : "facil"
         },
         "configuracion": {
             "cant_casillas": "5x5",
@@ -26,7 +27,8 @@
         "estadisticas": {
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
-            "puntaje_maximo": 0
+            "puntaje_maximo": 0,
+            "dif_puntMax" : "facil"
         },
         "configuracion": {
             "cant_casillas": "6x6",
@@ -45,7 +47,8 @@
         "estadisticas": {
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
-            "puntaje_maximo": 0
+            "puntaje_maximo": 10,
+            "dif_puntMax" : "facil"
         },
         "configuracion": {
             "cant_casillas": "6x6",
@@ -64,7 +67,8 @@
         "estadisticas": {
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
-            "puntaje_maximo": 0
+            "puntaje_maximo": 0,
+            "dif_puntMax" : "facil"
         },
         "configuracion": {
             "cant_casillas": "4x4",
@@ -83,7 +87,8 @@
         "estadisticas": {
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
-            "puntaje_maximo": 0
+            "puntaje_maximo": 0,
+            "dif_puntMax" : "facil"
         },
         "configuracion": {
             "cant_casillas": 0,
@@ -102,7 +107,8 @@
         "estadisticas": {
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
-            "puntaje_maximo": 0
+            "puntaje_maximo": 0,
+            "dif_puntMax" : "facil"
         },
         "configuracion": {
             "cant_casillas": 0,
@@ -110,6 +116,26 @@
             "cant_coincidencias": 0,
             "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
+        },
+        "conectado": 0
+    },
+    {
+        "nombre": "jose maria",
+        "contraseña": "jose maria",
+        "edad": "masculino",
+        "genero": "12",
+        "estadisticas": {
+            "partidas_ganadas": 0,
+            "partidas_perdidas": 0,
+            "puntaje_maximo": 0,
+            "dif_puntMax" : "facil"
+        },
+        "configuracion": {
+            "cant_casillas": 0,
+            "tipo_elemento": "texto",
+            "cant_coincidencias": 0,
+            "tiempo": 120,
+            "paleta_de_colores": "color"
         },
         "conectado": 0
     }

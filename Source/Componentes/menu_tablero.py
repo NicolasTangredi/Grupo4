@@ -1,17 +1,12 @@
-import json, PySimpleGUI as sg
-from time import sleep
+import traceback, PySimpleGUI as sg
 from ..Ventanas import tablero
 from ..Handlers import datos_casilleros, usuario, clases
 
 def start():
     ''' comienza la ejecucion del tablero del juego'''
     
-    nombre = usuario.usuario_conectado()
-    config = None
-    with open("data/usuarios.json","r", encoding="utf8") as file:
-        users = json.load(file)
-        user = [user for user in users if user["nombre"] == nombre][0]
-        config = user['configuracion']
+    user = usuario.usuario_conectado_profile()
+    config, nombre = user['configuracion'], user['nombre']
 
     # esto es el alto y ancho del tablero y los datos
     x, y = tuple(map( int, config["cant_casillas"].split("x")))
@@ -28,19 +23,24 @@ def loop(window, datos, tipo, coin, x, y):
     window.layout(datos_casilleros.crearCasillasVacias(x,y, coin))
     jugada = clases.Jugada(tipo, coin, (x*y // coin))
 
-    while True:
-        event, _value = window.read()
-        
-        if event == sg.WIN_CLOSED:
-            break
-
-        realEv, values = event.split('-')
-        if realEv == "CARD":
-            button = window[event]
+    try:
+        while True:
+            event, _value = window.read()
             
-            # consigue los valores de x e y del boton, busca el dato adecuado y actualiza
-            x, y = values.split(',')
-            dato = datos[int(y)][int(x)]
-            button.Update(image_data=dato, image_size=(100,102), disabled=True) if tipo == 'imagenes' else button.Update(dato, disabled=True)
-            window.refresh()
-            evento = jugada.update(button, dato)
+            if event == sg.WIN_CLOSED:
+                break
+
+            realEv, values = event.split('-')
+            if realEv == "CARD":
+                button = window[event]
+                
+                # consigue los valores de x e y del boton, busca el dato adecuado y actualiza
+                x, y = values.split(',')
+                dato = datos[int(y)][int(x)]
+                button.Update(image_data=dato, image_size=(100,102), disabled=True) if tipo == 'imagenes' else button.Update(dato, disabled=True)
+                window.refresh()
+                jugada.update(button, dato)
+    except:
+        print('-' * 50)
+        print(traceback.print_exc())
+        print('-' * 50)

@@ -48,6 +48,27 @@ def sos_pro (max_punt,puntaje_logrado,nombre):
             cambiado = True
     return cambiado
 
+def pro_o_manco (var,nombre):
+    """recibe un boolean y suma +1 en las partidas ganadas o perdidas del jugador"""
+    if var:
+        with open("data/usuarios.json","r", encoding="utf8") as usuario:
+            datos = json.load(usuario)
+            for buscar_usuario in datos:
+                if nombre == buscar_usuario["nombre"]:
+                    buscar_usuario["estadisticas"]["partidas_ganadas"] = buscar_usuario["estadisticas"]["partidas_ganadas"] + 1
+                    break
+            with open("data/usuarios.json","w", encoding="utf8") as file:
+                json.dump(datos, file, indent=4, ensure_ascii=False)
+    else:
+        with open("data/usuarios.json","r", encoding="utf8") as usuario:
+            datos = json.load(usuario)
+            for buscar_usuario in datos:
+                if nombre == buscar_usuario["nombre"]:
+                    buscar_usuario["estadisticas"]["partidas_perdidas"] = buscar_usuario["estadisticas"]["partidas_perdidas"] + 1
+                    break
+            with open("data/usuarios.json","w", encoding="utf8") as file:
+                json.dump(datos, file, indent=4, ensure_ascii=False)
+
 def update_accumulated_points(user,cant_points):
     """aumenta la cantidad de puntos acumulados"""
     with open("data/usuarios.json","r", encoding="utf8") as usuario:
@@ -126,3 +147,28 @@ def fin_juego (total_aciertos,punt_total,tiempo_sobrante,user):
                 json.dump(datos, file, indent=4, ensure_ascii=False)
     tot = total_aciertos * punt_total + tiempo_sobrante
     return tot
+
+def div(dificultad,puntajes,dato):
+    """recibe un diccionario con nombre-dificultad y puntajes-dificultad para crear una lista solo con la dificultad
+    recibida en dato"""
+    x = list(puntajes.keys())
+    lista = []
+    for user in x:
+        if dificultad[user] == dato:
+            lista.append([user,puntajes[user],dato])      
+    return lista
+
+def dividir_puntajes(dif):
+    """crea un diccionario de listas ordenadas por puntuacion mas alta segun la dificultad que reciba"""
+    puntajes = uuser.dame_puntuaciones_pa()
+    dificultad = uuser.dif_usuarios()
+    if dif == "facil":
+        f = div(dificultad,puntajes,"facil")
+        xd = sorted(f,key=lambda x: x[1] ,reverse=True)[:10]
+    elif dif == "medio":
+        f = div(dificultad,puntajes,"medio")
+        xd = sorted(f,key=lambda x: x[1] ,reverse=True)[:10]
+    elif dif == "dificil":
+        f = div(dificultad,puntajes,"dificil")
+        xd = sorted(f,key=lambda x: x[1] ,reverse=True)[:10]         
+    return xd

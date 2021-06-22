@@ -1,7 +1,7 @@
 import json, PySimpleGUI as sg
-from time import sleep
+import time as t
 from ..Ventanas import tablero
-from ..Handlers import datos_casilleros, usuario, clases
+from ..Handlers import datos_casilleros, usuario, clases, timer
 
 def start():
     ''' comienza la ejecucion del tablero del juego'''
@@ -27,7 +27,8 @@ def loop(window, datos, tipo, coin, x, y):
     # crea los botones vacios e inicia la jugada
     window.layout(datos_casilleros.crearCasillasVacias(x,y, coin))
     jugada = clases.Jugada(tipo, coin, (x*y // coin))
-
+    
+    start_timer = t.time()
     while True:
         event, _value = window.read()
         
@@ -35,6 +36,7 @@ def loop(window, datos, tipo, coin, x, y):
             break
 
         realEv, values = event.split('-')
+        
         if realEv == "CARD":
             button = window[event]
             
@@ -44,3 +46,5 @@ def loop(window, datos, tipo, coin, x, y):
             button.Update(image_data=dato, image_size=(100,102), disabled=True) if tipo == 'imagenes' else button.Update(dato, disabled=True)
             window.refresh()
             evento = jugada.update(button, dato)
+
+                

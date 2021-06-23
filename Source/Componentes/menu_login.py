@@ -5,7 +5,6 @@ from Source.Handlers import usuario
 
 def start():
     """Ejecuta la ventana del menu de inicio de sesion"""
-
     loop()
 
 

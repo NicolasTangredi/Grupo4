@@ -157,7 +157,9 @@ def usuario_conectado():
                 usuar = user["nombre"]
                 break
     return usuar
-
+            
+    
+                
 def usuario_conectado_profile():
     """devuelve el usuario conectado"""
 

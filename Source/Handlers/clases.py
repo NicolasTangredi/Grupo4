@@ -31,9 +31,8 @@ class Jugada():
 
         # si el primer elemento aparece en todo el arreglo
         esIgual = self._elems.count(self._elems[0]) == len(self._elems)
-
-        # si se equivoco o llego al max de coincidencias
         point = 0
+        # si se equivoco o llego al max de coincidencias
         if( not esIgual):
             #calcula la puntuacion del jugador si la jugada fue buena y actualiza la puntuacion en su perfil
             point = PuntosAciertos.calcular_puntos(
@@ -56,9 +55,9 @@ class Jugada():
         sleep(0.5)
         for boton in self._botones:
             if(self._tipo == 'imagenes'):
-                boton.Update(image_data="", image_size=(100,102), disabled=False)
+                boton.update(image_data="", image_size=(100,102), disabled=False)
             else:
-                boton.Update("", disabled=False)
+                boton.update("", disabled=False)
         
         self._limpiar()
 
@@ -74,7 +73,7 @@ class Jugada():
 
         # termino la jugada y gano
         if( self._aciertos == self._maxAc):
-            usuario.pro_o_manco(True)
+            PuntosAciertos.pro_o_manco(True)
             registrar_jugada('fin', self._numJug)
             user = usuario.usuario_conectado_profile()
             
@@ -101,7 +100,7 @@ class Jugada():
 
 def abrir_registro():
     try:
-        with open('./data/registro_jugadas.csv', "r+") as file:
+        with open('./data/stats.csv', "r+") as file:
             return pandas.read_csv(file)
     except:
         return pandas.DataFrame()

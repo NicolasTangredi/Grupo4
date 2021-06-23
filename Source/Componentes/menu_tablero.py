@@ -25,7 +25,7 @@ def loop(window, datos, tipo, coin, x, y):
     # crea los botones vacios e inicia la jugada
     window.layout(datos_casilleros.crearCasillasVacias(x,y, coin))
     jugada = clases.Jugada(tipo, coin, (x*y // coin))
-
+    
     start_timer = t.time()
     while True:
         event, _value = window.read()
@@ -44,3 +44,5 @@ def loop(window, datos, tipo, coin, x, y):
             button.Update(image_data=dato, image_size=(100,102), disabled=True) if tipo == 'imagenes' else button.Update(dato, disabled=True)
             window.refresh()
             evento = jugada.update(button, dato)
+        # window["-TIMER-"].Update(timer.actualizar(start_timer))
+        # window.refresh()

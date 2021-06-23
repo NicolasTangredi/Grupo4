@@ -7,22 +7,27 @@ def build_punt():
     easy = PA.dividir_puntajes("facil")
     medium = PA.dividir_puntajes("medio")
     hard = PA.dividir_puntajes("dificil")
-    #MAÑANA METO MAS JUGADORES XQ SINO ME REVIENTA LA VENTANA XD :]
-    layout = [[sg.Text(hard[0][0]), sg.Text(hard[0][1]),sg.Text(hard[0][2])],
-                [sg.Text(hard[1][0]), sg.Text(hard[1][1]),sg.Text(hard[1][2])],
-                [sg.Text(hard[2][0]), sg.Text(hard[2][1]),sg.Text(hard[2][2])],
-                [sg.Text(hard[3][0]), sg.Text(hard[3][1]),sg.Text(hard[3][2])],
-                [sg.Text(hard[4][0]), sg.Text(hard[4][1]),sg.Text(hard[4][2])],
-                [sg.Text(medium[0][0]), sg.Text(medium[0][1]),sg.Text(medium[0][2])],
-                [sg.Text(medium[1][0]), sg.Text(medium[1][1]),sg.Text(medium[1][2])],
-                [sg.Text(medium[2][0]), sg.Text(medium[2][1]),sg.Text(medium[2][2])],
-                [sg.Text(medium[3][0]), sg.Text(medium[3][1]),sg.Text(medium[3][2])],
-                [sg.Text(medium[4][0]), sg.Text(medium[4][1]),sg.Text(medium[4][2])],
-                [sg.Text(easy[0][0]), sg.Text(easy[0][1]),sg.Text(easy[0][2])],
-                [sg.Text(easy[1][0]), sg.Text(easy[1][1]),sg.Text(easy[1][2])],
-                [sg.Text(easy[2][0]), sg.Text(easy[2][1]),sg.Text(easy[2][2])],
-                [sg.Text(easy[3][0]), sg.Text(easy[3][1]),sg.Text(easy[3][2])],
-                [sg.Text(easy[4][0]), sg.Text(easy[4][1]),sg.Text(easy[4][2])],
+    
+    """En caso de que haya menos de 5 jugadores este trozo de codigo colocara la cantidad que haya
+    y evitara el cierre de la ventana"""
+    var = []
+    cant = len(hard)
+    for i in range(0,cant):
+        var.append([sg.Text(hard[i][0]), sg.Text(hard[i][1]),sg.Text(hard[i][2])])
+        
+    var2 = []
+    cant2 = len(medium)
+    for h in range(0,cant2):
+        var2.append([sg.Text(medium[h][0]), sg.Text(medium[h][1]),sg.Text(medium[h][2])])
+        
+    var3 = []
+    cant3 = len(easy)
+    for k in range(0,cant3):
+        var3.append([sg.Text(easy[k][0]), sg.Text(easy[k][1]),sg.Text(easy[k][2])])
+        
+    layout = [var,
+               var2,
+                 var3,
                 [sg.Ok()]]
 
     window = sg.Window('Mejores puntajes por dificultad ', layout, element_justification='center') 

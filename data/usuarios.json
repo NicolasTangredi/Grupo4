@@ -17,7 +17,7 @@
             "tiempo": 90,
             "paleta_de_colores": "DarkTeal5"
         },
-        "conectado": 1
+        "conectado": 0
     },
     {
         "nombre": "juan",
@@ -88,7 +88,7 @@
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
             "puntaje_maximo": 0,
-            "dif_puntMax": "facil"
+            "dif_puntMax": "medio"
         },
         "configuracion": {
             "cant_casillas": 0,

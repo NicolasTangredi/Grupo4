@@ -101,7 +101,7 @@ class Jugada():
 
 def abrir_registro():
     try:
-        with open('./data/stats.csv', "r+") as file:
+        with open('./data/registro_jugadas.csv', "r+") as file:
             return pandas.read_csv(file)
     except:
         return pandas.DataFrame()

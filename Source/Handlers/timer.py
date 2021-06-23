@@ -6,3 +6,12 @@ def actualizar(start_timer):
     timer = 'Tiempo:' f'{round(tiempo // 60):02d}:{round(tiempo % 60):02d}'
 
     return timer
+
+def se_termino_el_tiempo (start_timer,user_time) -> bool:
+    """Devuelve True si se termino el tiempo o False si aun no se termina"""
+
+    tiempo = int(t.time() - start_timer)
+    if user_time == tiempo:
+        return True
+    else:
+        return False    

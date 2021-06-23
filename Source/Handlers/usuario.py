@@ -203,7 +203,7 @@ def get_time ():
             datos = json.load(usuario)
             for buscar_usuario in datos:
                 if usuario_conectado() == buscar_usuario["nombre"]:
-                    tiempo = buscar_usuario["estadisticas"]["tiempo"]
+                    tiempo = buscar_usuario["configuracion"]["tiempo"]
                     break
     return tiempo
 

@@ -50,24 +50,17 @@ def sos_pro (max_punt,puntaje_logrado,nombre):
 
 def pro_o_manco (var,nombre):
     """recibe un boolean y suma +1 en las partidas ganadas o perdidas del jugador"""
-    if var:
-        with open("data/usuarios.json","r", encoding="utf8") as usuario:
-            datos = json.load(usuario)
-            for buscar_usuario in datos:
-                if nombre == buscar_usuario["nombre"]:
+    with open("data/usuarios.json","r", encoding="utf8") as usuario:
+        datos = json.load(usuario)
+        for buscar_usuario in datos:
+            if nombre == buscar_usuario["nombre"]:
+                if var:
                     buscar_usuario["estadisticas"]["partidas_ganadas"] = buscar_usuario["estadisticas"]["partidas_ganadas"] + 1
-                    break
-            with open("data/usuarios.json","w", encoding="utf8") as file:
-                json.dump(datos, file, indent=4, ensure_ascii=False)
-    else:
-        with open("data/usuarios.json","r", encoding="utf8") as usuario:
-            datos = json.load(usuario)
-            for buscar_usuario in datos:
-                if nombre == buscar_usuario["nombre"]:
-                    buscar_usuario["estadisticas"]["partidas_perdidas"] = buscar_usuario["estadisticas"]["partidas_perdidas"] + 1
-                    break
-            with open("data/usuarios.json","w", encoding="utf8") as file:
-                json.dump(datos, file, indent=4, ensure_ascii=False)
+                else:
+                    buscar_usuario["estadisticas"]["partidas_perdidas"] = buscar_usuario["estadisticas"]["partidas_perdidas"] + 1                         
+                break
+    with open("data/usuarios.json","w", encoding="utf8") as file:
+            json.dump(datos, file, indent=4, ensure_ascii=False)
 
 def update_accumulated_points(user,cant_points):
     """aumenta la cantidad de puntos acumulados"""

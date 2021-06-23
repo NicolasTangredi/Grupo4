@@ -1,5 +1,6 @@
 import json, PySimpleGUI as sg
 import time as t
+from ..Handlers import PuntosAciertos
 from ..Ventanas import tablero
 from ..Handlers import datos_casilleros, usuario, clases, timer
 
@@ -20,8 +21,10 @@ def start():
 def loop(window, datos, tipo, coin, x, y):
     ''' loop de la ventana del tablero '''
     #Reinicia sus aciertos y puntos en caso de que se haya cerrado inesperadamente la partida anterior y quedaran guardados
-    PuntosAciertos.clear_accumulated_aciertos()
-    PuntosAciertos.clear_accumulated_points()
+    if PuntosAciertos.puntuacion_acumulada() != 0:
+        PuntosAciertos.clear_accumulated_aciertos()
+    if PuntosAciertos.aciertos() != 0:    
+        PuntosAciertos.clear_accumulated_points()
     # crea los botones vacios e inicia la jugada
     window.layout(datos_casilleros.crearCasillasVacias(x,y, coin))
     jugada = clases.Jugada(tipo, coin, (x*y // coin))

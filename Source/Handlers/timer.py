@@ -14,4 +14,11 @@ def se_termino_el_tiempo (start_timer,user_time) -> bool:
     if user_time == tiempo:
         return True
     else:
-        return False    
+        return False
+
+def tiempo_restante(start_timer,user_time) -> int:
+    """devuelve el tiempo que sobro de la partida"""
+    tiempo = int(t.time() - start_timer)
+    time_left = user_time - tiempo
+    return time_left
+

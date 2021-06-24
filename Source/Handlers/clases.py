@@ -75,7 +75,8 @@ class Jugada():
         #si la puntuacion fue mayor que su puntaje maximo entonces la actualiza
         PuntosAciertos.sos_pro(
             user["estadisticas"]["puntaje_maximo"],
-            puntuacion_total,user["nombre"]
+            puntuacion_total,user["nombre"],
+            self._dificultad
         )
         #pone en 0 la casilla in game del usuario
         PuntosAciertos.clear_accumulated_points(user)
@@ -121,7 +122,7 @@ class Jugada():
 
         """ abre el archivo que registra las jugadas y turnos """
         try:
-            with open('./data/stats.csv', "r+") as file:
+            with open('./data/registro_jugadas.csv', "r+") as file:
                 return pandas.read_csv(file)
         except:
             return pandas.DataFrame()
@@ -136,6 +137,8 @@ class Jugada():
         
         niveles = ['facil', 'medio', 'dificil']
         nivel = niveles[(config['tiempo'] - 30) % 30]
+        
+        
 
         data = {
             'tiempo': config['tiempo'], 

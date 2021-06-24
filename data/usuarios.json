@@ -5,16 +5,16 @@
         "edad": "Masculino",
         "genero": "56",
         "estadisticas": {
-            "partidas_ganadas": 1,
+            "partidas_ganadas": 8,
             "partidas_perdidas": 0,
             "puntaje_maximo": 10,
             "dif_puntMax": "facil"
         },
         "configuracion": {
-            "cant_casillas": "4x4",
+            "cant_casillas": "6x6",
             "tipo_elemento": "imagenes",
             "cant_coincidencias": 2,
-            "tiempo": 120,
+            "tiempo": 60,
             "paleta_de_colores": "DarkTeal5"
         },
         "in_game": {
@@ -26,6 +26,48 @@
                 "nombre": "pepe",
                 "puntaje": 8,
                 "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 9,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 8,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 2,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 7,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 8,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 5,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 5,
+                "tiempo": 50,
                 "dificultad": "facil"
             }
         ],
@@ -62,23 +104,30 @@
         "edad": "Masculino",
         "genero": "46",
         "estadisticas": {
-            "partidas_ganadas": 0,
+            "partidas_ganadas": 1,
             "partidas_perdidas": 0,
             "puntaje_maximo": 10,
             "dif_puntMax": "facil"
         },
         "configuracion": {
-            "cant_casillas": 0,
-            "tipo_elemento": "palabras",
-            "cant_coincidencias": 0,
-            "tiempo": 120,
+            "cant_casillas": "4x4",
+            "tipo_elemento": "imagenes",
+            "cant_coincidencias": 2,
+            "tiempo": 60,
             "paleta_de_colores": "DarkTeal5"
         },
         "in_game": {
             "cant_puntos": 0,
             "cant_aciertos": 0
         },
-        "historial": [],
+        "historial": [
+            {
+                "nombre": "tobias",
+                "puntaje": 8,
+                "tiempo": 50,
+                "dificultad": "facil"
+            }
+        ],
         "conectado": 0
     },
     {
@@ -204,6 +253,31 @@
             "cant_aciertos": 0
         },
         "historial": [],
-        "conectado": 0
+        "conectado": 1
+    },
+    {
+        "nombre": "asd",
+        "contraseña": "asd",
+        "edad": "asd",
+        "genero": "12",
+        "estadisticas": {
+            "partidas_ganadas": 0,
+            "partidas_perdidas": 0,
+            "puntaje_maximo": 0,
+            "dif_puntMax": "facil"
+        },
+        "configuracion": {
+            "cant_casillas": "4x4",
+            "tipo_elemento": "palabras",
+            "cant_coincidencias": 2,
+            "tiempo": 120,
+            "paleta_de_colores": "DarkTeal5"
+        },
+        "in_game": {
+            "cant_puntos": 0,
+            "cant_aciertos": 0
+        },
+        "historial": [],
+        "conectado": 1
     }
 ]

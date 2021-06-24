@@ -32,7 +32,7 @@ def restar_puntos (boolean,es_igual,difficult="facil bro"):
             es_igual = es_igual - 12
     return es_igual
 
-def sos_pro (max_punt,puntaje_logrado,nombre):
+def sos_pro (max_punt,puntaje_logrado,nombre,dificultad):
     """cambia el puntaje del usuario en caso de que la puntuacion lograda haya sido mayor que su 
     puntuacion maxima,la puntuacion lograda se determina a traves de la funcion 'fin_juego'"""
     cambiado = False
@@ -42,6 +42,7 @@ def sos_pro (max_punt,puntaje_logrado,nombre):
             for buscar_usuario in datos:
                 if nombre == buscar_usuario["nombre"]:
                     buscar_usuario["estadisticas"]["puntaje_maximo"] = puntaje_logrado
+                    buscar_usuario["estadisticas"]["dif_puntMax"] = dificultad
                     break
             with open("data/usuarios.json","w", encoding="utf8") as file:
                 json.dump(datos, file, indent=4, ensure_ascii=False)
@@ -124,11 +125,11 @@ def dividir_puntajes(dif):
     dificultad = uuser.dif_usuarios()
     if dif == "facil":
         f = div(dificultad,puntajes,"facil")
-        xd = sorted(f,key=lambda x: x[1] ,reverse=True)[:10]
+        xd = sorted(f,key=lambda x: x[1] ,reverse=True)[:5]
     elif dif == "medio":
         f = div(dificultad,puntajes,"medio")
-        xd = sorted(f,key=lambda x: x[1] ,reverse=True)[:10]
+        xd = sorted(f,key=lambda x: x[1] ,reverse=True)[:5]
     elif dif == "dificil":
         f = div(dificultad,puntajes,"dificil")
-        xd = sorted(f,key=lambda x: x[1] ,reverse=True)[:10]         
+        xd = sorted(f,key=lambda x: x[1] ,reverse=True)[:5]         
     return xd

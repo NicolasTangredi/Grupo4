@@ -10,7 +10,7 @@ def crear_usuario(nombre, contra, genero, edad):
                                 'partidas_perdidas': 0,
                                 'puntaje_maximo': 0,
                                 "dif_puntMax" : "facil"},
-              'configuracion': {'cant_casillas': '4x4',
+              'configuracion': {'cant_casillas': "4x4",
                                 'tipo_elemento': 'palabras',
                                 'cant_coincidencias': 2,
                                 'tiempo': 120,
@@ -85,13 +85,6 @@ def validacion_signin(user,age,genre):
             else:
                 return 0  
             
-
-                 
-
-    
-    
-
-# arreglado brother B)
 
 def user_logged(nom):
     """conecta al usuario del que se ingrso nombre y contraseña en sus argumentos""" 
@@ -222,6 +215,8 @@ def datos_partida(usuario,puntaje_logrado,tiempo_jugado):
         "tiempo": config["tiempo"] - tiempo_jugado,
         "dificultad": niveles[(config["tiempo"] - 30) % 30]
     }
+    
+
 
 
 

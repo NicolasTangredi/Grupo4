@@ -18,10 +18,6 @@ def start():
 
 def loop(window, datos, config, x, y):
     ''' loop de la ventana del tablero '''
-    #Reinicia sus aciertos y puntos en caso de que se haya cerrado inesperadamente la partida anterior y quedaran guardados
-    #  if PuntosAciertos.puntuacion_acumulada() != 0:
-    #     PuntosAciertos.clear_accumulated_aciertos()
-
     # crea los botones vacios e inicia la jugada
     coin = config["cant_coincidencias"]
     window.layout(datos_casilleros.crearCasillasVacias(x,y, coin))

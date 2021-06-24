@@ -236,24 +236,49 @@
         "edad": "Tejon",
         "genero": "100",
         "estadisticas": {
-            "partidas_ganadas": 0,
-            "partidas_perdidas": 0,
-            "puntaje_maximo": 0,
+            "partidas_ganadas": 4,
+            "partidas_perdidas": 1,
+            "puntaje_maximo": 162,
             "dif_puntMax": "facil"
         },
         "configuracion": {
-            "cant_casillas": 0,
-            "tipo_elemento": "palabras",
-            "cant_coincidencias": 0,
-            "tiempo": 120,
+            "cant_casillas": "4x4",
+            "tipo_elemento": "imagenes",
+            "cant_coincidencias": 2,
+            "tiempo": 60,
             "paleta_de_colores": "DarkTeal5"
         },
         "in_game": {
-            "cant_puntos": 19,
+            "cant_puntos": 0,
             "cant_aciertos": 0
         },
-        "historial": [],
-        "conectado": 1
+        "historial": [
+            {
+                "nombre": "teemo",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 0,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 0,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 0,
+                "tiempo": 50,
+                "dificultad": "facil"
+            }
+        ],
+        "conectado": 0
     },
     {
         "nombre": "asd",
@@ -278,6 +303,6 @@
             "cant_aciertos": 0
         },
         "historial": [],
-        "conectado": 1
+        "conectado": 0
     }
 ]

@@ -216,6 +216,16 @@ def datos_partida(usuario,puntaje_logrado,tiempo_jugado):
         "dificultad": niveles[(config["tiempo"] - 30) % 30]
     }
     
+def desconectar_todos():
+    with open("data/usuarios.json","r", encoding="utf8") as usuario:
+        datos = json.load(usuario)
+        for buscar_usuario in datos:
+            if buscar_usuario["conectado"] ==1:
+                buscar_usuario["conectado"] = 0
+        with open("data/usuarios.json","w", encoding="utf8") as file:
+            json.dump(datos, file, indent=4, ensure_ascii=False)
+    
+    
 
 
 

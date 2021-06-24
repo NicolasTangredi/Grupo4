@@ -56,6 +56,8 @@ def loop(window, datos, config, x, y):
 
         if(timer.se_termino_el_tiempo(start_timer, config["tiempo"])):
             jugada.finalizar()
+            user = usuario.usuario_conectado_profile()
+            PuntosAciertos.pro_o_manco(False,user["nombre"])
             sg.Popup("Se termino el tiempo")
             break
         

@@ -24,8 +24,12 @@ class Jugada():
         self._elems = []
         self._botones = []
         
-        file = self._abrir_registro()
-        self._numJug = len(file)
+        self._numJug = 0
+        try:
+            numJugAct = self._abrir_registro().tail(1)["partida"].values[0]
+            self._numJug = (numJugAct + 1)
+        except KeyError:  
+            pass
 
         self._registrar_jugada('inicio_partida', self._numJug)
 
@@ -154,7 +158,7 @@ class Jugada():
         }
 
         dataframe = dataframe.append(data, ignore_index=True)
-        dataframe.to_csv('./data/registro_jugadas.csv', index=False)
+        dataframe.to_csv('./data/stats.csv', index=False)
 
 
         

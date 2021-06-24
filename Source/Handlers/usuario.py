@@ -207,28 +207,21 @@ def get_time ():
                 if usuario_conectado() == buscar_usuario["nombre"]:
                     tiempo = buscar_usuario["configuracion"]["tiempo"]
                     break
-    return tiempo
-
-def que_dificultad_papa (time):
-    """ define la dificultad en el rango (1-3) segun la cantidad de coincidencias y tiempo del usuario"""
-    if time == 120:
-        jg_diff = "facil bro"
-    elif time == 90:
-        jg_diff = "madio pa"
-    else:
-        jg_diff = "re dificil hermano"     
-    return jg_diff
+    return tiempo  
 
 def datos_partida(usuario,puntaje_logrado,tiempo_jugado):
     """
     recibe datos de la partida y retorna un diccionario con 
     el nombre de usuario y los datos de la partida jugada cargados"""
-    dic={}
-    dic["nombre"]=usuario["nombre"]
-    dic["puntaje"]=puntaje_logrado
-    dic["tiempo"]=usuario["configuraciones"]["tiempo"] - tiempo_jugado
-    dic["dificultad"]=que_dificultad_papa(usuario["estadisticas"]["cant_coincidencias"],usuario["estadisticas"]["tiempo"])    
-    return dic
+
+    config = usuario["configuracion"]
+    niveles = ["facil", "medio", "dificil"]
+    return {
+        "nombre": usuario["nombre"],
+        "puntaje": puntaje_logrado,
+        "tiempo": config["tiempo"] - tiempo_jugado,
+        "dificultad": niveles[(config["tiempo"] - 30) % 30]
+    }
 
 
 

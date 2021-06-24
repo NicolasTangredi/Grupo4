@@ -1,53 +1,66 @@
-import PySimpleGUI as sg
-import time as t
-from ..Handlers import timer
-from ..Handlers import PuntosAciertos
+import traceback, PySimpleGUI as sg, time
+from ..Handlers import timer, PuntosAciertos, datos_casilleros, usuario, clases, PuntosAciertos 
 from ..Ventanas import tablero
-from ..Handlers import datos_casilleros, usuario, clases
-from ..Handlers import PuntosAciertos
 
 def start():
     ''' comienza la ejecucion del tablero del juego'''
     
     user = usuario.usuario_conectado_profile()
     config, nombre = user['configuracion'], user['nombre']
-
+    
     # esto es el alto y ancho del tablero y los datos
     x, y = tuple(map( int, config["cant_casillas"].split("x")))
     datos, crit = datos_casilleros.crearDatosJugada(config['tipo_elemento'], config['cant_coincidencias'], x, y)
-        
+
     window = tablero.crear(nombre, crit)
-    loop(window, datos, config['tipo_elemento'], config['cant_coincidencias'], x, y)
+    loop(window, datos, config, x, y)
     window.close()
 
-def loop(window, datos, tipo, coin, x, y):
+def loop(window, datos, config, x, y):
     ''' loop de la ventana del tablero '''
     #Reinicia sus aciertos y puntos en caso de que se haya cerrado inesperadamente la partida anterior y quedaran guardados
-  #  if PuntosAciertos.puntuacion_acumulada() != 0:
-   #     PuntosAciertos.clear_accumulated_aciertos()
-   # if PuntosAciertos.aciertos() != 0:    
-   #     PuntosAciertos.clear_accumulated_points()
+    #  if PuntosAciertos.puntuacion_acumulada() != 0:
+    #     PuntosAciertos.clear_accumulated_aciertos()
+
     # crea los botones vacios e inicia la jugada
+    coin = config["cant_coincidencias"]
     window.layout(datos_casilleros.crearCasillasVacias(x,y, coin))
-    jugada = clases.Jugada(tipo, coin, (x*y // coin))
+    jugada = clases.Jugada(config, (x*y // coin))
     
-    start_timer = t.time()
+    start_timer = time.time()
+
     while True:
-        event, _value = window.read()
+        event, _value = window.read(timeout=100)
 
         if event == sg.WIN_CLOSED:
             break
 
-        realEv, values = event.split('-')
-
-        if realEv == "CARD":
+        if "CARD" in event:
+            
             button = window[event]
 
-            # consigue los valores de x e y del boton, busca el dato adecuado y actualiza
-            x, y = values.split(',')
+            # consigue los valores de X e Y del boton (dato = -CARD-X,Y)
+            x, y = event.split('-')[1].split(',')
             dato = datos[int(y)][int(x)]
-            button.Update(image_data=dato, image_size=(100,102), disabled=True) if tipo == 'imagenes' else button.Update(dato, disabled=True)
+            
+            if config["tipo_elemento"] == 'imagenes':
+                button.Update(image_data = dato, image_size=(100,102), disabled=True)  
+            else: 
+                button.Update(dato, disabled=True)
+            
             window.refresh()
-            evento = jugada.update(button, dato)
-        #window["-TIMER-"].Update(timer.actualizar(start_timer))
-        #window.refresh()
+            fin = jugada.update(button, dato)
+
+            if(fin):
+                sg.Popup("Ganaste!")
+                break
+            
+        window["-TIMER-"].Update(timer.actualizar(start_timer))
+        window.refresh()
+
+        if(timer.se_termino_el_tiempo(start_timer, config["tiempo"])):
+            jugada.finalizar()
+            sg.Popup("Se termino el tiempo")
+            break
+        
+

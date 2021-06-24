@@ -8,8 +8,8 @@ def build_punt():
     medium = PA.dividir_puntajes("medio")
     hard = PA.dividir_puntajes("dificil")
     
-    """En caso de que haya menos de 5 jugadores este trozo de codigo colocara la cantidad que haya
-    y evitara el cierre de la ventana"""
+    # En caso de que haya menos de 5 jugadores este trozo de codigo colocara la cantidad que haya
+    # y evitara el cierre de la ventana
     var = []
     cant = len(hard)
     for i in range(0,cant):

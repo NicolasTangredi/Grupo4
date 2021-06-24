@@ -10,16 +10,24 @@ class Jugada():
         para reiniciar los elementos se hace obj.limpiar( tipo de dato )
     '''
 
-    def __init__(self, tipo, coincidencias, maxAc):
-        self._tipo = tipo
+    def __init__(self, config, maxAc):
+        niveles = ['facil', 'medio', 'dificil']
+
+        # configuracion
+        self._tipo = config["tipo_elemento"]
+        self._max = config["cant_coincidencias"]
+        self._dificultad = niveles[(config['tiempo'] - 30) % 30]
+        
+        # contadores
         self._aciertos = 0
         self._maxAc = maxAc
         self._elems = []
         self._botones = []
-        self._max = coincidencias
-        self._numJug = len(abrir_registro())
+        
+        file = self._abrir_registro()
+        self._numJug = len(file)
 
-        registrar_jugada('inicio_partida', self._numJug)
+        self._registrar_jugada('inicio_partida', self._numJug)
 
     def update(self, boton, dato):
         ''' recibe el boton que fue clickeado y sus datos para
@@ -38,16 +46,41 @@ class Jugada():
             point = PuntosAciertos.calcular_puntos(
                 False,
                 point,
-                usuario.que_dificultad_papa(usuario.get_time())
+                self._dificultad
             )
             
             PuntosAciertos.update_accumulated_points(usuario.usuario_conectado_profile(),point)
             self._mala(dato)
         elif ( len(self._elems) == self._max):
             #calcula la puntuacion del jugador si la jugada fue buena y actualiza la puntuacion en su perfil
-            point = PuntosAciertos.calcular_puntos(True,point,usuario.que_dificultad_papa(usuario.get_time()))
-            PuntosAciertos.update_accumulated_points(usuario.usuario_conectado_profile(),point)
-            self._buena(dato)
+            point = PuntosAciertos.calcular_puntos(True, point, self._dificultad)
+            PuntosAciertos.update_accumulated_points(usuario.usuario_conectado_profile(), point)
+            return self._buena(dato)
+
+    def finalizar(self):
+        user = usuario.usuario_conectado_profile()
+        PuntosAciertos.pro_o_manco(True, user["nombre"])
+        
+        #falta una funcion para retornar el tiempo sobrante despues de la partida
+        
+        def tiempo_sobrante(user):
+            return 10
+
+        puntuacion_total = PuntosAciertos.fin_juego(
+            PuntosAciertos.puntuacion_acumulada(),
+            self._aciertos,
+            tiempo_sobrante(user),
+            user
+        )
+        #si la puntuacion fue mayor que su puntaje maximo entonces la actualiza
+        PuntosAciertos.sos_pro(
+            user["estadisticas"]["puntaje_maximo"],
+            puntuacion_total,user["nombre"]
+        )
+        #pone en 0 la casilla in game del usuario
+        PuntosAciertos.clear_accumulated_points(user)
+
+    # --------------------- FUNCIONES PRIVADAS NO LLAMAR ---------------------
 
     def _mala(self, dato):
         ''' pone los casilleros en blanco y reinicia los elementos y botones guardados
@@ -60,9 +93,8 @@ class Jugada():
                 boton.update("", disabled=False)
         
         self._limpiar()
-
         palabra = 'imagen' if (self._tipo == 'imagenes') else dato
-        registrar_jugada('intento', self._numJug, 'error', palabra)
+        self._registrar_jugada('intento', self._numJug, 'error', palabra)
 
     def _buena(self, dato):
         """ Logica de un turno con todas las coincidencias 
@@ -73,64 +105,53 @@ class Jugada():
 
         # termino la jugada y gano
         if( self._aciertos == self._maxAc):
-            PuntosAciertos.pro_o_manco(True)
-            registrar_jugada('fin', self._numJug)
-            user = usuario.usuario_conectado_profile()
-            
-            #falta una funcion para retornar el tiempo sobrante despues de la partida
-            
-            puntuacion_total = PuntosAciertos.fin_juego(
-                PuntosAciertos.puntuacion_acumulada(),
-                PuntosAciertos.aciertos(),
-                # tiempo_sobrante(user),
-                user
-            )
-            #si la puntuacion fue mayor que su puntaje maximo entonces la actualiza
-            PuntosAciertos.sos_pro(user["estadisticas"]["puntaje_maximo"],puntuacion_total,user["nombre"])
-            #pone en 0 la casilla in game del usuario
-            PuntosAciertos.clear_accumulated_points(user)
-            PuntosAciertos.clear_accumulated_aciertos(user)
+            self._registrar_jugada('fin', self._numJug)
+            self.finalizar()
+            return True
         else:
             palabra = 'imagen' if (self._tipo == 'imagenes') else dato
-            registrar_jugada('intento', self._numJug, 'ok', palabra)
-    
+            self._registrar_jugada('intento', self._numJug, 'ok', palabra)
+
     def _limpiar(self):
+        """ limpia las listas de tarjetas clickeadas """
         self._elems.clear()
         self._botones.clear()
 
-def abrir_registro():
-    try:
-        with open('./data/stats.csv', "r+") as file:
-            return pandas.read_csv(file)
-    except:
-        return pandas.DataFrame()
+    def _abrir_registro(self):
 
-def registrar_jugada(evento, numJug, estado=None, palabra=None):
-    user = usuario.usuario_conectado_profile()
-    dataframe = abrir_registro()
-    
-    config = user['configuracion']
-    num, num2 = config['cant_casillas'].split('x')
-    elem = int(num) * int(num2) // config['cant_coincidencias']
-    
-    niveles = ['facil', 'medio', 'dificil']
-    nivel = niveles[(config['tiempo'] - 30) % 30]
+        """ abre el archivo que registra las jugadas y turnos """
+        try:
+            with open('./data/stats.csv', "r+") as file:
+                return pandas.read_csv(file)
+        except:
+            return pandas.DataFrame()
 
-    data = {
-        'tiempo': config['tiempo'], 
-        'partida': numJug, 
-        'cant_elementos': elem, 
-        'evento': evento, 
-        'nombre': user['nombre'], 
-        'genero': user['genero'], 
-        'edad': user['edad'], 
-        'estado': estado, 
-        'palabra': palabra, 
-        'nivel': nivel
-    }
+    def _registrar_jugada(self, evento, numJug, estado=None, palabra=None):
+        user = usuario.usuario_conectado_profile()
+        dataframe = self._abrir_registro()
+        
+        config = user['configuracion']
+        num, num2 = config['cant_casillas'].split('x')
+        elem = int(num) * int(num2) // config['cant_coincidencias']
+        
+        niveles = ['facil', 'medio', 'dificil']
+        nivel = niveles[(config['tiempo'] - 30) % 30]
 
-    dataframe = dataframe.append(data, ignore_index=True)
-    dataframe.to_csv('./data/registro_jugadas.csv', index=False)
+        data = {
+            'tiempo': config['tiempo'], 
+            'partida': numJug, 
+            'cant_elementos': elem, 
+            'evento': evento, 
+            'nombre': user['nombre'], 
+            'genero': user['genero'], 
+            'edad': user['edad'], 
+            'estado': estado, 
+            'palabra': palabra, 
+            'nivel': nivel
+        }
+
+        dataframe = dataframe.append(data, ignore_index=True)
+        dataframe.to_csv('./data/registro_jugadas.csv', index=False)
 
 
         

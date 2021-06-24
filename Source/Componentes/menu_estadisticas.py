@@ -13,7 +13,7 @@ def loop():
     window = estadisticas.build_estad(num1,num2,num3)
 
     while True:
-        event,values = window.read()
+        event, _values = window.read()
         
         if event == "Ok" or event == None:
             break

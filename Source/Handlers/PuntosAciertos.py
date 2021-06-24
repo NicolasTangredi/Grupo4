@@ -6,7 +6,7 @@ def calcular_puntos (boolean,cant_punt,difficult="facil bro"):
     if boolean:
         cant_punt = sumar_puntos(boolean,cant_punt,difficult)
     else:
-            cant_punt = restar_puntos(boolean,cant_punt,difficult)
+        cant_punt = restar_puntos(boolean,cant_punt,difficult)
     return cant_punt    
     
 
@@ -72,18 +72,6 @@ def update_accumulated_points(user,cant_points):
                     break
             with open("data/usuarios.json","w", encoding="utf8") as file:
                 json.dump(datos, file, indent=4, ensure_ascii=False)
-                
-def clear_accumulated_points(user):
-    """pone en 0 la cantidad de puntos acumulados"""
-    with open("data/usuarios.json","r", encoding="utf8") as usuario:
-        datos = json.load(usuario)
-        for buscar_usuario in datos:
-            if user["nombre"] == buscar_usuario["nombre"]:
-                buscar_usuario["in_game"]["cant_puntos"] = 0
-                break
-        with open("data/usuarios.json","w", encoding="utf8") as file:
-            json.dump(datos, file, indent=4, ensure_ascii=False)
-    
 
 def puntuacion_acumulada():
     """retorna la cantidad de puntos acumulados hasta el momento"""
@@ -93,36 +81,15 @@ def puntuacion_acumulada():
             if user["conectado"] == 1:
                 usuar = user["in_game"]["cant_puntos"]
                 break
-    return usuar
-
-def aciertos():
-    """retorna la cantidad de aciertos actual del usuario"""
-    with open('data/usuarios.json',"r", encoding="utf8") as file:
-        usuarios = json.load(file)
-        for user in usuarios:
-            if user["conectado"] == 1:
-                usuar = user["in_game"]["cant_aciertos"]
-                break
-    return usuar
-
-def update_accumulated_aciertos(user):
-    """aumenta en 1 la cantidad de aciertos del usuario"""
-    with open("data/usuarios.json","r", encoding="utf8") as usuario:
-            datos = json.load(usuario)
-            for buscar_usuario in datos:
-                if user["nombre"] == buscar_usuario["nombre"]:
-                    buscar_usuario["in_game"]["cant_aciertos"] = buscar_usuario["in_game"]["cant_puntos"] + 1
-                    break
-            with open("data/usuarios.json","w", encoding="utf8") as file:
-                json.dump(datos, file, indent=4, ensure_ascii=False)          
+    return usuar       
                 
-def clear_accumulated_aciertos(user):
-    """pone en 0 la cantidad de aciertos del usuario"""
+def clear_accumulated_points(user):
+    """pone en 0 la cantidad de puntos del usuario"""
     with open("data/usuarios.json","r", encoding="utf8") as usuario:
             datos = json.load(usuario)
             for buscar_usuario in datos:
                 if user["nombre"] == buscar_usuario["nombre"]:
-                    buscar_usuario["in_game"]["cant_aciertos"] = 0
+                    buscar_usuario["in_game"]["cant_puntos"] = 0
                     break
             with open("data/usuarios.json","w", encoding="utf8") as file:
                 json.dump(datos, file, indent=4, ensure_ascii=False)

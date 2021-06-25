@@ -5,16 +5,16 @@
         "edad": "Masculino",
         "genero": "56",
         "estadisticas": {
-            "partidas_ganadas": 19,
+            "partidas_ganadas": 20,
             "partidas_perdidas": 4,
             "puntaje_maximo": 10,
             "dif_puntMax": "facil"
         },
         "configuracion": {
             "cant_casillas": "4x4",
-            "tipo_elemento": "imagenes",
+            "tipo_elemento": "palabras",
             "cant_coincidencias": 2,
-            "tiempo": 60,
+            "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
         },
         "in_game": {
@@ -135,9 +135,15 @@
                 "puntaje": 0,
                 "tiempo": 50,
                 "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
             }
         ],
-        "conectado": 1
+        "conectado": 0
     },
     {
         "nombre": "juan",
@@ -302,16 +308,16 @@
         "edad": "Tejon",
         "genero": "100",
         "estadisticas": {
-            "partidas_ganadas": 8,
-            "partidas_perdidas": 3,
+            "partidas_ganadas": 17,
+            "partidas_perdidas": 6,
             "puntaje_maximo": 162,
             "dif_puntMax": "facil"
         },
         "configuracion": {
             "cant_casillas": "4x4",
-            "tipo_elemento": "imagenes",
+            "tipo_elemento": "palabras",
             "cant_coincidencias": 2,
-            "tiempo": 120,
+            "tiempo": 60,
             "paleta_de_colores": "DarkTeal5"
         },
         "in_game": {
@@ -365,6 +371,60 @@
                 "nombre": "teemo",
                 "puntaje": 8,
                 "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 0,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 8,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 8,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 0,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 8,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 8,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 2,
+                "tiempo": 50,
                 "dificultad": "facil"
             }
         ],

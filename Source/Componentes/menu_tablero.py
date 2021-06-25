@@ -42,6 +42,7 @@ def loop(window, datos, config, x, y):
         event, _value = window.read(timeout=100)
 
         if event == sg.WIN_CLOSED:
+            pg.mixer.music.stop()
             break
 
         if "CARD" in event:

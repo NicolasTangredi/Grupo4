@@ -5,7 +5,7 @@
         "edad": "Masculino",
         "genero": "56",
         "estadisticas": {
-            "partidas_ganadas": 11,
+            "partidas_ganadas": 14,
             "partidas_perdidas": 2,
             "puntaje_maximo": 10,
             "dif_puntMax": "facil"
@@ -73,6 +73,24 @@
             {
                 "nombre": "pepe",
                 "puntaje": 10,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 8,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 8,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 8,
                 "tiempo": 50,
                 "dificultad": "facil"
             },

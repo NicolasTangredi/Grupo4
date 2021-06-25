@@ -110,7 +110,7 @@ class Jugada():
 
         # termino la jugada y gano
         if( self._aciertos == self._maxAc):
-            self._registrar_jugada('fin', self._numJug)
+            self._registrar_jugada('fin', self._numJug,"finalizada")
             self.finalizar()
             return True
         else:
@@ -126,7 +126,7 @@ class Jugada():
 
         """ abre el archivo que registra las jugadas y turnos """
         try:
-            with open('./data/registro_jugadas.csv', "r+") as file:
+            with open('./data/stats.csv', "r+") as file:
                 return pandas.read_csv(file)
         except:
             return pandas.DataFrame()

@@ -5,7 +5,7 @@
         "edad": "Masculino",
         "genero": "56",
         "estadisticas": {
-            "partidas_ganadas": 14,
+            "partidas_ganadas": 15,
             "partidas_perdidas": 2,
             "puntaje_maximo": 10,
             "dif_puntMax": "facil"
@@ -14,7 +14,7 @@
             "cant_casillas": "4x4",
             "tipo_elemento": "imagenes",
             "cant_coincidencias": 2,
-            "tiempo": 60,
+            "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
         },
         "in_game": {
@@ -104,6 +104,12 @@
                 "nombre": "pepe",
                 "puntaje": 8,
                 "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 8,
+                "tiempo": 110,
                 "dificultad": "facil"
             }
         ],
@@ -272,8 +278,8 @@
         "edad": "Tejon",
         "genero": "100",
         "estadisticas": {
-            "partidas_ganadas": 4,
-            "partidas_perdidas": 1,
+            "partidas_ganadas": 7,
+            "partidas_perdidas": 3,
             "puntaje_maximo": 162,
             "dif_puntMax": "facil"
         },
@@ -281,7 +287,7 @@
             "cant_casillas": "4x4",
             "tipo_elemento": "imagenes",
             "cant_coincidencias": 2,
-            "tiempo": 60,
+            "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
         },
         "in_game": {
@@ -310,6 +316,24 @@
             {
                 "nombre": "teemo",
                 "puntaje": 0,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 5,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 4,
                 "tiempo": 50,
                 "dificultad": "facil"
             }

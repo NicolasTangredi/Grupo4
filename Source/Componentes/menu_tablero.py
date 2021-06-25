@@ -1,6 +1,7 @@
 import traceback, PySimpleGUI as sg, time
 from ..Handlers import timer, PuntosAciertos, datos_casilleros, usuario, clases, PuntosAciertos 
 from ..Ventanas import tablero
+import pygame as pg
 
 def start():
     ''' comienza la ejecucion del tablero del juego'''
@@ -22,7 +23,19 @@ def loop(window, datos, config, x, y):
     coin = config["cant_coincidencias"]
     window.layout(datos_casilleros.crearCasillasVacias(x,y, coin))
     jugada = clases.Jugada(config, (x*y // coin))
+
+    #configuro la musica de fondo y los efectos de sonido
+    pg.mixer.init()
+    pg.mixer.music.load('data/sonidos/background.mp3')
+    pg.mixer.music.set_volume(0.01)
+    derrota = pg.mixer.Sound('data/sonidos/maldicion.wav')
+    victoria = pg.mixer.Sound('data/sonidos/victory.wav')
+    victoria.set_volume(0.01)
+    derrota.set_volume(0.01)
+    #comienza la musica
+    pg.mixer.music.play(-1)
     
+    #guardo como referecia cuantos segundos pasaron desde una fecha en especifica
     start_timer = time.time()
 
     while True:
@@ -48,6 +61,8 @@ def loop(window, datos, config, x, y):
             fin = jugada.update(button, dato)
 
             if(fin):
+                pg.mixer.music.stop()
+                victoria.play()
                 sg.Popup("Ganaste!")
                 break
             
@@ -56,6 +71,8 @@ def loop(window, datos, config, x, y):
 
         if(timer.se_termino_el_tiempo(start_timer, config["tiempo"])):
             jugada.finalizar()
+            pg.mixer.music.stop()
+            derrota.play()
             user = usuario.usuario_conectado_profile()
             PuntosAciertos.pro_o_manco(False,user["nombre"])
             sg.Popup("Se termino el tiempo")

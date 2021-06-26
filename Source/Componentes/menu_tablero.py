@@ -1,7 +1,4 @@
-import io
-import PIL.Image
 import PySimpleGUI as sg, time, os
-from PySimpleGUI.PySimpleGUI import DEFAULT_FONT, Image, WIN_CLOSED
 from ..Handlers import timer, PuntosAciertos, datos_casilleros, usuario, clases, PuntosAciertos 
 from ..Ventanas import tablero
 import pygame as pg
@@ -118,9 +115,14 @@ def loop(window, datos, config, x, y):
                 PuntosAciertos.pro_o_manco(False,user["nombre"])
                 sg.Popup("Se termino el tiempo")
                 break
+    else:
+        pg.mixer.music.stop()
         
 
-def mostrar_mensaje(titulo, mensaje, name_img):      
+def mostrar_mensaje(titulo, mensaje, name_img):
+    """ muestra un mensaje al usuario con un gif,
+        del gif solo se necesita el nombre del archivo con la extension
+    """      
     layout = [   
         [sg.Text(mensaje, font=('', 15))],
         [sg.Image(key="-GIF-", filename=os.path.join('data/imagenes', name_img))],
@@ -136,6 +138,6 @@ def mostrar_mensaje(titulo, mensaje, name_img):
             time_between_frames=20
         )
         
-        if event == "Ok" or event == WIN_CLOSED:
+        if event == "Ok" or event == sg.WIN_CLOSED:
             window.close()
             break

@@ -1,4 +1,4 @@
-import csv, json
+import csv, json, pandas
 from posixpath import split
 
 def crear(semana):
@@ -8,12 +8,11 @@ def crear(semana):
     '''
 
     # abre los dos datasets
-    with open('data/netflix_titles.csv', 'r', encoding='utf-8') as data, open('data/appstore_games.csv', 'r', encoding='utf-8') as data2:
+    with open('data/netflix_titles.csv', 'r', encoding='utf-8') as pal, open('data/appstore_games.csv', 'r', encoding='utf-8') as img:
         
         # criterios y datos a utilizar
         diccionario = {}
-        full_data = (csv.DictReader(data2), csv.DictReader(data))
-        criterios = definir_criterios()
+        criterios = definir_criterios(pal, img)
 
         # carga el diccionario con los datos divididos por dia y por franja horaria
         for i, dia in enumerate(semana):
@@ -22,23 +21,19 @@ def crear(semana):
             diccionario[dia] = {
                 'imagenes': {
                     'criterio': crit[0][1],
-                    'data': crit[0][0](full_data),
+                    'data': list(crit[0][0]),
                 },
                 'palabras': {
                     'criterio': crit[1][1],
-                    'data': crit[1][0](full_data),
+                    'data': list(crit[1][0]),
                 }
             }
-
-            # reset de los lectores de archivos
-            data.seek(0)
-            data2.seek(0)
 
         # crea y guarda los datos en json
         with open('data/datos_juego.json', 'w', encoding='utf-8') as json_new:
             json.dump(diccionario, json_new, indent=4, ensure_ascii= False)
 
-def definir_criterios():
+def definir_criterios(pal, img):
     ''' Los criterios para elegir los datos y una descripcion.   
         Se organiza como:   
           
@@ -46,54 +41,48 @@ def definir_criterios():
             --- dia(tupla) 
                 --- imagenes o texto(tupla)
     '''
+    dataframe_pal = pandas.read_csv(pal)
+    dataframe_img = pandas.read_csv(img)
 
-    ""
-    
-
-    # en general, se filtra a los datos por un criterio definido y
-    # se mapea el filterObject, quedandose con el dato que se necesite,
-    # para despues castearlo el map a lista
-    criterios = [
-        (   # lunes con imagenes
-            (lambda data: list(map( lambda item: item['Icon URL'], filter(lambda row: int(row['Original Release Date'].split('/')[2]) > 2000, data[0])))[:20]
-            , 'Juegos de la app store creados luego del año 2000'), 
+    return [
+        (   # ----- lunes con imagenes -----
+            (dataframe_img[dataframe_img['Original Release Date'] >= '1/1/2001']['Icon URL'][:20],
+            'Juegos de la app store creados luego del año 2000'), 
             
-            # lunes con texto
-            (lambda data: list(map( lambda item: item['title'], filter(lambda row: row['type'] == 'TV Show' and int(row['duration'].split(' ')[0]) > 2, data[1])))[:20]
-            , 'Series de netflix con mas de 2 temporadas'), 
+            # ----- lunes con texto -----
+            (dataframe_pal[(dataframe_pal['type'] == 'TV Show') & (dataframe_pal['duration'] > '2')]['title'][:20], 
+            'Series de netflix con mas de 2 temporadas') 
         ), 
-        (   # martes con imagenes
-            (lambda data: list(map( lambda item: item['Icon URL'], filter(lambda row: row['ID'][-1] == '1' and int(0 if not row['User Rating Count'] else row['User Rating Count']) > 400, data[0])))[:20]
-            , 'Juegos de la app store con mas de 400 reseñas y un id que termina en uno'),
+        (   # ----- martes con imagenes -----
+            (dataframe_img[(dataframe_img['ID'].apply(str).str[-1:] == '1') & (dataframe_img['User Rating Count'] > 400)]['Icon URL'][:20], 
+            'Juegos de la app store con mas de 400 reseñas y un id que termina en uno'),
             
-            # martes con texto
-            (lambda data: list(map( lambda item: item['title'], filter(lambda row: row['type'] == 'Movie' and 'Horror Movies' in row['listed_in'] and int(row['duration'].split(' ')[0]) > 60, data[1])))[:20]
-            , 'Peliculas de terror en netflix con mas de 60 minutos')
+            # ----- martes con texto -----
+            (dataframe_pal[(dataframe_pal['type'] == 'Movie') & (dataframe_pal['duration'] > '60')]['title'][:20], 
+            'Peliculas de netflix con mas de 60 minutos')
         ),
-        (   # miercoles con imagenes
-            (lambda data: list(map( lambda item: item['Icon URL'], filter(lambda row: len(row['Languages'].split(',')) > 5 and int(row['Current Version Release Date'].split('/')[-1]) > 2018, data[0])))[:20]
-            , 'Los juegos de la app store con mas de 20 años de diferencia entre versiones'), 
+        (   # ----- miercoles con imagenes -----
+            (dataframe_img[(dataframe_img['Languages'].str.split(',').str.len() > 5) & (dataframe_img['Current Version Release Date'] >= '1/1/2019')]['Icon URL'][:20], 
+            'Los juegos de la app store con mas de 20 años de diferencia entre versiones'), 
             
-            # miercoles con texto
-            (lambda data: list(map( lambda item: item['title'], filter(lambda row: row['type'] == 'TV Show' and 1980 < int(row['release_year']) > 2000, data[1])))[:20]
-            , 'Peliculas de netflix creadas entre los años 1980 y 2000')
+            # ----- miercoles con texto -----
+            (dataframe_pal[(dataframe_pal['type'] == 'TV Show') & ((1980 < dataframe_pal['release_year']) & (dataframe_pal['release_year'] > 2000))]['title'][:20], 
+            'Peliculas de netflix creadas entre los años 1980 y 2000')
         ), 
-        (   # jueves con imagenes
-            (lambda data: list(map( lambda item: item['Icon URL'], filter(lambda row: float(0 if row['Price'] in ['Price', ''] else row['Price']) > 2 and 'Puzzle' in row['Genres'], data[0])))[:20]
-            , 'Juegos del genero puzzle con un precio mayor a 2'), 
+        (   # ----- jueves con imagenes -----
+            (dataframe_img[(dataframe_img['Price'] > 2) & (dataframe_img['Primary Genre'] == "Games")]['Icon URL'][:20],
+            'Juegos con un precio mayor a 2'), 
             
-            # jueves con texto
-            (lambda data: list(map( lambda item: item['title'], filter(lambda row: row['type'] == 'TV Show' and 'Dramas' in row['listed_in'], data[1])))[:20]
-            , 'Series de netflix que aparecen en la categoria de dramas')
+            # ----- jueves con texto -----
+            (dataframe_pal[(dataframe_pal['type'] == 'TV Show') & (['Dramas' in data for data in list(dataframe_pal['listed_in'])])]['title'][:20],
+            'Series de netflix que aparecen en la categoria de dramas')
         ),
-        (   # viernes con imagenes
-            (lambda data: list(map( lambda item: item['Icon URL'], filter(lambda row: 'FR' in row['Languages'] and row['Name'][0].lower() == 'r', data[0])))[:20]
-            , 'Juego de la app store con lenguaje fances que su nombre empieza con r'), 
+        (   # ----- viernes con imagenes -----
+            (dataframe_img[(['FR' in data for data in list(dataframe_img['Languages'].apply(str))]) & (dataframe_img['Name'].str[0].str.lower() == 'r')]['Icon URL'][:20],
+            'Juego de la app store con lenguaje frances que su nombre empieza con r'), 
             
-            # viernes con texto
-            (lambda data: list(map( lambda item: item['title'], filter(lambda row: 'robot' in row['description'].lower(), data[1])))[:20]
+            # ----- viernes con texto -----
+            (dataframe_pal[['robot' in data for data in list(dataframe_pal['description'])]]['title'][:20]
             , 'Peliculas o series de netflix cuya descripcion contiene la palabra robot')
         )
     ]
-
-    return criterios

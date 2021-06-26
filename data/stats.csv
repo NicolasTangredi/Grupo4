@@ -59,107 +59,156 @@ cant_elementos,edad,estado,evento,genero,nivel,nombre,palabra,partida,tiempo
 8.0,Tejon,ok,intento,100,facil,teemo,Mystery Science Theater 3000,3.0,60.0
 8.0,Tejon,error,intento,100,facil,teemo,Next Gen,3.0,60.0
 8.0,Tejon,timeout,fin,100,facil,teemo,,3.0,60.0
-8.0,Masculino,,inicio_partida,37,facil,Goku,,4.0,120.0
-8.0,Masculino,error,intento,37,facil,Goku,Hot Bot,4.0,120.0
-8.0,Masculino,ok,intento,37,facil,Goku,Mystery Science Theater 3000,4.0,120.0
-8.0,Masculino,error,intento,37,facil,Goku,Hot Bot,4.0,120.0
-8.0,Masculino,error,intento,37,facil,Goku,Gurren Lagann,4.0,120.0
-8.0,Masculino,error,intento,37,facil,Goku,Gurren Lagann,4.0,120.0
-8.0,Masculino,error,intento,37,facil,Goku,Gurren Lagann,4.0,120.0
-8.0,Masculino,error,intento,37,facil,Goku,Next Gen,4.0,120.0
-8.0,Masculino,ok,intento,37,facil,Goku,Hot Bot,4.0,120.0
-8.0,Masculino,error,intento,37,facil,Goku,Next Gen,4.0,120.0
-8.0,Masculino,ok,intento,37,facil,Goku,Next Gen,4.0,120.0
-8.0,Masculino,ok,intento,37,facil,Goku,Better Than Us,4.0,120.0
-8.0,Masculino,error,intento,37,facil,Goku,Gurren Lagann,4.0,120.0
-8.0,Masculino,error,intento,37,facil,Goku,Gurren Lagann,4.0,120.0
-8.0,Masculino,ok,intento,37,facil,Goku,9,4.0,120.0
-8.0,Masculino,ok,intento,37,facil,Goku,Gurren Lagann,4.0,120.0
-8.0,Masculino,timeout,fin,37,facil,Goku,,4.0,120.0
-8.0,Masculino,,inicio_partida,56,facil,pepe,,5.0,0.0
-8.0,Masculino,,inicio_partida,37,facil,Goku,,6.0,0.0
-8.0,Masculino,error,intento,37,facil,Goku,Chappie,6.0,Tiempo:00:01
-8.0,Masculino,error,intento,37,facil,Goku,Hot Bot,6.0,Tiempo:00:03
-8.0,Masculino,error,intento,37,facil,Goku,Gurren Lagann,6.0,Tiempo:00:04
-8.0,Masculino,ok,intento,37,facil,Goku,Gurren Lagann,6.0,Tiempo:00:06
-8.0,Masculino,error,intento,37,facil,Goku,Hot Bot,6.0,Tiempo:00:07
-8.0,Masculino,error,intento,37,facil,Goku,Hot Bot,6.0,Tiempo:00:07
-8.0,Masculino,error,intento,37,facil,Goku,Hot Bot,6.0,Tiempo:00:08
-8.0,Masculino,error,intento,37,facil,Goku,F.R.E.D.I.,6.0,Tiempo:00:10
-8.0,Masculino,error,intento,37,facil,Goku,F.R.E.D.I.,6.0,Tiempo:00:11
-8.0,Masculino,ok,intento,37,facil,Goku,Next Gen,6.0,Tiempo:00:12
-8.0,Masculino,error,intento,37,facil,Goku,Bill Burr: Paper Tiger,6.0,Tiempo:00:12
-8.0,Masculino,error,intento,37,facil,Goku,Chappie,6.0,Tiempo:00:13
-8.0,Masculino,error,intento,37,facil,Goku,Chappie,6.0,Tiempo:00:14
-8.0,Masculino,error,intento,37,facil,Goku,F.R.E.D.I.,6.0,Tiempo:00:15
-8.0,Masculino,error,intento,37,facil,Goku,F.R.E.D.I.,6.0,Tiempo:00:16
-8.0,Masculino,ok,intento,37,facil,Goku,Chappie,6.0,Tiempo:00:17
-8.0,Masculino,ok,intento,37,facil,Goku,Bill Burr: Paper Tiger,6.0,Tiempo:00:19
-8.0,Masculino,error,intento,37,facil,Goku,F.R.E.D.I.,6.0,Tiempo:00:20
-8.0,Masculino,error,intento,37,facil,Goku,F.R.E.D.I.,6.0,Tiempo:00:22
-8.0,Masculino,ok,intento,37,facil,Goku,F.R.E.D.I.,6.0,Tiempo:00:23
-8.0,Masculino,error,intento,37,facil,Goku,Hot Bot,6.0,Tiempo:00:25
-8.0,Masculino,ok,intento,37,facil,Goku,Mystery Science Theater 3000,6.0,Tiempo:00:26
-8.0,Masculino,ok,intento,37,facil,Goku,Hot Bot,6.0,Tiempo:00:28
-8.0,Masculino,Tiempo:00:30,fin,37,facil,Goku,,6.0,0
-8.0,Masculino,,inicio_partida,17,facil,zz,,7.0,0
-8.0,Masculino,ok,intento,17,facil,zz,imagen,7.0,3.217437267303467
-8.0,Masculino,error,intento,17,facil,zz,imagen,7.0,3.6771812438964844
-8.0,Masculino,ok,intento,17,facil,zz,imagen,7.0,4.417171478271484
-8.0,Masculino,error,intento,17,facil,zz,imagen,7.0,5.298896312713623
-8.0,Masculino,error,intento,17,facil,zz,imagen,7.0,6.321110725402832
-8.0,Masculino,error,intento,17,facil,zz,imagen,7.0,6.867533922195435
-8.0,Masculino,error,intento,17,facil,zz,imagen,7.0,8.069812297821045
-8.0,Masculino,error,intento,17,facil,zz,imagen,7.0,9.602039098739624
-8.0,Masculino,error,intento,17,facil,zz,imagen,7.0,11.105323076248169
-8.0,Masculino,ok,intento,17,facil,zz,imagen,7.0,13.002056360244751
-8.0,Masculino,error,intento,17,facil,zz,imagen,7.0,14.32620096206665
-8.0,Masculino,error,intento,17,facil,zz,imagen,7.0,15.607056379318237
-8.0,Masculino,error,intento,17,facil,zz,imagen,7.0,16.895135164260864
-8.0,Masculino,ok,intento,17,facil,zz,imagen,7.0,17.97855234146118
-8.0,Masculino,error,intento,17,facil,zz,imagen,7.0,18.766411066055298
-8.0,Masculino,ok,intento,17,facil,zz,imagen,7.0,19.781192302703857
-8.0,Masculino,error,intento,17,facil,zz,imagen,7.0,20.888164043426514
-8.0,Masculino,ok,intento,17,facil,zz,imagen,7.0,21.868720531463623
-8.0,Masculino,ok,intento,17,facil,zz,imagen,7.0,22.339439153671265
-8.0,Masculino,24.17739701271057,fin,17,facil,zz,,7.0,0
-8.0,Masculino,,inicio_partida,17,facil,zz,,8.0,0
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,2
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,3
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,5
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,6
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,7
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,8
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,9
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,11
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,12
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,13
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,15
-8.0,Masculino,ok,intento,17,facil,zz,imagen,8.0,16
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,17
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,18
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,20
-8.0,Masculino,ok,intento,17,facil,zz,imagen,8.0,21
-8.0,Masculino,ok,intento,17,facil,zz,imagen,8.0,22
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,24
-8.0,Masculino,ok,intento,17,facil,zz,imagen,8.0,26
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,28
-8.0,Masculino,error,intento,17,facil,zz,imagen,8.0,29
-8.0,Masculino,ok,intento,17,facil,zz,imagen,8.0,31
-8.0,Masculino,ok,intento,17,facil,zz,imagen,8.0,32
-8.0,Masculino,ok,intento,17,facil,zz,imagen,8.0,34
-8.0,Masculino,35,fin,17,facil,zz,,8.0,0
-8.0,37,,inicio_partida,Masculino,facil,Goku,,9.0,0
-8.0,37,error,intento,Masculino,facil,Goku,Kong: King of the Apes,9.0,1
-8.0,37,ok,intento,Masculino,facil,Goku,Miniforce,9.0,2
-8.0,37,error,intento,Masculino,facil,Goku,Better Than Us,9.0,3
-8.0,37,error,intento,Masculino,facil,Goku,Mystery Science Theater 3000,9.0,5
-8.0,37,ok,intento,Masculino,facil,Goku,Mystery Science Theater 3000,9.0,7
-8.0,37,ok,intento,Masculino,facil,Goku,Better Than Us,9.0,8
-8.0,37,error,intento,Masculino,facil,Goku,Mystery Science Theater 3000: The Return,9.0,10
-8.0,37,error,intento,Masculino,facil,Goku,Power Players,9.0,12
-8.0,37,ok,intento,Masculino,facil,Goku,Chappie,9.0,16
-8.0,37,ok,intento,Masculino,facil,Goku,Mystery Science Theater 3000: The Return,9.0,18
-8.0,37,ok,intento,Masculino,facil,Goku,Gurren Lagann,9.0,20
-8.0,37,ok,intento,Masculino,facil,Goku,Power Players,9.0,21
-8.0,37,23,fin,Masculino,facil,Goku,,9.0,0
+8.0,Masculino,,inicio_partida,56,facil,pepe,,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Mystery Science Theater 3000: The Return,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Better Than Us,4.0,120.0
+8.0,Masculino,ok,intento,56,facil,pepe,Hot Bot,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Better Than Us,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Gurren Lagann,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Mystery Science Theater 3000: The Return,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Better Than Us,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Next Gen,4.0,120.0
+8.0,Masculino,ok,intento,56,facil,pepe,Next Gen,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Mystery Science Theater 3000: The Return,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Mystery Science Theater 3000,4.0,120.0
+8.0,Masculino,ok,intento,56,facil,pepe,Mystery Science Theater 3000,4.0,120.0
+8.0,Masculino,ok,intento,56,facil,pepe,Gurren Lagann,4.0,120.0
+8.0,Masculino,ok,intento,56,facil,pepe,Mystery Science Theater 3000: The Return,4.0,120.0
+8.0,Masculino,ok,intento,56,facil,pepe,Better Than Us,4.0,120.0
+8.0,Masculino,ok,intento,56,facil,pepe,Bill Burr: Paper Tiger,4.0,120.0
+8.0,Masculino,,fin,56,facil,pepe,,4.0,120.0
+8.0,Masculino,finalizada,fin,56,facil,pepe,,4.0,120.0
+8.0,Masculino,,inicio_partida,56,facil,pepe,,5.0,120.0
+8.0,Masculino,abandonada,fin,56,facil,pepe,,5.0,120.0
+8.0,Masculino,,inicio_partida,56,facil,pepe,,6.0,120.0
+8.0,Masculino,abandonada,fin,56,facil,pepe,,6.0,120.0
+8.0,Masculino,,inicio_partida,56,facil,pepe,,7.0,120.0
+8.0,Masculino,abandonada,fin,56,facil,pepe,,7.0,120.0
+8.0,Masculino,,inicio_partida,56,facil,pepe,,8.0,120.0
+8.0,Masculino,abandonada,fin,56,facil,pepe,,8.0,120.0
+8.0,x,,inicio_partida,12,facil,x,,9.0,120.0
+8.0,x,abandonada,fin,12,facil,x,,9.0,120.0
+8.0,x,,inicio_partida,12,facil,x,,10.0,120.0
+8.0,x,abandonada,fin,12,facil,x,,10.0,120.0
+8.0,x,,inicio_partida,12,facil,x,,11.0,120.0
+8.0,x,abandonada,fin,12,facil,x,,11.0,120.0
+8.0,x,,inicio_partida,12,facil,x,,12.0,120.0
+8.0,x,abandonada,fin,12,facil,x,,12.0,120.0
+8.0,x,,inicio_partida,12,facil,x,,13.0,60.0
+8.0,x,error,intento,12,facil,x,Mystery Science Theater 3000,13.0,60.0
+8.0,x,error,intento,12,facil,x,F.R.E.D.I.,13.0,60.0
+8.0,x,error,intento,12,facil,x,9,13.0,60.0
+8.0,x,error,intento,12,facil,x,Hot Bot,13.0,60.0
+8.0,x,error,intento,12,facil,x,9,13.0,60.0
+8.0,x,ok,intento,12,facil,x,9,13.0,60.0
+8.0,x,timeout,fin,12,facil,x,,13.0,60.0
+18.0,x,,inicio_partida,12,facil,x,,14.0,120.0
+18.0,x,error,intento,12,facil,x,Kill Command,14.0,120.0
+18.0,x,error,intento,12,facil,x,Kill Command,14.0,120.0
+18.0,x,ok,intento,12,facil,x,Next Gen,14.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,14.0,120.0
+18.0,x,,inicio_partida,12,facil,x,,15.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,15.0,120.0
+18.0,x,,inicio_partida,12,facil,x,,16.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,16.0,120.0
+18.0,x,,inicio_partida,12,facil,x,,17.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,17.0,120.0
+18.0,x,,inicio_partida,12,facil,x,,18.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,18.0,120.0
+18.0,x,,inicio_partida,12,facil,x,,19.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,19.0,120.0
+18.0,x,,inicio_partida,12,facil,x,,20.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,20.0,120.0
+18.0,x,,inicio_partida,12,facil,x,,21.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,21.0,120.0
+8.0,12,,inicio_partida,x,facil,x,,22.0,120.0
+8.0,12,error,intento,x,facil,x,Bill Burr: Paper Tiger,22.0,120.0
+8.0,12,error,intento,x,facil,x,Bill Burr: Paper Tiger,22.0,120.0
+8.0,12,error,intento,x,facil,x,Miniforce,22.0,120.0
+8.0,12,error,intento,x,facil,x,Automata,22.0,120.0
+8.0,12,error,intento,x,facil,x,Automata,22.0,120.0
+8.0,12,error,intento,x,facil,x,Miniforce,22.0,120.0
+8.0,12,error,intento,x,facil,x,Bill Burr: Paper Tiger,22.0,120.0
+8.0,12,error,intento,x,facil,x,Automata,22.0,120.0
+8.0,12,error,intento,x,facil,x,Barrio Universitario,22.0,120.0
+8.0,12,error,intento,x,facil,x,Bill Burr: Paper Tiger,22.0,120.0
+8.0,12,ok,intento,x,facil,x,Bill Burr: Paper Tiger,22.0,120.0
+8.0,12,error,intento,x,facil,x,Automata,22.0,120.0
+8.0,12,error,intento,x,facil,x,Barrio Universitario,22.0,120.0
+8.0,12,ok,intento,x,facil,x,Miniforce,22.0,120.0
+8.0,12,error,intento,x,facil,x,Power Players,22.0,120.0
+8.0,12,error,intento,x,facil,x,Gurren Lagann,22.0,120.0
+8.0,12,ok,intento,x,facil,x,Gurren Lagann,22.0,120.0
+8.0,12,ok,intento,x,facil,x,Mystery Science Theater 3000: The Return,22.0,120.0
+8.0,12,ok,intento,x,facil,x,Barrio Universitario,22.0,120.0
+8.0,12,error,intento,x,facil,x,Power Players,22.0,120.0
+8.0,12,ok,intento,x,facil,x,Automata,22.0,120.0
+8.0,12,error,intento,x,facil,x,A.X.L.,22.0,120.0
+8.0,12,ok,intento,x,facil,x,Power Players,22.0,120.0
+8.0,12,finalizada,fin,x,facil,x,,22.0,120.0
+8.0,56,,inicio_partida,Masculino,facil,pepe,,23.0,120.0
+8.0,56,error,intento,Masculino,facil,pepe,Kill Command,23.0,120.0
+8.0,56,error,intento,Masculino,facil,pepe,Kill Command,23.0,120.0
+8.0,56,error,intento,Masculino,facil,pepe,Kong: King of the Apes,23.0,120.0
+8.0,56,error,intento,Masculino,facil,pepe,Power Players,23.0,120.0
+8.0,56,error,intento,Masculino,facil,pepe,Better Than Us,23.0,120.0
+8.0,56,ok,intento,Masculino,facil,pepe,Power Players,23.0,120.0
+8.0,56,ok,intento,Masculino,facil,pepe,9,23.0,120.0
+8.0,56,error,intento,Masculino,facil,pepe,Hot Bot,23.0,120.0
+8.0,56,ok,intento,Masculino,facil,pepe,Hot Bot,23.0,120.0
+8.0,56,error,intento,Masculino,facil,pepe,Miniforce,23.0,120.0
+8.0,56,error,intento,Masculino,facil,pepe,Gurren Lagann,23.0,120.0
+8.0,56,ok,intento,Masculino,facil,pepe,Gurren Lagann,23.0,120.0
+8.0,56,ok,intento,Masculino,facil,pepe,Better Than Us,23.0,120.0
+8.0,56,error,intento,Masculino,facil,pepe,Kill Command,23.0,120.0
+8.0,56,ok,intento,Masculino,facil,pepe,Miniforce,23.0,120.0
+8.0,56,ok,intento,Masculino,facil,pepe,Kill Command,23.0,120.0
+8.0,56,finalizada,fin,Masculino,facil,pepe,,23.0,120.0
+8.0,12,,inicio_partida,x,facil,x,,24.0,120.0
+8.0,12,error,intento,x,facil,x,Next Gen,24.0,120.0
+8.0,12,error,intento,x,facil,x,Next Gen,24.0,120.0
+8.0,12,error,intento,x,facil,x,Miniforce,24.0,120.0
+8.0,12,error,intento,x,facil,x,Next Gen,24.0,120.0
+8.0,12,ok,intento,x,facil,x,Miniforce,24.0,120.0
+8.0,12,error,intento,x,facil,x,Kung Fu Magoo,24.0,120.0
+8.0,12,error,intento,x,facil,x,Next Gen,24.0,120.0
+8.0,12,error,intento,x,facil,x,Kung Fu Magoo,24.0,120.0
+8.0,12,error,intento,x,facil,x,Next Gen,24.0,120.0
+8.0,12,error,intento,x,facil,x,Mystery Science Theater 3000,24.0,120.0
+8.0,12,ok,intento,x,facil,x,9,24.0,120.0
+8.0,12,error,intento,x,facil,x,Kung Fu Magoo,24.0,120.0
+8.0,12,ok,intento,x,facil,x,Kung Fu Magoo,24.0,120.0
+8.0,12,error,intento,x,facil,x,Next Gen,24.0,120.0
+8.0,12,error,intento,x,facil,x,Kill Command,24.0,120.0
+8.0,12,error,intento,x,facil,x,Kong: King of the Apes,24.0,120.0
+8.0,12,error,intento,x,facil,x,Next Gen,24.0,120.0
+8.0,12,ok,intento,x,facil,x,Mystery Science Theater 3000,24.0,120.0
+8.0,12,error,intento,x,facil,x,Next Gen,24.0,120.0
+8.0,12,error,intento,x,facil,x,Kill Command,24.0,120.0
+8.0,12,ok,intento,x,facil,x,Kill Command,24.0,120.0
+8.0,12,ok,intento,x,facil,x,Kong: King of the Apes,24.0,120.0
+8.0,12,ok,intento,x,facil,x,Bill Burr: Paper Tiger,24.0,120.0
+8.0,12,finalizada,fin,x,facil,x,,24.0,120.0
+8.0,12,,inicio_partida,x,facil,x,,25.0,120.0
+8.0,12,error,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,error,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,error,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,error,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,error,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,ok,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,error,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,error,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,error,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,ok,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,error,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,error,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,error,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,ok,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,ok,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,error,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,error,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,ok,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,error,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,ok,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,ok,intento,x,facil,x,imagen,25.0,120.0
+8.0,12,finalizada,fin,x,facil,x,,25.0,120.0

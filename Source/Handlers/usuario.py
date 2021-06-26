@@ -224,7 +224,15 @@ def desconectar_todos():
                 buscar_usuario["conectado"] = 0
         with open("data/usuarios.json","w", encoding="utf8") as file:
             json.dump(datos, file, indent=4, ensure_ascii=False)
-    
+            
+def genero():
+    with open("data/usuarios.json","r", encoding="utf8") as usuario:
+            datos = json.load(usuario)
+            gender = []
+            for buscar_usuario in datos:
+                if buscar_usuario["genero"] not in gender:
+                    gender.append(buscar_usuario["genero"])                   
+    return gender 
     
 
 

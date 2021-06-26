@@ -1,6 +1,7 @@
 from os import remove
 import pandas as pd
 from matplotlib import pyplot as pt
+from ..Handlers import usuario
 
 def preview_game_num():
     """retorna el numero de la ultima partida jugada"""
@@ -36,6 +37,29 @@ def porcentaje():
     pt.title("Cantida de partidas finalzadas,abandonadas y timeout")
     pt.savefig("grafico.png",format="png")
 
+def cant_genero():
+    ds = pd.read_csv('./data/stats.csv',encoding="utf8")
+    generos = usuario.genero()
+    cant = []
+    for k in generos:
+        cant.append(ds[(ds["estado"] == "finalizada") & ((ds["genero"] == k) | (ds["edad"] == k))]["estado"].count())
+    return generos,cant
+
+def porcentaje2():
+    pt.clf()
+    etiquetas,data_dibujo = cant_genero()
+    colores = ["lightblue","yellow","lightgreen","grey","red","brown","orange","lightpink","pink","purple"]
+    colores2 = []
+    for k in range(0,len(etiquetas)):
+        colores2.append(colores[k])
+    pt.pie(data_dibujo ,colors=colores2, autopct='%1.1f%%',
+    shadow=True, startangle=90, labeldistance= 1.1)
+    pt.axis('equal')
+    pt.legend(etiquetas)
+    pt.title("Porcentaje de partidas finalizadas")
+    pt.savefig("grafica.png",format="png")
+
+
     
-porcentaje()
+    
 

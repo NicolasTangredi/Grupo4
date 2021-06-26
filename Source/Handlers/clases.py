@@ -110,7 +110,6 @@ class Jugada():
 
         # termino la jugada y gano
         if( self._aciertos == self._maxAc):
-            self._registrar_jugada('fin', self._numJug,tiempo)
             self.finalizar()
             return True
         else:

@@ -5,7 +5,7 @@
         "edad": "56",
         "genero": "Masculino",
         "estadisticas": {
-            "partidas_ganadas": 21,
+            "partidas_ganadas": 22,
             "partidas_perdidas": 4,
             "puntaje_maximo": 10,
             "dif_puntMax": "facil"
@@ -147,6 +147,12 @@
                 "puntaje": 8,
                 "tiempo": 110,
                 "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
             }
         ],
         "conectado": 0
@@ -179,8 +185,8 @@
     {
         "nombre": "tobias",
         "contraseña": "tobias",
-        "edad": "Masculino",
-        "genero": "46",
+        "edad": "46",
+        "genero": "Femenino",
         "estadisticas": {
             "partidas_ganadas": 1,
             "partidas_perdidas": 0,
@@ -359,16 +365,16 @@
         "edad": "100",
         "genero": "Tejon",
         "estadisticas": {
-            "partidas_ganadas": 17,
-            "partidas_perdidas": 6,
+            "partidas_ganadas": 18,
+            "partidas_perdidas": 7,
             "puntaje_maximo": 162,
             "dif_puntMax": "facil"
         },
         "configuracion": {
             "cant_casillas": "4x4",
-            "tipo_elemento": "palabras",
+            "tipo_elemento": "imagenes",
             "cant_coincidencias": 2,
-            "tiempo": 60,
+            "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
         },
         "in_game": {
@@ -477,6 +483,12 @@
                 "puntaje": 2,
                 "tiempo": 50,
                 "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 0,
+                "tiempo": 110,
+                "dificultad": "facil"
             }
         ],
         "conectado": 0
@@ -509,17 +521,17 @@
     {
         "nombre": "x",
         "contraseña": "x",
-        "edad": "x",
-        "genero": "12",
+        "edad": "12",
+        "genero": "x",
         "estadisticas": {
-            "partidas_ganadas": 1,
-            "partidas_perdidas": 1,
+            "partidas_ganadas": 6,
+            "partidas_perdidas": 2,
             "puntaje_maximo": 10,
             "dif_puntMax": "facil"
         },
         "configuracion": {
-            "cant_casillas": "6x6",
-            "tipo_elemento": "palabras",
+            "cant_casillas": "4x4",
+            "tipo_elemento": "imagenes",
             "cant_coincidencias": 2,
             "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
@@ -533,6 +545,36 @@
                 "nombre": "x",
                 "puntaje": 1,
                 "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 0,
+                "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 8,
+                "tiempo": 110,
                 "dificultad": "facil"
             }
         ],

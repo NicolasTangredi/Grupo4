@@ -13,8 +13,7 @@ def start():
     window.close()
     
 def loop():
-    num1,num2,num3 = usuario.stats_logged()
-    window = estadisticas.build_estad(num1,num2,num3)
+    window = estadisticas.build_estad()
 
     while True:
         event, _values = window.read()
@@ -22,6 +21,11 @@ def loop():
         if event == "a ver pa":
             st.porcentaje()
             start2()
+            break
+        
+        if event == "mostra compa":
+            st.porcentaje2()
+            start3()
             break
         
         if event == "Ok" or event == None:
@@ -37,6 +41,23 @@ def start2():
     
 def loop2():
     window = estadisticas.build_graph1()
+
+    while True:
+        event, _values = window.read()
+         
+        if event == "Ok" or event == None:
+            break
+        
+    return window
+
+def start3():
+    "Ejecuta la ventana de estadisticas del menu principal "
+
+    window = loop3()
+    window.close()
+    
+def loop3():
+    window = estadisticas.build_graph2()
 
     while True:
         event, _values = window.read()

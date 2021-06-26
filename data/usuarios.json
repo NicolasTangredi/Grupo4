@@ -5,7 +5,7 @@
         "edad": "Masculino",
         "genero": "56",
         "estadisticas": {
-            "partidas_ganadas": 20,
+            "partidas_ganadas": 21,
             "partidas_perdidas": 4,
             "puntaje_maximo": 10,
             "dif_puntMax": "facil"
@@ -134,6 +134,12 @@
                 "nombre": "pepe",
                 "puntaje": 0,
                 "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 8,
+                "tiempo": 110,
                 "dificultad": "facil"
             },
             {
@@ -453,6 +459,38 @@
             "cant_aciertos": 0
         },
         "historial": [],
+        "conectado": 0
+    },
+    {
+        "nombre": "x",
+        "contraseña": "x",
+        "edad": "x",
+        "genero": "12",
+        "estadisticas": {
+            "partidas_ganadas": 1,
+            "partidas_perdidas": 1,
+            "puntaje_maximo": 10,
+            "dif_puntMax": "facil"
+        },
+        "configuracion": {
+            "cant_casillas": "6x6",
+            "tipo_elemento": "palabras",
+            "cant_coincidencias": 2,
+            "tiempo": 120,
+            "paleta_de_colores": "DarkTeal5"
+        },
+        "in_game": {
+            "cant_puntos": 0,
+            "cant_aciertos": 0
+        },
+        "historial": [
+            {
+                "nombre": "x",
+                "puntaje": 1,
+                "tiempo": 50,
+                "dificultad": "facil"
+            }
+        ],
         "conectado": 0
     }
 ]

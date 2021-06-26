@@ -59,3 +59,65 @@ cant_elementos,edad,estado,evento,genero,nivel,nombre,palabra,partida,tiempo
 8.0,Tejon,ok,intento,100,facil,teemo,Mystery Science Theater 3000,3.0,60.0
 8.0,Tejon,error,intento,100,facil,teemo,Next Gen,3.0,60.0
 8.0,Tejon,timeout,fin,100,facil,teemo,,3.0,60.0
+8.0,Masculino,,inicio_partida,56,facil,pepe,,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Mystery Science Theater 3000: The Return,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Better Than Us,4.0,120.0
+8.0,Masculino,ok,intento,56,facil,pepe,Hot Bot,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Better Than Us,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Gurren Lagann,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Mystery Science Theater 3000: The Return,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Better Than Us,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Next Gen,4.0,120.0
+8.0,Masculino,ok,intento,56,facil,pepe,Next Gen,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Mystery Science Theater 3000: The Return,4.0,120.0
+8.0,Masculino,error,intento,56,facil,pepe,Mystery Science Theater 3000,4.0,120.0
+8.0,Masculino,ok,intento,56,facil,pepe,Mystery Science Theater 3000,4.0,120.0
+8.0,Masculino,ok,intento,56,facil,pepe,Gurren Lagann,4.0,120.0
+8.0,Masculino,ok,intento,56,facil,pepe,Mystery Science Theater 3000: The Return,4.0,120.0
+8.0,Masculino,ok,intento,56,facil,pepe,Better Than Us,4.0,120.0
+8.0,Masculino,ok,intento,56,facil,pepe,Bill Burr: Paper Tiger,4.0,120.0
+8.0,Masculino,,fin,56,facil,pepe,,4.0,120.0
+8.0,Masculino,finalizada,fin,56,facil,pepe,,4.0,120.0
+8.0,Masculino,,inicio_partida,56,facil,pepe,,5.0,120.0
+8.0,Masculino,abandonada,fin,56,facil,pepe,,5.0,120.0
+8.0,Masculino,,inicio_partida,56,facil,pepe,,6.0,120.0
+8.0,Masculino,abandonada,fin,56,facil,pepe,,6.0,120.0
+8.0,Masculino,,inicio_partida,56,facil,pepe,,7.0,120.0
+8.0,Masculino,abandonada,fin,56,facil,pepe,,7.0,120.0
+8.0,Masculino,,inicio_partida,56,facil,pepe,,8.0,120.0
+8.0,Masculino,abandonada,fin,56,facil,pepe,,8.0,120.0
+8.0,x,,inicio_partida,12,facil,x,,9.0,120.0
+8.0,x,abandonada,fin,12,facil,x,,9.0,120.0
+8.0,x,,inicio_partida,12,facil,x,,10.0,120.0
+8.0,x,abandonada,fin,12,facil,x,,10.0,120.0
+8.0,x,,inicio_partida,12,facil,x,,11.0,120.0
+8.0,x,abandonada,fin,12,facil,x,,11.0,120.0
+8.0,x,,inicio_partida,12,facil,x,,12.0,120.0
+8.0,x,abandonada,fin,12,facil,x,,12.0,120.0
+8.0,x,,inicio_partida,12,facil,x,,13.0,60.0
+8.0,x,error,intento,12,facil,x,Mystery Science Theater 3000,13.0,60.0
+8.0,x,error,intento,12,facil,x,F.R.E.D.I.,13.0,60.0
+8.0,x,error,intento,12,facil,x,9,13.0,60.0
+8.0,x,error,intento,12,facil,x,Hot Bot,13.0,60.0
+8.0,x,error,intento,12,facil,x,9,13.0,60.0
+8.0,x,ok,intento,12,facil,x,9,13.0,60.0
+8.0,x,timeout,fin,12,facil,x,,13.0,60.0
+18.0,x,,inicio_partida,12,facil,x,,14.0,120.0
+18.0,x,error,intento,12,facil,x,Kill Command,14.0,120.0
+18.0,x,error,intento,12,facil,x,Kill Command,14.0,120.0
+18.0,x,ok,intento,12,facil,x,Next Gen,14.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,14.0,120.0
+18.0,x,,inicio_partida,12,facil,x,,15.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,15.0,120.0
+18.0,x,,inicio_partida,12,facil,x,,16.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,16.0,120.0
+18.0,x,,inicio_partida,12,facil,x,,17.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,17.0,120.0
+18.0,x,,inicio_partida,12,facil,x,,18.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,18.0,120.0
+18.0,x,,inicio_partida,12,facil,x,,19.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,19.0,120.0
+18.0,x,,inicio_partida,12,facil,x,,20.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,20.0,120.0
+18.0,x,,inicio_partida,12,facil,x,,21.0,120.0
+18.0,x,abandonada,fin,12,facil,x,,21.0,120.0

@@ -31,7 +31,7 @@ def loop():
             elif i == 3:
                 sg.popup('el genero ingresado no es valido, por favor ingrese caracteres validos')
             else:
-                new_user = usuario.crear_usuario(user,pwd,age,genre)
+                new_user = usuario.crear_usuario(user,pwd,genre,age)
                 usuario.añadir_usuario(new_user)
                 break    
     return window        

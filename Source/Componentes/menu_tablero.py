@@ -40,7 +40,8 @@ def loop(window, datos, config, x, y):
 
     while True:
         event, _value = window.read(timeout=100)
-
+        
+        tiempo = timer.actualizar(start_timer)
         if event == sg.WIN_CLOSED:
             jugada._registrar_jugada('fin', jugada._numJug,"abandonada")
             pg.mixer.music.stop()
@@ -60,7 +61,8 @@ def loop(window, datos, config, x, y):
                 button.Update(dato, disabled=True)
             
             window.refresh()
-            fin = jugada.update(button, dato)
+            
+            fin = jugada.update(button, dato,tiempo)#pasar tiempo
 
             if(fin):
                 pg.mixer.music.stop()
@@ -68,11 +70,11 @@ def loop(window, datos, config, x, y):
                 sg.Popup("Ganaste!")
                 break
             
-        window["-TIMER-"].Update(timer.actualizar(start_timer))
+        window["-TIMER-"].Update('Tiempo:' f'{round(tiempo // 60):02d}:{round(tiempo % 60):02d}')
         window.refresh()
 
         if(timer.se_termino_el_tiempo(start_timer, config["tiempo"])):
-            jugada._registrar_jugada('fin', jugada._numJug,"timeout")
+            jugada._registrar_jugada('fin', jugada._numJug,"timeout",tiempo)
             jugada.finalizar()
             pg.mixer.music.stop()
             derrota.play()

@@ -33,7 +33,7 @@ class Jugada():
 
         self._registrar_jugada('inicio_partida', self._numJug)
 
-    def update(self, boton, dato):
+    def update(self, boton, dato,tiempo):
         ''' recibe el boton que fue clickeado y sus datos para
             chequear que sean iguales y si tiene todas las coincidencias
         '''
@@ -54,12 +54,12 @@ class Jugada():
             )
             
             PuntosAciertos.update_accumulated_points(usuario.usuario_conectado_profile(),point)
-            self._mala(dato)
+            self._mala(dato,tiempo)
         elif ( len(self._elems) == self._max):
             #calcula la puntuacion del jugador si la jugada fue buena y actualiza la puntuacion en su perfil
             point = PuntosAciertos.calcular_puntos(True, point, self._dificultad)
             PuntosAciertos.update_accumulated_points(usuario.usuario_conectado_profile(), point)
-            return self._buena(dato)
+            return self._buena(dato,tiempo)
 
     def finalizar(self):
         user = usuario.usuario_conectado_profile()
@@ -87,7 +87,7 @@ class Jugada():
 
     # --------------------- FUNCIONES PRIVADAS NO LLAMAR ---------------------
 
-    def _mala(self, dato):
+    def _mala(self, dato,tiempo):
         ''' pone los casilleros en blanco y reinicia los elementos y botones guardados
         '''
         sleep(0.5)
@@ -99,9 +99,9 @@ class Jugada():
         
         self._limpiar()
         palabra = 'imagen' if (self._tipo == 'imagenes') else dato
-        self._registrar_jugada('intento', self._numJug, 'error', palabra)
+        self._registrar_jugada('intento', self._numJug, 'error', palabra,tiempo)
 
-    def _buena(self, dato):
+    def _buena(self, dato,tiempo):
         """ Logica de un turno con todas las coincidencias 
             cuena los aciertos y da final a la partida
         """
@@ -110,12 +110,12 @@ class Jugada():
 
         # termino la jugada y gano
         if( self._aciertos == self._maxAc):
-            self._registrar_jugada('fin', self._numJug)
+            self._registrar_jugada('fin', self._numJug,tiempo)
             self.finalizar()
             return True
         else:
             palabra = 'imagen' if (self._tipo == 'imagenes') else dato
-            self._registrar_jugada('intento', self._numJug, 'ok', palabra)
+            self._registrar_jugada('intento', self._numJug, 'ok', palabra,tiempo)
 
     def _limpiar(self):
         """ limpia las listas de tarjetas clickeadas """
@@ -131,7 +131,7 @@ class Jugada():
         except:
             return pandas.DataFrame()
 
-    def _registrar_jugada(self, evento, numJug, estado=None, palabra=None):
+    def _registrar_jugada(self, evento, numJug, estado=None, palabra=None, tiempo = 0):
         user = usuario.usuario_conectado_profile()
         dataframe = self._abrir_registro()
         
@@ -145,7 +145,7 @@ class Jugada():
         
 
         data = {
-            'tiempo': config['tiempo'], 
+            'tiempo': tiempo, 
             'partida': numJug, 
             'cant_elementos': elem, 
             'evento': evento, 

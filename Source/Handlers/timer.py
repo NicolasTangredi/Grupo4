@@ -2,10 +2,9 @@ import time as t
 
 def actualizar(start_timer):
     """Devuelve un string con el tiempo transcurrido"""
-    tiempo = t.time() - start_timer
-    timer = 'Tiempo:' f'{round(tiempo // 60):02d}:{round(tiempo % 60):02d}'
+    tiempo = int(t.time() - start_timer)
 
-    return timer
+    return tiempo
 
 def se_termino_el_tiempo (start_timer,user_time) -> bool:
     """Devuelve True si se termino el tiempo o False si aun no se termina"""

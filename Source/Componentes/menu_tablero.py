@@ -1,4 +1,7 @@
-import traceback, PySimpleGUI as sg, time
+import io
+import PIL.Image
+import PySimpleGUI as sg, time, os
+from PySimpleGUI.PySimpleGUI import DEFAULT_FONT, Image, WIN_CLOSED
 from ..Handlers import timer, PuntosAciertos, datos_casilleros, usuario, clases, PuntosAciertos 
 from ..Ventanas import tablero
 import pygame as pg
@@ -12,17 +15,19 @@ def start():
     # esto es el alto y ancho del tablero y los datos
     x, y = tuple(map( int, config["cant_casillas"].split("x")))
     datos, crit = datos_casilleros.crearDatosJugada(config['tipo_elemento'], config['cant_coincidencias'], x, y)
-
-    window = tablero.crear(nombre, crit)
-    loop(window, datos, config, x, y)
-    window.close()
+    try:
+        window = tablero.crear(nombre, crit)
+        loop(window, datos, config, x, y)
+        window.close()
+    except Exception as err:
+        print(err)
 
 def loop(window, datos, config, x, y):
     ''' loop de la ventana del tablero '''
-    # crea los botones vacios e inicia la jugada
     coin = config["cant_coincidencias"]
-    window.layout(datos_casilleros.crearCasillasVacias(x,y, coin))
-    jugada = clases.Jugada(config, (x*y // coin))
+    buttons = datos_casilleros.crearCasillasVacias(x, y, coin)
+    window.layout(buttons)
+    window.finalize()
 
     #configuro la musica de fondo y los efectos de sonido
     pg.mixer.init()
@@ -30,58 +35,107 @@ def loop(window, datos, config, x, y):
     pg.mixer.music.set_volume(0.01)
     derrota = pg.mixer.Sound('data/sonidos/maldicion.wav')
     victoria = pg.mixer.Sound('data/sonidos/victory.wav')
+    
     victoria.set_volume(0.01)
     derrota.set_volume(0.01)
+    
     #comienza la musica
     pg.mixer.music.play(-1)
+
+    for rows in buttons: 
+        for elem in rows: elem.Update("", disabled=True)
+    event, _value = window.read()
     
-    #guardo como referecia cuantos segundos pasaron desde una fecha en especifica
-    start_timer = time.time()
-
-    while True:
-        event, _value = window.read(timeout=100)
+    if event == "-JUGAR-":
+        # crea una jugada, los botones vacios y empieza el timer
+        for rows in buttons: 
+            for elem in rows: elem.Update("", disabled=False)
         
-        tiempo = timer.actualizar(start_timer)
-        if event == sg.WIN_CLOSED:
-            jugada._registrar_jugada('fin', jugada._numJug,"abandonada")
-            pg.mixer.music.stop()
-            break
+        window['-JUGAR-'].Update("Pausa")
 
-        if "CARD" in event:
-            
-            button = window[event]
+        start_timer = time.time()
+        jugada = clases.Jugada(config, (x * y // coin))
 
-            # consigue los valores de X e Y del boton (dato = -CARD-X,Y)
-            x, y = event.split('-')[1].split(',')
-            dato = datos[int(y)][int(x)]
-            
-            if config["tipo_elemento"] == 'imagenes':
-                button.Update(image_data = dato, image_size=(100,102), disabled=True)  
-            else: 
-                button.Update(dato, disabled=True)
-            
-            window.refresh()
-            
-            fin = jugada.update(button, dato,tiempo)#pasar tiempo
+        while True:
+            event, _value = window.read(timeout=100)
+            tiempo = timer.actualizar(start_timer)
 
-            if(fin):
-                jugada._registrar_jugada('fin', jugada._numJug,"finalizada")
+            if event == sg.WIN_CLOSED:
+                jugada._registrar_jugada('fin', jugada._numJug,"abandonada")
                 pg.mixer.music.stop()
-                victoria.play()
-                sg.Popup("Ganaste!")
+                break
+
+            if event == "-JUGAR-":
+                start_timer += timer.parar()
+
+            if "CARD" in event:
+                
+                button = window[event]
+
+                # consigue los valores de X e Y del boton (dato = -CARD-X,Y)
+                x, y = event.split('-')[1].split(',')
+                dato = datos[int(y)][int(x)]
+                
+                if config["tipo_elemento"] == 'imagenes':
+                    button.Update(image_data = dato, image_size=(100,102), disabled=True)  
+                else: 
+                    button.Update(dato, disabled=True)
+                
+                window.refresh()
+                fin = jugada.update(button, dato, tiempo)
+
+                if(fin):
+                    jugada._registrar_jugada('fin', jugada._numJug,"finalizada")
+                    pg.mixer.music.stop()
+                    victoria.play()
+                    mostrar_mensaje('Ganaste!', 'Conseguiste todas las coincidencias', "Win.gif")
+                    break
+                
+            window["-TIMER-"].Update(timer.actualizar(start_timer))
+            window.refresh()
+
+            if(timer.se_termino_el_tiempo(start_timer, config["tiempo"])):
+                jugada.finalizar()
+                
+                pg.mixer.music.stop()
+                derrota.play()
+
+                user = usuario.usuario_conectado_profile()
+                PuntosAciertos.pro_o_manco(False,user["nombre"])
+                
+                mostrar_mensaje('perdiste', 'se te acabo el tiempo', "Lose.gif")
                 break
             
-        window["-TIMER-"].Update('Tiempo:' f'{round(tiempo // 60):02d}:{round(tiempo % 60):02d}')
-        window.refresh()
+            window["-TIMER-"].Update('Tiempo:' f'{round(tiempo // 60):02d}:{round(tiempo % 60):02d}')
+            window.refresh()
 
-        if(timer.se_termino_el_tiempo(start_timer, config["tiempo"])):
-            jugada._registrar_jugada('fin', jugada._numJug,"timeout",tiempo)
-            jugada.finalizar()
-            pg.mixer.music.stop()
-            derrota.play()
-            user = usuario.usuario_conectado_profile()
-            PuntosAciertos.pro_o_manco(False,user["nombre"])
-            sg.Popup("Se termino el tiempo")
-            break
+            if(timer.se_termino_el_tiempo(start_timer, config["tiempo"])):
+                jugada._registrar_jugada('fin', jugada._numJug,"timeout",tiempo)
+                jugada.finalizar()
+                pg.mixer.music.stop()
+                derrota.play()
+                user = usuario.usuario_conectado_profile()
+                PuntosAciertos.pro_o_manco(False,user["nombre"])
+                sg.Popup("Se termino el tiempo")
+                break
         
 
+def mostrar_mensaje(titulo, mensaje, name_img):      
+    layout = [   
+        [sg.Text(mensaje, font=('', 15))],
+        [sg.Image(key="-GIF-", filename=os.path.join('data/imagenes', name_img))],
+        [sg.Ok(size=(12,2))]
+    ]
+    
+    window = sg.Window(titulo, layout, element_justification="center")
+    
+    while True:
+        event, _value = window.read(timeout=20)
+        window["-GIF-"].update_animation(
+            os.path.join('data/imagenes', name_img),
+            time_between_frames=20
+        )
+        
+        if event == "Ok" or event == WIN_CLOSED:
+            window.close()
+            break

@@ -1,4 +1,4 @@
-import time as t
+import time as t, PySimpleGUI as sg
 
 def actualizar(start_timer):
     """Devuelve un string con el tiempo transcurrido"""
@@ -21,3 +21,10 @@ def tiempo_restante(start_timer,user_time) -> int:
     time_left = user_time - tiempo
     return time_left
 
+def parar():
+    try:
+        tiempo = t.time()
+        sg.Popup("el juego esta pausado")
+        return t.time() - tiempo
+    except Exception as err:
+        print(err)

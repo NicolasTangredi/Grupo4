@@ -10,7 +10,7 @@ def crear(nombre, crit):
 
     layout = [
         [sg.Text(f'Criterio: {crit}')],
-        [sg.Text(f'Jugador: {nombre}'), sg.Text('Tiempo: 00:00', key='-TIMER-')]
+        [sg.Button('Comenzar', key="-JUGAR-"), sg.Text(f'Jugador: {nombre}'), sg.Text('Tiempo: 00:00', key='-TIMER-')]
     ]
     
     return sg.Window(

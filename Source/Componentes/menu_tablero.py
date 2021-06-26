@@ -28,7 +28,7 @@ def loop(window, datos, config, x, y):
 
     #configuro la musica de fondo y los efectos de sonido
     pg.mixer.init()
-    pg.mixer.music.load('data/sonidos/background.mp3')
+    pg.mixer.music.load('data/sonidos/background.wav')
     pg.mixer.music.set_volume(0.01)
     derrota = pg.mixer.Sound('data/sonidos/maldicion.wav')
     victoria = pg.mixer.Sound('data/sonidos/victory.wav')
@@ -88,10 +88,11 @@ def loop(window, datos, config, x, y):
                     mostrar_mensaje('Ganaste!', 'Conseguiste todas las coincidencias', "Win.gif")
                     break
                 
-            window["-TIMER-"].Update(timer.actualizar(start_timer))
+            window["-TIMER-"].Update('Tiempo:' f'{round(tiempo // 60):02d}:{round(tiempo % 60):02d}')
             window.refresh()
 
             if(timer.se_termino_el_tiempo(start_timer, config["tiempo"])):
+                jugada._registrar_jugada('fin', jugada._numJug,"timeout",tiempo)
                 jugada.finalizar()
                 
                 pg.mixer.music.stop()
@@ -101,19 +102,6 @@ def loop(window, datos, config, x, y):
                 PuntosAciertos.pro_o_manco(False,user["nombre"])
                 
                 mostrar_mensaje('perdiste', 'se te acabo el tiempo', "Lose.gif")
-                break
-            
-            window["-TIMER-"].Update('Tiempo:' f'{round(tiempo // 60):02d}:{round(tiempo % 60):02d}')
-            window.refresh()
-
-            if(timer.se_termino_el_tiempo(start_timer, config["tiempo"])):
-                jugada._registrar_jugada('fin', jugada._numJug,"timeout",tiempo)
-                jugada.finalizar()
-                pg.mixer.music.stop()
-                derrota.play()
-                user = usuario.usuario_conectado_profile()
-                PuntosAciertos.pro_o_manco(False,user["nombre"])
-                sg.Popup("Se termino el tiempo")
                 break
     else:
         pg.mixer.music.stop()

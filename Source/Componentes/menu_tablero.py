@@ -65,6 +65,7 @@ def loop(window, datos, config, x, y):
             fin = jugada.update(button, dato,tiempo)#pasar tiempo
 
             if(fin):
+                jugada._registrar_jugada('fin', jugada._numJug,"finalizada")
                 pg.mixer.music.stop()
                 victoria.play()
                 sg.Popup("Ganaste!")

@@ -28,6 +28,10 @@ def loop():
             start3()
             break
         
+        if event == "KIERO BER":
+            start4()
+            break
+        
         if event == "Ok" or event == None:
             break
         
@@ -58,6 +62,23 @@ def start3():
     
 def loop3():
     window = estadisticas.build_graph2()
+
+    while True:
+        event, _values = window.read()
+         
+        if event == "Ok" or event == None:
+            break
+        
+    return window
+
+def start4():
+    "Ejecuta la ventana de estadisticas del menu principal "
+
+    window = loop4()
+    window.close()
+    
+def loop4():
+    window = estadisticas.build_estad3()
 
     while True:
         event, _values = window.read()

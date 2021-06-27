@@ -186,11 +186,40 @@ def loop3():
             break
         
     return window
+def cant_palabras():
+    ds = pd.read_csv('./data/stats.csv',encoding="utf8")
+    dic = {}
+    l=0
+    for k in range(l,len(ds.loc[:])):
+        print(k)
+        if k == 3:
+            l=200
+            
 
-start()
+def top():
+    ds = pd.read_csv('./data/stats.csv',encoding="utf8")
+    cant = ds[(ds["estado"] == "ok") | (ds["evento"]=="inicio_partida")]
+    tamaño = len(cant.iloc[:])
+    dic = {}
+    next_word = False
+    for k in range(0,tamaño):
+        if cant.iloc[k]["evento"] == "inicio_partida":
+            next_word = True
+        if (cant.iloc[k]["estado"] == "ok") & (next_word):
+            if cant.iloc[k]["palabra"] not in list(dic.keys()):
+                dic[cant.iloc[k]["palabra"]] = 0
+            else:
+                dic[cant.iloc[k]["palabra"]] = dic[cant.iloc[k]["palabra"]] +1
+            next_word = False 
+    return dic    
 
+def convertirTop():
+    f= top()
+    myList = f.items()
 
+    myList = list(myList)
 
- 
-    
-              
+    k = sorted(myList,key=lambda x: x[1] ,reverse=True)[:5]  
+    return k              
+
+print(convertirTop())

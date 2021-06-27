@@ -2,6 +2,34 @@ from os import remove
 import pandas as pd
 from matplotlib import pyplot as pt
 from ..Handlers import usuario
+import PySimpleGUI as sg
+
+def top():
+    ds = pd.read_csv('./data/stats.csv',encoding="utf8")
+    cant = ds[(ds["estado"] == "ok") | (ds["evento"]=="inicio_partida")]
+    tamaño = len(cant.iloc[:])
+    dic = {}
+    next_word = False
+    for k in range(0,tamaño):
+        if cant.iloc[k]["evento"] == "inicio_partida":
+            next_word = True
+        if (cant.iloc[k]["estado"] == "ok") & (next_word):
+            if cant.iloc[k]["palabra"] not in list(dic.keys()):
+                dic[cant.iloc[k]["palabra"]] = 0
+            else:
+                dic[cant.iloc[k]["palabra"]] = dic[cant.iloc[k]["palabra"]] +1
+            next_word = False 
+    return dic    
+
+def convertirTop():
+    f= top()
+    myList = f.items()
+
+    myList = list(myList)
+
+    k = sorted(myList,key=lambda x: x[1] ,reverse=True)[:5]  
+    return k            
+  
 
 def preview_game_num():
     """retorna el numero de la ultima partida jugada"""
@@ -9,14 +37,6 @@ def preview_game_num():
     x = sorted(df["Partida"],reverse=True)[0]
     return x
 
-def primera_palabra():
-    ds = pd.read_csv('./data/stats.csv', "r+")
-    cant = ds.groupby(["estado"]=="inicio_de_partida")["palabra"].count()
-    topTen = cant.sort_values(ascending = False).head(10)
-    return topTen
-
-def armarTop10(top10):
-    return top10.plot(kind = "pie")
 
 def cant_fin():
     ds = pd.read_csv('./data/stats.csv',encoding="utf8")

@@ -71,8 +71,8 @@ cant_elementos,edad,estado,evento,genero,nivel,nombre,palabra,partida,tiempo
 8.0,Masculino,ok,intento,56,facil,pepe,Next Gen,4.0,120.0
 8.0,Masculino,error,intento,56,facil,pepe,Mystery Science Theater 3000: The Return,4.0,120.0
 8.0,Masculino,error,intento,56,facil,pepe,Mystery Science Theater 3000,4.0,120.0
-8.0,Masculino,ok,intento,56,facil,pepe,Mystery Science Theater 3000,4.0,120.0
-8.0,Masculino,ok,intento,56,facil,pepe,Gurren Lagann,4.0,120.0
+8.0,Masculino,ok,intento,56,facil,pepe,Mystery Science Theater 3000,4.0,1.0
+8.0,Masculino,ok,intento,56,facil,pepe,Gurren Lagann,4.0,0.5
 8.0,Masculino,ok,intento,56,facil,pepe,Mystery Science Theater 3000: The Return,4.0,120.0
 8.0,Masculino,ok,intento,56,facil,pepe,Better Than Us,4.0,120.0
 8.0,Masculino,ok,intento,56,facil,pepe,Bill Burr: Paper Tiger,4.0,120.0
@@ -110,14 +110,17 @@ cant_elementos,edad,estado,evento,genero,nivel,nombre,palabra,partida,tiempo
 18.0,x,,inicio_partida,12,facil,x,,15.0,120.0
 18.0,x,abandonada,fin,12,facil,x,,15.0,120.0
 18.0,x,,inicio_partida,12,facil,x,,16.0,120.0
+8.0,x,ok,intento,12,facil,x,9,13.0,60.0
 18.0,x,abandonada,fin,12,facil,x,,16.0,120.0
 18.0,x,,inicio_partida,12,facil,x,,17.0,120.0
 18.0,x,abandonada,fin,12,facil,x,,17.0,120.0
 18.0,x,,inicio_partida,12,facil,x,,18.0,120.0
 18.0,x,abandonada,fin,12,facil,x,,18.0,120.0
 18.0,x,,inicio_partida,12,facil,x,,19.0,120.0
+8.0,12,ok,intento,x,facil,x,Bill Burr: Paper Tiger,22.0,120.0
 18.0,x,abandonada,fin,12,facil,x,,19.0,120.0
 18.0,x,,inicio_partida,12,facil,x,,20.0,120.0
+8.0,12,ok,intento,x,facil,x,Bill Burr: Paper Tiger,22.0,120.0
 18.0,x,abandonada,fin,12,facil,x,,20.0,120.0
 18.0,x,,inicio_partida,12,facil,x,,21.0,120.0
 18.0,x,abandonada,fin,12,facil,x,,21.0,120.0
@@ -152,14 +155,14 @@ cant_elementos,edad,estado,evento,genero,nivel,nombre,palabra,partida,tiempo
 8.0,56,error,intento,Masculino,facil,pepe,Kong: King of the Apes,23.0,120.0
 8.0,56,error,intento,Masculino,facil,pepe,Power Players,23.0,120.0
 8.0,56,error,intento,Masculino,facil,pepe,Better Than Us,23.0,120.0
-8.0,56,ok,intento,Masculino,facil,pepe,Power Players,23.0,120.0
-8.0,56,ok,intento,Masculino,facil,pepe,9,23.0,120.0
+8.0,56,ok,intento,Masculino,facil,pepe,Power Players,23.0,5.0
+8.0,56,ok,intento,Masculino,facil,pepe,9,23.0,8.0
 8.0,56,error,intento,Masculino,facil,pepe,Hot Bot,23.0,120.0
-8.0,56,ok,intento,Masculino,facil,pepe,Hot Bot,23.0,120.0
+8.0,56,ok,intento,Masculino,facil,pepe,Hot Bot,23.0,12.0
 8.0,56,error,intento,Masculino,facil,pepe,Miniforce,23.0,120.0
 8.0,56,error,intento,Masculino,facil,pepe,Gurren Lagann,23.0,120.0
 8.0,56,ok,intento,Masculino,facil,pepe,Gurren Lagann,23.0,120.0
-8.0,56,ok,intento,Masculino,facil,pepe,Better Than Us,23.0,120.0
+8.0,56,ok,intento,Masculino,facil,pepe,Better Than Us,23.0,17.0
 8.0,56,error,intento,Masculino,facil,pepe,Kill Command,23.0,120.0
 8.0,56,ok,intento,Masculino,facil,pepe,Miniforce,23.0,120.0
 8.0,56,ok,intento,Masculino,facil,pepe,Kill Command,23.0,120.0

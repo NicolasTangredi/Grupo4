@@ -5,14 +5,14 @@
         "edad": "56",
         "genero": "Masculino",
         "estadisticas": {
-            "partidas_ganadas": 22,
+            "partidas_ganadas": 23,
             "partidas_perdidas": 4,
             "puntaje_maximo": 10,
             "dif_puntMax": "facil"
         },
         "configuracion": {
             "cant_casillas": "4x4",
-            "tipo_elemento": "imagenes",
+            "tipo_elemento": "palabras",
             "cant_coincidencias": 2,
             "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
@@ -134,6 +134,12 @@
                 "nombre": "pepe",
                 "puntaje": 0,
                 "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 8,
+                "tiempo": 110,
                 "dificultad": "facil"
             },
             {

@@ -28,11 +28,10 @@ def convertirTop():
     con los 5 primeras palabras como las mas encontradas"""
     f= top()
     myList = f.items()
+    
+    myList = [list(sub) for sub in myList]
 
-    myList = list(myList)
-
-    k = sorted(myList,key=lambda x: x[1] ,reverse=True)[:5]  
-    return k            
+    return sorted(myList,key=lambda x: x[1] ,reverse=True)             
   
 
 def preview_game_num():

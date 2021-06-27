@@ -41,14 +41,21 @@ def build_graph2():
 def build_estad3():
     "Construye la ventana que lleva el top 10 de palabras que primero se encontaron"
     top10 = st.convertirTop()
-    
-    layout = [[sg.T("Top 1")],[sg.T(top10[0][0])],[sg.T(top10[0][1])],[sg.T("                ")],
-              [sg.T("Top 2")],[sg.T(top10[1][0])],[sg.T(top10[1][1])],[sg.T("                ")],
-              [sg.T("Top 3")],[sg.T(top10[2][0])],[sg.T(top10[2][1])],[sg.T("                ")],
-              [sg.T("Top 4")],[sg.T(top10[3][0])],[sg.T(top10[3][1])],[sg.T("                ")],
-              [sg.T("Top 5")],[sg.T(top10[4][0])],[sg.T(top10[4][1])],[sg.T("                ")],
-              [sg.Button("Ok")]
-              ]
+    top10 = [[f"Top {top10.index(li) + 1}"] + li for li in top10]
+
+    layout = [
+        [sg.Table(
+            values=top10,
+            headings=["Posicion", "Palabra", "Cant"],
+            num_rows=len(top10),
+            auto_size_columns = True,
+            justification = 'center',
+            alternating_row_color = 'lightblue',
+            hide_vertical_scroll = True,
+            size=(200, 300)
+        )],
+        [sg.Button("Ok")]
+    ]
     
     window = sg.Window('Palabras primero encontradas', layout) 
     return window

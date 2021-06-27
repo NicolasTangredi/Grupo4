@@ -116,7 +116,7 @@ def div(dificultad,puntajes,dato):
     lista = []
     for user in x:
         if dificultad[user] == dato:
-            lista.append([user,puntajes[user],dato])      
+            lista.append([user, puntajes[user]])      
     return lista
 
 def dividir_puntajes(dif):

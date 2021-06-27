@@ -38,7 +38,7 @@ def loop():
     return window
 
 def start2():
-    "Ejecuta la ventana de estadisticas del menu principal "
+    "Ejecuta la ventana de partidas finalizadas,timeout y abandonadas "
 
     window = loop2()
     window.close()
@@ -55,7 +55,7 @@ def loop2():
     return window
 
 def start3():
-    "Ejecuta la ventana de estadisticas del menu principal "
+    "Ejecuta la ventana de porcentaje de partidas por genero "
 
     window = loop3()
     window.close()
@@ -72,7 +72,7 @@ def loop3():
     return window
 
 def start4():
-    "Ejecuta la ventana de estadisticas del menu principal "
+    "Ejecuta la ventana del top 10 de palabras que primero se enconrtaron "
 
     window = loop4()
     window.close()

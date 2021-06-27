@@ -5,6 +5,8 @@ from ..Handlers import usuario
 import PySimpleGUI as sg
 
 def top():
+    """"devuelve un diccionario con las claves como palabras y los valores como la cantidad de veces que 
+    se encontro el valor por primera vez al iniciar una partida"""
     ds = pd.read_csv('./data/stats.csv',encoding="utf8")
     cant = ds[(ds["estado"] == "ok") | (ds["evento"]=="inicio_partida")]
     tamaño = len(cant.iloc[:])
@@ -22,6 +24,8 @@ def top():
     return dic    
 
 def convertirTop():
+    """convierte el diccionario de la funcion top() en una lista de tuplas ordenada descendentemente 
+    con los 5 primeras palabras como las mas encontradas"""
     f= top()
     myList = f.items()
 
@@ -39,6 +43,7 @@ def preview_game_num():
 
 
 def cant_fin():
+    """retorta 3 variables con la cantidad de partidas abandonadas,timeout y finalizadas"""
     ds = pd.read_csv('./data/stats.csv',encoding="utf8")
     cant = ds[ds["estado"]=="abandonada"]["cant_elementos"].count()
     cant2 = ds[ds["estado"]=="timeout"]["cant_elementos"].count()
@@ -46,6 +51,7 @@ def cant_fin():
     return cant,cant2,cant3
 
 def porcentaje():
+    """crea la grafica con los porcentajes de partidas que finalizadas,abandonadas y timeout"""
     pt.clf()
     etiquetas = ["abandonada","timeout","finalizada"]
     x,y,z=cant_fin()
@@ -58,6 +64,7 @@ def porcentaje():
     pt.savefig("grafico.png",format="png")
 
 def cant_genero():
+    """retorta una lista con la cantidad de generos y otra con la cantidad de partidas ambas en el mismo indice"""
     ds = pd.read_csv('./data/stats.csv',encoding="utf8")
     generos = usuario.genero()
     cant = []
@@ -66,6 +73,8 @@ def cant_genero():
     return generos,cant
 
 def porcentaje2():
+    """crea el grafico para cantidad de partidas finalizadas segun el genero y le asigna un color
+    #la cantidad de colores es de 10 por lo que no puedo ingresar mas de 10 generos XD"""
     pt.clf()
     etiquetas,data_dibujo = cant_genero()
     colores = ["lightblue","yellow","lightgreen","grey","red","brown","orange","lightpink","pink","purple"]
@@ -79,7 +88,5 @@ def porcentaje2():
     pt.title("Porcentaje de partidas finalizadas")
     pt.savefig("grafica.png",format="png")
 
-
-    
     
 

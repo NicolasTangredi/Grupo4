@@ -19,7 +19,7 @@ def build_estad():
     return window
 
 def build_graph1():
-    "Construye la ventana de estadisticas del usuario"
+    "Construye la ventana que lleva el grafico de cantidad de partidas finalizadas,abandonadas y timeout"
     
     layout = [[sg.Image("grafico.png")],
               [sg.Button("Ok")]
@@ -30,7 +30,7 @@ def build_graph1():
     
 
 def build_graph2():
-    "Construye la ventana de estadisticas del usuario"
+    "Construye la ventana que lleva los porcentajes de partidas finalizadas por genero"
     
     layout = [[sg.Image("grafica.png")],
               [sg.Button("Ok")]]
@@ -39,7 +39,7 @@ def build_graph2():
     return window
 
 def build_estad3():
-    "Construye la ventana de estadisticas del usuario"
+    "Construye la ventana que lleva el top 10 de palabras que primero se encontaron"
     top10 = st.convertirTop()
     
     layout = [[sg.T("Top 1")],[sg.T(top10[0][0])],[sg.T(top10[0][1])],[sg.T("                ")],

@@ -226,6 +226,7 @@ def desconectar_todos():
             json.dump(datos, file, indent=4, ensure_ascii=False)
             
 def genero():
+    """retorna una lista con todos los generos registrados"""
     with open("data/usuarios.json","r", encoding="utf8") as usuario:
             datos = json.load(usuario)
             gender = []

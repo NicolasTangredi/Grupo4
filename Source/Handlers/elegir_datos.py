@@ -32,27 +32,14 @@ def elegir_criterio( tipo_dato ):
             print('Parece que hay problemas con los datos')
 
     if data != None:
-        # obtiene el dia y hora actual
+        # obtiene el dia actual
         dia = datetime.datetime.now().weekday()
-        hora = datetime.datetime.now().hour
+
         # los fines de semana es una criterio aleatorio
         try:
             dia = semana[dia]
         except:
             dia = semana[random.randint(0,4)]
 
-        data_act = data[dia][tipo_dato]
-
-        # devuelve los datos segun el horario
-        if((hora // 12) == 1):
-            print(f"hoy es {dia} por la tarde, estas jugando con: {tipo_dato}")
-            return {
-                "criterio": data_act["criterio"], 
-                "data": data_act["data"][:20]
-            }
-        else:
-            print(f"hoy es {dia} por la maniana, estas jugando con: {tipo_dato}")
-            return {
-                "criterio": data_act["criterio"], 
-                "data": data_act["data"][20:40]
-            }
+        print('hoy es ', dia, ', estas jugando con: ', tipo_dato)
+        return data[dia][tipo_dato]

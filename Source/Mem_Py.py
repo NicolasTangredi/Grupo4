@@ -1,5 +1,3 @@
-import unittest
-from .Pruebas.test_datos import *
 from .Componentes import menu_login
 
 

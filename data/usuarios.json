@@ -5,21 +5,29 @@
         "edad": "56",
         "genero": "Masculino",
         "estadisticas": {
-            "partidas_ganadas": 23,
+            "partidas_ganadas": 24,
             "partidas_perdidas": 4,
-            "puntaje_maximo": 10,
-            "dif_puntMax": "facil"
+            "puntaje_maximo": [
+                [
+                    "facil",
+                    112
+                ],
+                [
+                    "medio",
+                    -100
+                ],
+                [
+                    "dificil",
+                    -100
+                ]
+            ]
         },
         "configuracion": {
             "cant_casillas": "4x4",
-            "tipo_elemento": "palabras",
+            "tipo_elemento": "imagenes",
             "cant_coincidencias": 2,
             "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
-        },
-        "in_game": {
-            "cant_puntos": 0,
-            "cant_aciertos": 0
         },
         "historial": [
             {
@@ -159,6 +167,12 @@
                 "puntaje": 8,
                 "tiempo": 110,
                 "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
             }
         ],
         "conectado": 0
@@ -171,8 +185,20 @@
         "estadisticas": {
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
-            "puntaje_maximo": 0,
-            "dif_puntMax": "facil"
+            "puntaje_maximo": [
+                [
+                    "facil",
+                    -100
+                ],
+                [
+                    "medio",
+                    -100
+                ],
+                [
+                    "dificil",
+                    -100
+                ]
+            ]
         },
         "configuracion": {
             "cant_casillas": 0,
@@ -180,10 +206,6 @@
             "cant_coincidencias": 0,
             "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
-        },
-        "in_game": {
-            "cant_puntos": 0,
-            "cant_aciertos": 0
         },
         "historial": [],
         "conectado": 0
@@ -194,27 +216,47 @@
         "edad": "46",
         "genero": "Femenino",
         "estadisticas": {
-            "partidas_ganadas": 1,
+            "partidas_ganadas": 3,
             "partidas_perdidas": 0,
-            "puntaje_maximo": 10,
-            "dif_puntMax": "facil"
+            "puntaje_maximo": [
+                [
+                    "facil",
+                    56
+                ],
+                [
+                    "medio",
+                    -100
+                ],
+                [
+                    "dificil",
+                    -100
+                ]
+            ]
         },
         "configuracion": {
             "cant_casillas": "4x4",
             "tipo_elemento": "imagenes",
             "cant_coincidencias": 2,
-            "tiempo": 60,
+            "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
-        },
-        "in_game": {
-            "cant_puntos": 0,
-            "cant_aciertos": 0
         },
         "historial": [
             {
                 "nombre": "tobias",
                 "puntaje": 8,
                 "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "tobias",
+                "puntaje": 12,
+                "tiempo": 80,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "tobias",
+                "puntaje": 8,
+                "tiempo": 120,
                 "dificultad": "facil"
             }
         ],
@@ -228,8 +270,20 @@
         "estadisticas": {
             "partidas_ganadas": 3,
             "partidas_perdidas": 1,
-            "puntaje_maximo": 10,
-            "dif_puntMax": "facil"
+            "puntaje_maximo": [
+                [
+                    "facil",
+                    -100
+                ],
+                [
+                    "medio",
+                    -100
+                ],
+                [
+                    "dificil",
+                    -100
+                ]
+            ]
         },
         "configuracion": {
             "cant_casillas": "4x4",
@@ -237,10 +291,6 @@
             "cant_coincidencias": 2,
             "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
-        },
-        "in_game": {
-            "cant_puntos": 0,
-            "cant_aciertos": 0
         },
         "historial": [
             {
@@ -272,8 +322,20 @@
         "estadisticas": {
             "partidas_ganadas": 2,
             "partidas_perdidas": 0,
-            "puntaje_maximo": 10,
-            "dif_puntMax": "facil"
+            "puntaje_maximo": [
+                [
+                    "facil",
+                    -100
+                ],
+                [
+                    "medio",
+                    -100
+                ],
+                [
+                    "dificil",
+                    -100
+                ]
+            ]
         },
         "configuracion": {
             "cant_casillas": "4x4",
@@ -281,10 +343,6 @@
             "cant_coincidencias": 2,
             "tiempo": 60,
             "paleta_de_colores": "DarkTeal5"
-        },
-        "in_game": {
-            "cant_puntos": 0,
-            "cant_aciertos": 0
         },
         "historial": [
             {
@@ -310,8 +368,20 @@
         "estadisticas": {
             "partidas_ganadas": 2,
             "partidas_perdidas": 0,
-            "puntaje_maximo": 10,
-            "dif_puntMax": "facil"
+            "puntaje_maximo": [
+                [
+                    "facil",
+                    -100
+                ],
+                [
+                    "medio",
+                    -100
+                ],
+                [
+                    "dificil",
+                    -100
+                ]
+            ]
         },
         "configuracion": {
             "cant_casillas": "4x4",
@@ -319,10 +389,6 @@
             "cant_coincidencias": 2,
             "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
-        },
-        "in_game": {
-            "cant_puntos": 0,
-            "cant_aciertos": 0
         },
         "historial": [
             {
@@ -348,8 +414,20 @@
         "estadisticas": {
             "partidas_ganadas": 0,
             "partidas_perdidas": 0,
-            "puntaje_maximo": 5,
-            "dif_puntMax": "dificil"
+            "puntaje_maximo": [
+                [
+                    "facil",
+                    -100
+                ],
+                [
+                    "medio",
+                    -100
+                ],
+                [
+                    "dificil",
+                    -100
+                ]
+            ]
         },
         "configuracion": {
             "cant_casillas": 0,
@@ -357,10 +435,6 @@
             "cant_coincidencias": 0,
             "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
-        },
-        "in_game": {
-            "cant_puntos": 0,
-            "cant_aciertos": 0
         },
         "historial": [],
         "conectado": 0
@@ -371,21 +445,29 @@
         "edad": "100",
         "genero": "Tejon",
         "estadisticas": {
-            "partidas_ganadas": 44,
-            "partidas_perdidas": 28,
-            "puntaje_maximo": 162,
-            "dif_puntMax": "facil"
+            "partidas_ganadas": 51,
+            "partidas_perdidas": 30,
+            "puntaje_maximo": [
+                [
+                    "facil",
+                    -96
+                ],
+                [
+                    "medio",
+                    -100
+                ],
+                [
+                    "dificil",
+                    -100
+                ]
+            ]
         },
         "configuracion": {
-            "cant_casillas": "6x6",
+            "cant_casillas": "4x4",
             "tipo_elemento": "imagenes",
             "cant_coincidencias": 2,
-            "tiempo": 60,
+            "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
-        },
-        "in_game": {
-            "cant_puntos": 0,
-            "cant_aciertos": 0
         },
         "historial": [
             {
@@ -651,6 +733,48 @@
                 "puntaje": 0,
                 "tiempo": 50,
                 "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 7,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 7,
+                "tiempo": 50,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 12,
+                "tiempo": 80,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "teemo",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
             }
         ],
         "conectado": 0
@@ -661,23 +785,44 @@
         "edad": "12",
         "genero": "asd",
         "estadisticas": {
-            "partidas_ganadas": 0,
+            "partidas_ganadas": 2,
             "partidas_perdidas": 0,
-            "puntaje_maximo": 0,
-            "dif_puntMax": "facil"
+            "puntaje_maximo": [
+                [
+                    "facil",
+                    136
+                ],
+                [
+                    "medio",
+                    -100
+                ],
+                [
+                    "dificil",
+                    -100
+                ]
+            ]
         },
         "configuracion": {
-            "cant_casillas": "4x4",
-            "tipo_elemento": "palabras",
+            "cant_casillas": "6x6",
+            "tipo_elemento": "imagenes",
             "cant_coincidencias": 2,
-            "tiempo": 120,
+            "tiempo": 60,
             "paleta_de_colores": "DarkTeal5"
         },
-        "in_game": {
-            "cant_puntos": 0,
-            "cant_aciertos": 0
-        },
-        "historial": [],
+        "historial": [
+            {
+                "nombre": "asd",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "asd",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            }
+        ],
         "conectado": 0
     },
     {
@@ -686,21 +831,29 @@
         "edad": "12",
         "genero": "x",
         "estadisticas": {
-            "partidas_ganadas": 7,
-            "partidas_perdidas": 2,
-            "puntaje_maximo": 10,
-            "dif_puntMax": "facil"
+            "partidas_ganadas": 24,
+            "partidas_perdidas": 3,
+            "puntaje_maximo": [
+                [
+                    "facil",
+                    252
+                ],
+                [
+                    "medio",
+                    -100
+                ],
+                [
+                    "dificil",
+                    -100
+                ]
+            ]
         },
         "configuracion": {
-            "cant_casillas": "6x6",
+            "cant_casillas": "4x4",
             "tipo_elemento": "imagenes",
             "cant_coincidencias": 2,
             "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
-        },
-        "in_game": {
-            "cant_puntos": 0,
-            "cant_aciertos": 0
         },
         "historial": [
             {
@@ -744,8 +897,110 @@
                 "puntaje": 18,
                 "tiempo": 110,
                 "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 12,
+                "tiempo": 80,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 12,
+                "tiempo": 80,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 12,
+                "tiempo": 80,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 8,
+                "tiempo": 110,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 12,
+                "tiempo": 90,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 12,
+                "tiempo": 90,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 12,
+                "tiempo": 90,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "x",
+                "puntaje": 0,
+                "tiempo": 120,
+                "dificultad": "facil"
             }
         ],
-        "conectado": 1
+        "conectado": 0
     }
 ]

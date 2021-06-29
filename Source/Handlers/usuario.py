@@ -8,15 +8,13 @@ def crear_usuario(nombre, contra, genero, edad):
               "genero": genero,
               "estadisticas": { 'partidas_ganadas': 0,
                                 'partidas_perdidas': 0,
-                                'puntaje_maximo': 0,
-                                "dif_puntMax" : "facil"},
+                                "puntaje_maximo": [["facil" ,0],["dificil" ,0],["dificil" ,0]],
+                                },
               'configuracion': {'cant_casillas': "4x4",
                                 'tipo_elemento': 'palabras',
                                 'cant_coincidencias': 2,
                                 'tiempo': 120,
                                 'paleta_de_colores': 'DarkTeal5'},
-              "in_game":{"cant_puntos":0,
-                         "cant_aciertos":0},
               "historial" : [],
               #Si el usuario esta desconectado = 0/Si el usuario esta conectado = 1
               'conectado': 0
@@ -108,7 +106,8 @@ def user_disconnected(nom):
                 break
         with open("data/usuarios.json","w", encoding="utf8") as file:
             json.dump(datos, file, indent=4, ensure_ascii=False)
-            
+                       
+
 def puntajes_usuarios():
     """devuelve un diccionario con los nombres como llave y el puntaje maximo como valor"""
     with open('data/usuarios.json', encoding="utf8") as usuario:
@@ -117,15 +116,7 @@ def puntajes_usuarios():
         for users in datos:
             dic[users["nombre"]]= users["estadisticas"]["puntaje_maximo"]
         return dic
-    
-def dif_usuarios():
-    """devuelve un diccionario con los nombres como llave y la difficultad como valor"""
-    with open('data/usuarios.json', encoding="utf8") as usuario:
-        datos = json.load(usuario)
-        dic = {}
-        for users in datos:
-            dic[users["nombre"]]= users["estadisticas"]["dif_puntMax"]
-        return dic     
+        
   
 def stats_logged():
     """devuelve las estadisticas del usuario conectado"""
@@ -166,22 +157,6 @@ def usuario_conectado_profile():
             
 
 
-def max_punt():
-    """retorna una lista con los nombres(impares) y puntajes(pares) de los 3 mejores jugadores"""
-    lista = []
-    puntajes = puntajes_usuarios()
-    k=1
-    for i in range(3):
-        max=-100
-        for jugador in puntajes.keys():
-            if puntajes[jugador] > max:
-                puntos_max=puntajes[jugador]
-                jugador_max=jugador
-        lista.append(jugador_max)
-        lista.append(puntos_max)        
-        puntajes.pop(jugador_max)
-        k=k+2
-    return lista
 
 def dame_puntuaciones_pa():
     """me devuelve un diccionario con los 10 usuarios con mayor puntuacion como llaves y claves"""

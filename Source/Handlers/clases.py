@@ -2,6 +2,7 @@ from time import sleep
 import pandas
 from ..Handlers import PuntosAciertos
 from ..Handlers import usuario
+from ..Handlers import timer as t
 
 class Jugada():
     ''' es el controlador de la jugada, lleva la cuenta de los 
@@ -23,6 +24,7 @@ class Jugada():
         self._maxAc = maxAc
         self._elems = []
         self._botones = []
+        self._pointt = 0
         
         self._numJug = 0
         try:
@@ -43,7 +45,7 @@ class Jugada():
 
         # si el primer elemento aparece en todo el arreglo
         esIgual = self._elems.count(self._elems[0]) == len(self._elems)
-        point = 0
+        point = self._pointt
         # si se equivoco o llego al max de coincidencias
         if( not esIgual):
             #calcula la puntuacion del jugador si la jugada fue buena y actualiza la puntuacion en su perfil
@@ -52,13 +54,15 @@ class Jugada():
                 point,
                 self._dificultad
             )
+            print(point)
+            self._pointt = point
             
-            PuntosAciertos.update_accumulated_points(usuario.usuario_conectado_profile(),point)
             self._mala(dato,tiempo)
         elif ( len(self._elems) == self._max):
             #calcula la puntuacion del jugador si la jugada fue buena y actualiza la puntuacion en su perfil
             point = PuntosAciertos.calcular_puntos(True, point, self._dificultad)
-            PuntosAciertos.update_accumulated_points(usuario.usuario_conectado_profile(), point)
+            self._pointt = point
+            print(point)
             return self._buena(dato,tiempo)
 
     def finalizar(self):
@@ -68,22 +72,24 @@ class Jugada():
         #falta una funcion para retornar el tiempo sobrante despues de la partida
         
         def tiempo_sobrante(user):
-            return 10
+            return 0
 
         puntuacion_total = PuntosAciertos.fin_juego(
-            PuntosAciertos.puntuacion_acumulada(),
+            self._pointt,
             self._aciertos,
             tiempo_sobrante(user),
             user
         )
         #si la puntuacion fue mayor que su puntaje maximo entonces la actualiza
+        max = PuntosAciertos.points_max(user,self._dificultad)
+        
         PuntosAciertos.sos_pro(
-            user["estadisticas"]["puntaje_maximo"],
-            puntuacion_total,user["nombre"],
+            max,
+            puntuacion_total,
+            user["nombre"],
             self._dificultad
         )
         #pone en 0 la casilla in game del usuario
-        PuntosAciertos.clear_accumulated_points(user)
 
     # --------------------- FUNCIONES PRIVADAS NO LLAMAR ---------------------
 

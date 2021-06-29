@@ -1,48 +1,59 @@
 import json
 from ..Handlers import usuario as uuser
 
-def calcular_puntos (boolean,cant_punt,difficult="facil bro"):
+def calcular_puntos (boolean,cant_punt,difficult):
     """resta o suma segun si se equivoco o no en las coincidencias y segun la dificultad elegida"""
     if boolean:
-        cant_punt = sumar_puntos(boolean,cant_punt,difficult)
+        x = sumar_puntos(cant_punt,difficult)
     else:
-        cant_punt = restar_puntos(boolean,cant_punt,difficult)
-    return cant_punt    
+        x = restar_puntos(cant_punt,difficult)
+    return x    
     
 
-def sumar_puntos (boolean,es_igual,difficult="facil bro"):
+def sumar_puntos (es_igual,difficult):
     """si las cartas fueron iguales entonces suma puntos a la funcion"""
-    if boolean and difficult == "facil bro":
+    if difficult == "facil":
         es_igual = es_igual + 3
-    elif boolean and difficult == "madio pa":
+    elif difficult == "madio":
         es_igual = es_igual + 6
-    else:
-        if boolean and difficult == "re dificil hermano":
-            es_igual = es_igual + 9
+    elif difficult == "dificil":
+        es_igual = es_igual + 9
     return es_igual
 
-def restar_puntos (boolean,es_igual,difficult="facil bro"):
+def restar_puntos (es_igual,difficult):
     """si se equivoco una cierta cantidad de veces entonces resta puntos"""
-    if boolean and difficult == "facil bro":
+    if difficult == "facil":
+        es_igual = es_igual - 1
+    elif difficult == "madio":
+        es_igual = es_igual - 2
+    elif difficult == "dificil":
         es_igual = es_igual - 3
-    elif boolean and difficult == "madio pa":
-        es_igual = es_igual - 8
-    else:
-        if boolean and difficult == "re dificil hermano":
-            es_igual = es_igual - 12
     return es_igual
+
+def points_max(user,dificultad):
+    if dificultad == "facil":
+        max_punt = user["estadisticas"]["puntaje_maximo"][0][1]
+    elif dificultad == "medio":
+        max_punt = user["estadisticas"]["puntaje_maximo"][1][1]   
+    elif dificultad == "dificil":
+        max_punt = user["estadisticas"]["puntaje_maximo"][2][1]
+    return max_punt        
 
 def sos_pro (max_punt,puntaje_logrado,nombre,dificultad):
     """cambia el puntaje del usuario en caso de que la puntuacion lograda haya sido mayor que su 
     puntuacion maxima,la puntuacion lograda se determina a traves de la funcion 'fin_juego'"""
-    cambiado = False
+    cambiado = False    
     if max_punt < puntaje_logrado:
         with open("data/usuarios.json","r", encoding="utf8") as usuario:
             datos = json.load(usuario)
             for buscar_usuario in datos:
                 if nombre == buscar_usuario["nombre"]:
-                    buscar_usuario["estadisticas"]["puntaje_maximo"] = puntaje_logrado
-                    buscar_usuario["estadisticas"]["dif_puntMax"] = dificultad
+                    if dificultad == "facil":
+                        buscar_usuario["estadisticas"]["puntaje_maximo"][0][1] = puntaje_logrado
+                    elif dificultad == "medio":    
+                        buscar_usuario["estadisticas"]["puntaje_maximo"][1][1] = puntaje_logrado
+                    elif dificultad == "dificil":
+                        buscar_usuario["estadisticas"]["puntaje_maximo"][2][1] = puntaje_logrado    
                     break
             with open("data/usuarios.json","w", encoding="utf8") as file:
                 json.dump(datos, file, indent=4, ensure_ascii=False)
@@ -62,38 +73,8 @@ def pro_o_manco (var,nombre):
                 break
     with open("data/usuarios.json","w", encoding="utf8") as file:
             json.dump(datos, file, indent=4, ensure_ascii=False)
-
-def update_accumulated_points(user,cant_points):
-    """aumenta la cantidad de puntos acumulados"""
-    with open("data/usuarios.json","r", encoding="utf8") as usuario:
-            datos = json.load(usuario)
-            for buscar_usuario in datos:
-                if user["nombre"] == buscar_usuario["nombre"]:
-                    buscar_usuario["in_game"]["cant_puntos"] = buscar_usuario["in_game"]["cant_puntos"] + cant_points
-                    break
-            with open("data/usuarios.json","w", encoding="utf8") as file:
-                json.dump(datos, file, indent=4, ensure_ascii=False)
-
-def puntuacion_acumulada():
-    """retorna la cantidad de puntos acumulados hasta el momento"""
-    with open('data/usuarios.json',"r", encoding="utf8") as file:
-        usuarios = json.load(file)
-        for user in usuarios:
-            if user["conectado"] == 1:
-                usuar = user["in_game"]["cant_puntos"]
-                break
-    return usuar       
+     
                 
-def clear_accumulated_points(user):
-    """pone en 0 la cantidad de puntos del usuario"""
-    with open("data/usuarios.json","r", encoding="utf8") as usuario:
-            datos = json.load(usuario)
-            for buscar_usuario in datos:
-                if user["nombre"] == buscar_usuario["nombre"]:
-                    buscar_usuario["in_game"]["cant_puntos"] = 0
-                    break
-            with open("data/usuarios.json","w", encoding="utf8") as file:
-                json.dump(datos, file, indent=4, ensure_ascii=False)
                 
 def fin_juego (total_aciertos,punt_total,tiempo_sobrante,user):
     """calcula la puntuacion total del usuario y actualiza el historial del usuario"""
@@ -109,6 +90,19 @@ def fin_juego (total_aciertos,punt_total,tiempo_sobrante,user):
     tot = total_aciertos * punt_total + tiempo_sobrante
     return tot
 
+def points_difficult(dificultad):
+    with open('data/usuarios.json',"r+", encoding="utf8") as usuario:
+        datos = json.load(usuario)
+        lis = []
+        for users in datos:
+            if dificultad == "facil":
+                lis.append([users["nombre"],users["estadisticas"]["puntaje_maximo"][0][1]])
+            elif dificultad == "medio":
+                lis.append([users["nombre"],users["estadisticas"]["puntaje_maximo"][1][1]])
+            elif dificultad == "dificil":
+                lis.append([users["nombre"],users["estadisticas"]["puntaje_maximo"][2][1]])      
+    return lis  
+
 def div(dificultad,puntajes,dato):
     """recibe un diccionario con nombre-dificultad y puntajes-dificultad para crear una lista solo con la dificultad
     recibida en dato"""
@@ -121,15 +115,13 @@ def div(dificultad,puntajes,dato):
 
 def dividir_puntajes(dif):
     """crea un diccionario de listas ordenadas por puntuacion mas alta segun la dificultad que reciba"""
-    puntajes = uuser.dame_puntuaciones_pa()
-    dificultad = uuser.dif_usuarios()
     if dif == "facil":
-        f = div(dificultad,puntajes,"facil")
+        f = points_difficult("facil")
         xd = sorted(f,key=lambda x: x[1] ,reverse=True)[:5]
     elif dif == "medio":
-        f = div(dificultad,puntajes,"medio")
+        f = points_difficult("medio")
         xd = sorted(f,key=lambda x: x[1] ,reverse=True)[:5]
     elif dif == "dificil":
-        f = div(dificultad,puntajes,"dificil")
+        f = points_difficult("dificil")
         xd = sorted(f,key=lambda x: x[1] ,reverse=True)[:5]         
     return xd

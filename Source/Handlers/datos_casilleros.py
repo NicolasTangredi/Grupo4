@@ -39,8 +39,11 @@ def crearDatosJugada( tipo_elem, coincidencias, x, y ):
     for _i in range( (x * y) // coincidencias ):
         index = random.randint(0, len(datos) - 1)
         
-        filasDatos.extend([crearDato(datos[index]) for _i in range(coincidencias)])
-        datos.remove(datos[index])
+        elem = crearDato(datos[index])
+
+        filasDatos.extend([elem] * coincidencias)
+        
+        del datos[index]
 
     # revuelv el arreglo y pense en retornar como una especie de matriz
     random.shuffle(filasDatos)

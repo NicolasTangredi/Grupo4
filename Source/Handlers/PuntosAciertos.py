@@ -13,11 +13,11 @@ def calcular_puntos (boolean,cant_punt,difficult):
 def sumar_puntos (es_igual,difficult):
     """si las cartas fueron iguales entonces suma puntos a la funcion"""
     if difficult == "facil":
-        es_igual = es_igual + 3
-    elif difficult == "madio":
-        es_igual = es_igual + 6
+        es_igual = es_igual + 10
+    elif difficult == "medio":
+        es_igual = es_igual + 20
     elif difficult == "dificil":
-        es_igual = es_igual + 9
+        es_igual = es_igual + 30
     return es_igual
 
 def restar_puntos (es_igual,difficult):

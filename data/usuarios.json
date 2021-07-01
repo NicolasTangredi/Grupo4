@@ -23,10 +23,10 @@
             ]
         },
         "configuracion": {
-            "cant_casillas": "5x5",
+            "cant_casillas": "4x4",
             "tipo_elemento": "imagenes",
             "cant_coincidencias": 2,
-            "tiempo": 90,
+            "tiempo": 120,
             "paleta_de_colores": "DarkTeal5"
         },
         "historial": [
@@ -831,12 +831,12 @@
         "edad": "12",
         "genero": "x",
         "estadisticas": {
-            "partidas_ganadas": 32,
-            "partidas_perdidas": 6,
+            "partidas_ganadas": 24,
+            "partidas_perdidas": 3,
             "puntaje_maximo": [
                 [
                     "facil",
-                    592
+                    252
                 ],
                 [
                     "medio",
@@ -997,54 +997,6 @@
             {
                 "nombre": "x",
                 "puntaje": 0,
-                "tiempo": 120,
-                "dificultad": "facil"
-            },
-            {
-                "nombre": "x",
-                "puntaje": 8,
-                "tiempo": 120,
-                "dificultad": "facil"
-            },
-            {
-                "nombre": "x",
-                "puntaje": 0,
-                "tiempo": 60,
-                "dificultad": "facil"
-            },
-            {
-                "nombre": "x",
-                "puntaje": 7,
-                "tiempo": 120,
-                "dificultad": "facil"
-            },
-            {
-                "nombre": "x",
-                "puntaje": 8,
-                "tiempo": 120,
-                "dificultad": "facil"
-            },
-            {
-                "nombre": "x",
-                "puntaje": 8,
-                "tiempo": 120,
-                "dificultad": "facil"
-            },
-            {
-                "nombre": "x",
-                "puntaje": 0,
-                "tiempo": 120,
-                "dificultad": "facil"
-            },
-            {
-                "nombre": "x",
-                "puntaje": 8,
-                "tiempo": 120,
-                "dificultad": "facil"
-            },
-            {
-                "nombre": "x",
-                "puntaje": 8,
                 "tiempo": 120,
                 "dificultad": "facil"
             }

@@ -1,6 +1,6 @@
 import json
 import PySimpleGUI as sg
-from ..Ventanas import principal as ventana
+from ..Ventanas import principal as ventana, ayuda
 from ..Componentes import menu_estadisticas, menu_tablero 
 from ..Componentes import menu_puntajes
 from ..Componentes import menu_configuracion
@@ -42,6 +42,12 @@ def loop(window):
             window.hide()
             menu_estadisticas.start()
             window.un_hide()
+
+        elif(event == '-AYUDA-'):
+            win = ayuda.crear()
+            win.read()
+            win.close()
+
 
         elif(event == '-SALIR-' or event == sg.WIN_CLOSED):
             user = usuario.usuario_conectado()

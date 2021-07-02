@@ -10,6 +10,7 @@ def crear():
         [button( 'Configuracion', '-CONFIG-')],
         [button( 'Puntos', '-PUNTOS-')],
         [button( 'Estadisticas', '-ESTAD-')],
+        [button( 'Ayuda', '-AYUDA-')],
         [button( 'Salir', '-SALIR-')]
     ]
 

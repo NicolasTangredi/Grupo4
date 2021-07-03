@@ -93,7 +93,6 @@ def loop(window, datos, config, x, y):
 
             if(timer.se_termino_el_tiempo(start_timer, config["tiempo"])):
                 jugada._registrar_jugada('fin', jugada._numJug,"timeout",tiempo)
-                jugada._registrar_jugada('fin', jugada._numJug,"finalizada",tiempo)
                 jugada.finalizar()
                 
                 pg.mixer.music.stop()

@@ -68,7 +68,7 @@ def cant_genero():
     generos = usuario.genero()
     cant = []
     for k in generos:
-        cant.append(ds[(ds["estado"] == "finalizada") & ((ds["genero"] == k) | (ds["edad"] == k))]["estado"].count())
+        cant.append(ds[(ds["estado"] == "timeout") & (ds["estado"] == "finalizada") & ((ds["genero"] == k) | (ds["edad"] == k))]["estado"].count())
     return generos,cant
 
 def porcentaje2():

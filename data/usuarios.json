@@ -5,8 +5,8 @@
         "edad": "56",
         "genero": "Masculino",
         "estadisticas": {
-            "partidas_ganadas": 24,
-            "partidas_perdidas": 4,
+            "partidas_ganadas": 27,
+            "partidas_perdidas": 7,
             "puntaje_maximo": [
                 [
                     "facil",
@@ -23,10 +23,10 @@
             ]
         },
         "configuracion": {
-            "cant_casillas": "4x4",
+            "cant_casillas": "6x6",
             "tipo_elemento": "imagenes",
-            "cant_coincidencias": 2,
-            "tiempo": 120,
+            "cant_coincidencias": 3,
+            "tiempo": 60,
             "paleta_de_colores": "DarkTeal5"
         },
         "historial": [
@@ -172,6 +172,24 @@
                 "nombre": "pepe",
                 "puntaje": 8,
                 "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 5,
+                "tiempo": 60,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 1,
+                "tiempo": 60,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "pepe",
+                "puntaje": 0,
+                "tiempo": 60,
                 "dificultad": "facil"
             }
         ],
@@ -1001,6 +1019,127 @@
                 "dificultad": "facil"
             }
         ],
+        "conectado": 0
+    },
+    {
+        "nombre": "ccc",
+        "contraseña": "ccc",
+        "edad": "5",
+        "genero": "Femenino",
+        "estadisticas": {
+            "partidas_ganadas": 9,
+            "partidas_perdidas": 0,
+            "puntaje_maximo": [
+                [
+                    "facil",
+                    584
+                ],
+                [
+                    "dificil",
+                    0
+                ],
+                [
+                    "dificil",
+                    0
+                ]
+            ]
+        },
+        "configuracion": {
+            "cant_casillas": "4x4",
+            "tipo_elemento": "imagenes",
+            "cant_coincidencias": 2,
+            "tiempo": 120,
+            "paleta_de_colores": "DarkTeal5"
+        },
+        "historial": [
+            {
+                "nombre": "ccc",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "ccc",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "ccc",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "ccc",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "ccc",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "ccc",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "ccc",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "ccc",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            },
+            {
+                "nombre": "ccc",
+                "puntaje": 8,
+                "tiempo": 120,
+                "dificultad": "facil"
+            }
+        ],
+        "conectado": 0
+    },
+    {
+        "nombre": "vvvv",
+        "contraseña": "vvvv",
+        "edad": "14",
+        "genero": "Masculino",
+        "estadisticas": {
+            "partidas_ganadas": 0,
+            "partidas_perdidas": 0,
+            "puntaje_maximo": [
+                [
+                    "facil",
+                    0
+                ],
+                [
+                    "dificil",
+                    0
+                ],
+                [
+                    "dificil",
+                    0
+                ]
+            ]
+        },
+        "configuracion": {
+            "cant_casillas": "4x4",
+            "tipo_elemento": "palabras",
+            "cant_coincidencias": 2,
+            "tiempo": 120,
+            "paleta_de_colores": "DarkTeal5"
+        },
+        "historial": [],
         "conectado": 0
     }
 ]

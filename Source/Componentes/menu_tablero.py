@@ -85,7 +85,11 @@ def loop(window, datos, config, x, y):
                     jugada._registrar_jugada('fin', jugada._numJug,"finalizada")
                     pg.mixer.music.stop()
                     victoria.play()
+                    window.close()
                     mostrar_mensaje('Ganaste!', 'Conseguiste todas las coincidencias', "Win.gif")
+                    if (sg.popup_yes_no('Desea jugar continuar jugando?')) == 'Yes':
+                        start()
+                        
                     break
                 
             window["-TIMER-"].Update('Tiempo:' f'{round(tiempo // 60):02d}:{round(tiempo % 60):02d}')
@@ -100,8 +104,10 @@ def loop(window, datos, config, x, y):
 
                 user = usuario.usuario_conectado_profile()
                 PuntosAciertos.pro_o_manco(False,user["nombre"])
-                
+                window.close()
                 mostrar_mensaje('perdiste', 'se te acabo el tiempo', "Lose.gif")
+                if (sg.popup_yes_no('Desea jugar continuar jugando?')) == 'Yes':
+                    start()
                 break
     else:
         pg.mixer.music.stop()

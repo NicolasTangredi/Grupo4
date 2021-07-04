@@ -27,7 +27,7 @@ def loop():
             if i == 1:
                 sg.popup('el nombre de usuario no es valido o no esta disponible')
             elif i == 2:
-                sg.popup("la edad ingresada no es valida, por favor ingrese un numero")
+                sg.popup("la edad ingresada no es valida, por favor ingrese un numero. Tenes que ser mayor de 5 años y menor de 120")
             elif i == 3:
                 sg.popup('el genero ingresado no es valido, por favor ingrese caracteres validos')
             else:

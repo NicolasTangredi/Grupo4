@@ -64,7 +64,7 @@ def validacion_signin(user,age,genre):
         y devuelve un nro. si los datos son validos devuelve 0, si 
         el username no es valido devuelve 1, si la edad no es valida
         devuelve 2 y si el genero no es valido devuelve 3"""
-    if len(user) == 0 or user[0] == ' ' or  not usuario_disponible(user) :
+    if len(user) == 0 or user[0] == ' ' or  not usuario_disponible(user):
         return 1
     elif len(age) == 0 or age[0] == ' ':
         return 2
@@ -73,7 +73,10 @@ def validacion_signin(user,age,genre):
     else:
         try:
             i = 0
-            print(int(age))
+            edad = int(age)
+            print(edad)
+            if edad < 5 or edad > 120:
+                return 2
             i=+ 1
             print(int(genre))
             return 3
@@ -164,7 +167,12 @@ def dame_puntuaciones_pa():
     points = dict(sorted(puntajes.items(),key=lambda x: x[1] ,reverse=True)[:10])
     return points
   
-                
+def get_configuracion():
+    """devuelve la configuracion del usuario conectado"""
+
+    user = usuario_conectado_profile()
+    return user['configuracion']
+
     
 
 def get_time ():

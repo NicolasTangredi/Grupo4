@@ -49,13 +49,11 @@ class Jugada():
         # si se equivoco o llego al max de coincidencias
         if( not esIgual):
             #calcula la puntuacion del jugador si la jugada fue buena y actualiza la puntuacion en su perfil
-            point = PuntosAciertos.calcular_puntos(
+            self._pointt = PuntosAciertos.calcular_puntos(
                 False,
                 point,
                 self._dificultad
             )
-            print(point)
-            self._pointt = point
             
             self._mala(dato,tiempo)
         elif ( len(self._elems) == self._max):
@@ -147,8 +145,6 @@ class Jugada():
         niveles = ['facil', 'medio', 'dificil']
         nivel = niveles[(config['tiempo'] - 30) % 30]
         
-        
-
         data = {
             'tiempo': tiempo, 
             'partida': numJug, 

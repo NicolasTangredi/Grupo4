@@ -1,3 +1,4 @@
+import traceback
 import PySimpleGUI as sg, time, os
 from ..Handlers import timer, PuntosAciertos, datos_casilleros, usuario, clases, PuntosAciertos 
 from ..Ventanas import tablero
@@ -9,15 +10,17 @@ def start():
     user = usuario.usuario_conectado_profile()
     config, nombre = user['configuracion'], user['nombre']
     
+    dificultad = ['dificil', 'medio', 'facil'][(config['tiempo'] - 60) // 30]
+
     # esto es el alto y ancho del tablero y los datos
     x, y = tuple(map( int, config["cant_casillas"].split("x")))
     datos, crit = datos_casilleros.crearDatosJugada(config['tipo_elemento'], config['cant_coincidencias'], x, y)
     try:
-        window = tablero.crear(nombre, crit)
+        window = tablero.crear(nombre, dificultad, crit)
         loop(window, datos, config, x, y)
         window.close()
     except Exception as err:
-        print(err)
+        print(traceback.print_exc())
 
 def loop(window, datos, config, x, y):
     ''' loop de la ventana del tablero '''
@@ -54,13 +57,16 @@ def loop(window, datos, config, x, y):
         jugada = clases.Jugada(config, (x * y // coin))
 
         while True:
-            event, _value = window.read(timeout=100)
+            event, _value = window.read(timeout=50)
             tiempo = timer.actualizar(start_timer)
 
-            if event == sg.WIN_CLOSED:
-                jugada._registrar_jugada('fin', jugada._numJug,"abandonada")
-                pg.mixer.music.stop()
-                break
+            if event == sg.WINDOW_CLOSE_ATTEMPTED_EVENT:
+                mensaje = 'Estas seguro de que queres salir, la partida actual se considerara abandonada'
+                print('hola')
+                if(sg.popup_yes_no(mensaje) == 'Yes'):
+                    jugada._registrar_jugada('fin', jugada._numJug,"abandonada")
+                    pg.mixer.music.stop()
+                    break
 
             if event == "-JUGAR-":
                 start_timer += timer.parar()
@@ -78,16 +84,22 @@ def loop(window, datos, config, x, y):
                 else: 
                     button.Update(dato, disabled=True)
                 
+                
                 window.refresh()
                 fin = jugada.update(button, dato, tiempo)
+                window["-PUNT-"].Update(f"Puntos: {jugada._pointt:03d}")
+                sg.Text()
 
                 if(fin):
                     jugada._registrar_jugada('fin', jugada._numJug,"finalizada")
                     pg.mixer.music.stop()
                     victoria.play()
-                    window.close()
-                    mostrar_mensaje('Ganaste!', 'Conseguiste todas las coincidencias', "Win.gif")
-                    if (sg.popup_yes_no('Desea jugar continuar jugando?')) == 'Yes':
+                    
+                    mostrar_mensaje('Ganaste!', 'Conseguiste todas las coincidencias', 
+                    "Win.gif", jugada, config["tiempo"] - tiempo)
+
+                    if (sg.popup_yes_no('Desea continuar jugando?')) == 'Yes':
+                        window.close()
                         start()
                         
                     break
@@ -104,21 +116,29 @@ def loop(window, datos, config, x, y):
 
                 user = usuario.usuario_conectado_profile()
                 PuntosAciertos.pro_o_manco(False,user["nombre"])
-                window.close()
-                mostrar_mensaje('perdiste', 'se te acabo el tiempo', "Lose.gif")
+                
+                mostrar_mensaje('perdiste', 'se te acabo el tiempo', 
+                "Lose.gif", jugada, config["tiempo"] - tiempo)
+                
                 if (sg.popup_yes_no('Desea jugar continuar jugando?')) == 'Yes':
+                    window.close()
                     start()
+
                 break
     else:
         pg.mixer.music.stop()
         
 
-def mostrar_mensaje(titulo, mensaje, name_img):
+def mostrar_mensaje(titulo, mensaje, name_img, jugada, tiempo):
     """ muestra un mensaje al usuario con un gif,
         del gif solo se necesita el nombre del archivo con la extension
-    """      
+    """
+    string = f'{round(tiempo // 60):02d}:{round(tiempo % 60):02d}'
+
     layout = [   
         [sg.Text(mensaje, font=('', 15))],
+        [sg.Text(f'Conseguiste {jugada._pointt} Puntos!')],
+        [sg.Text(f'El tiempo restante es: {string}')],
         [sg.Image(key="-GIF-", filename=os.path.join('data/imagenes', name_img))],
         [sg.Ok(size=(12,2))]
     ]

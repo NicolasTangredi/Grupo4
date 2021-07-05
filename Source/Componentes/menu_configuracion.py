@@ -19,7 +19,7 @@ def loop(window):
     while True:
         event, values = window.read()
 
-        if event == '-SALIR-':
+        if (event == '-SALIR-') or (event == sg.WINDOW_CLOSE_ATTEMPTED_EVENT):
             if guarde:
                 pop1 = sg.popup_yes_no('Estas segurx que queres salir?')
                 if pop1 == 'Yes':
@@ -29,8 +29,6 @@ def loop(window):
                 if pop2 == 'Yes':
                     break
                 
-        elif event == sg.WIN_CLOSED:
-            break
         elif event == "-FACIL-":
             window['-CASILLAS-'].update("4x4")
             window['-ELEMENTO-'].update("imagenes")

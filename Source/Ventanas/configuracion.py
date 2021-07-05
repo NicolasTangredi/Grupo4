@@ -17,7 +17,7 @@ def build_config():
         [sg.Text('Si deja este campo vacio se utilizara una paleta de colores aleatoria)')], 
         [sg.Button('Save', key ='-SAVE-'), sg.Button ('Salir', key = '-SALIR-')]
         ]
-        window = sg.Window('Configuracion', layout)
+        window = sg.Window('Configuracion', layout, enable_close_attempted_event = True)
         return window
 
 

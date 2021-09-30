@@ -74,18 +74,7 @@ def cant_genero():
 def porcentaje2():
     """crea el grafico para cantidad de partidas finalizadas segun el genero y le asigna un color
     #la cantidad de colores es de 10 por lo que no puedo ingresar mas de 10 generos XD"""
-    pt.clf()
-    etiquetas,data_dibujo = cant_genero()
-    colores = ["lightblue","yellow","lightgreen","grey","red","brown","orange","lightpink","pink","purple"]
-    colores2 = []
-    for k in range(0,len(etiquetas)):
-        colores2.append(colores[k])
-    pt.pie(data_dibujo ,colors=colores2, autopct='%1.1f%%',
-    shadow=True, startangle=90, labeldistance= 1.1)
-    pt.axis('equal')
-    pt.legend(etiquetas)
-    pt.title("Porcentaje de partidas finalizadas")
-    pt.savefig("grafica.png",format="png")
+
 
     
 
